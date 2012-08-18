@@ -34,19 +34,19 @@ div#content {
 h1 {
     font-size: 1.8em;
     color: #258FB8;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 h2 {
     font-size: 1.5em;
     color: #258FB8;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 h3 {
     font-size: 1.3em;
     color: #258FB8;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 /* Header stuff */
@@ -58,6 +58,7 @@ header {
     line-height: 40px;
     position: relative;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
 }
 
 header > .right {
@@ -98,7 +99,7 @@ header h1 span {
 
 /* Header nav stuff */
 header nav {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 5px;
     float: left;
 }
