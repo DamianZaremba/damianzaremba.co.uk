@@ -1,0 +1,28 @@
+---
+comments: true
+layout: post
+title: Twitter?
+categories:
+- General
+---
+
+It appears twitter decided to have a re-style once again as can be seen below;
+
+**2011**
+[]({% postfile twitter1.png %})
+
+**2010**
+[]({% postfile twitter2.png %})
+
+**2009**
+[]({% postfile twitter3.png %})
+
+They also keep playing with the web theme as well, mainly the homepage which has changed twice this year and the login link colors which last week where orange but are now back to white.
+
+I think they should focus more on scaling their API and web stack so that they can remove the API limits and increase the platform stability.
+
+Things could change now they have purchased tweetdeck however this may just slowly replace the "official" twitter client.
+
+The recent changes to send email notifications on events also seems to be a step backwards - they are moving things away from near-real time to slow time. The notifications also seem to be quite slow along with the search feeds which I hope they speed up soon.
+
+The one notification I wouldn't mind getting via email is un-follow notifications, I currently rely on third-party services +a bunch of Perl for them.

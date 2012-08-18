@@ -1,0 +1,51 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc></loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>/about</loc>
+        <lastmod>{{ site.time }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>/feed</loc>
+        <lastmod>{{ site.time }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives</loc>
+        <lastmod>{{ site.time }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    {% for post in site.posts %}
+    <url>
+        <loc>/{{ post.url }}</loc>
+        <lastmod>{{ site.time }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
+
+    {% for cat in site.category_urls %}
+    <url>
+        <loc>/{{ cat }}</loc>
+        <lastmod>{{ site.time }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    {% endfor %}
+</urlset>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: Archives
+description: Damian Zaremba's Blog Archives
+---
+
+<ul id="archives">
+{% for post in site.posts %}
+	{% unless post.next %}
+		<h2>{{ post.date | date: '%Y' }}</h2>
+	{% else %}
+
+		{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+		{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+		{% if year != nyear %}
+			<h2>{{ post.date | date: '%Y' }}</h2>
+		{% endif %}
+	{% endunless %}
+
+	<li>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>

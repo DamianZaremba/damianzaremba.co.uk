@@ -1,0 +1,202 @@
+---
+comments: true
+layout: post
+title: canhazip
+categories:
+- Fun
+- Work
+---
+
+I was a little bored this afternoon so made [canhazip.info](http://canhazip.info)! Inspired by the awesome service [icanhazip.com](http://icanhazip.com/) run by [RackerHacker](http://rackerhacker.com/), it basically does the same thing but there are some differences.
+
+
+#### Basic Usage
+
+
+[http://canhazip.info/](http://canhazip.info/)
+
+This will return your public IP - if you have dual stack (IPv4 and IPv6) then it will return your v6 address.
+
+
+#### Specific IP type
+
+
+[http://ipv4.canhazip.info/](http://ipv4.canhazip.info/)
+
+This will return your public IPv4 address if you are have a working one, else it will time-out (uses an A record).
+
+[http://ipv6.canhazip.info/](http://ipv6.canhazip.info/)
+
+This will return your public IPv6 address if you are have a working one, else it will time-out (uses an AAAA record).
+
+
+#### Output format
+
+
+By default the output will be plain text however you can optionally pass a format to be returned. To pass a format simply add /<your format>
+to the end of the URL.
+
+Accepted formats are:
+
+
+
+	
+  * xml
+
+	
+  * json
+
+	
+  * yaml
+
+	
+  * php (serialize of an array)
+
+	
+  * plain
+
+
+Example usage:
+
+[http://canhazip.info/xml](http://canhazip.info/xml)
+
+
+#### FAQ
+
+
+
+
+##### icanhazip exists, why another service that does the same thing?
+
+
+
+
+
+	
+  1. Because I can
+
+	
+  2. Because .info domains were on special offer ($1.87!)
+
+	
+  3. The servers hosting the site are in London and Manchester not the US (latency)
+
+	
+  4. The secondary service I was using previously no longer exists (I like basic redundancy)
+
+
+
+
+##### Do you keep logs
+
+
+I have logs from the web server which I keep for a few days just in case there is any abuse. These are not shared with anyone and access to the server is heavily restricted.
+
+
+##### Why different formats?
+
+
+For developers wanting more than plain text. I plan to add in extended information such as GeoIP and the option to specify an IP to get the info for. This will appear in time as I get randomly bored.
+
+
+##### Is this reliable
+
+
+I make no guarantee but the 2 servers are split between two data centres with multiple A/AAAA records per name. The NS servers are also split between 3 providers and in total there are 7.
+
+
+##### Example usage
+
+
+(I currently use this to keep my TunnelBroker endpoint updated) - It could probably be done much nicer but this kinda just works.
+
+{% highlight php %}
+#!/usr/bin/php
+<?php
+ $PASSWORD = "";
+ $TUNNELID = 0;
+ $USERID = "";
+ $currentIP = @file_get_contents('http://ipv4.canhazip.info/');
+ if(empty($currentIP)){
+ $currentIP = @file_get_contents('http://ipv4.icanhazip.com/');
+ }
+
+if(empty($currentIP)){
+ die('Could not get current IP'."\n");
+ }
+
+$currentIP = trim($currentIP);
+ $return = file_get_contents("https://ipv4.tunnelbroker.net/ipv4_end.php?ipv4b=" . $currentIP . "&pass=" . $PASSWORD . "&user_id=" . $USERID . "&tunnel_id=" . $TUNNELID);
+
+if(strpos($return, "That IPv4 endpoint is already in use.") !== False){
+ print "IP has not changed";
+ print "\n";
+ }else if(strpos($return, "Your tunnel endpoint has been updated to:") !== False){
+ print "Tunnel endpoint has been updated";
+ print "\n";
+ }else{
+ print "Unknown return!?!?!";
+ print $return;
+ print "\n";
+ }
+?>
+{% endhighlight %}
+
+
+##### Another example
+
+
+Basic screen scraping example (I use this to keep my Cluenet VPN endpoint updated)
+
+{% highlight php %}
+#!/usr/bin/php
+<?php
+ $ACCESSKEY = "";
+ $NODENAME = "";
+
+$currentIP = @file_get_contents('http://ipv4.canhazip.info/');
+ if(empty($currentIP)){
+ $currentIP = @file_get_contents('http://ipv4.icanhazip.com/');
+ }
+
+if(empty($currentIP)){
+ die('Could not get current IP'."\n");
+ }
+
+$currentIP = trim($currentIP);
+ $bnlTable = @file_get_contents('http://a.core.cluenet.org/main/cluevpnpanel.php?page=printbnl');
+ $bnlTable = explode('<table border=6 class=\"wikitable sortable\">', $bnlTable); $bnlTable = explode('</table>', $bnlTable[0]); $bnlTable = str_replace('</tr>', "", $bnlTable[0]); $bnlTable = explode('<tr>', $bnlTable); unset($bnlTable[0]); unset($bnlTable[1]);
+ $nodes = array();
+
+foreach($bnlTable as $entry){
+ $entry = str_replace('</td>', "", $entry); $entry = explode('<td align=center>', $entry);
+ $nodes[trim($entry[1])] = array(
+ 'id' => trim($entry[2]),
+ 'ip' => trim($entry[3]),
+ 'ipv6′ => trim($entry[4]),
+ 'port' => trim($entry[5]),
+ 'ipv6pref' => trim($entry[6]),
+ 'subnet' => trim($entry[7]),
+ );
+ }
+
+$currentVPNIP = $nodes[$NODENAME]['ip'];
+ if($currentIP != $currentVPNIP){
+ /* Update IP */
+ $ch = curl_init ("http://a.core.cluenet.org/main/cluevpnpanel.php?page=updateiphandle");
+ curl_setopt($ch, CURLOPT_COOKIE, 'clueauth_tokenstack='.$ACCESSKEY);
+ curl_setopt($ch, CURLOPT_POSTFIELDS, 'nodename='.$NODENAME.'&newip='.$currentIP.'&newport=3406&submit=Change');
+ curl_setopt($ch, CURLOPT_POST, 1);
+ curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+ $output = curl_exec ($ch);
+
+if(strpos($output, 'Success.') != 0){
+ die('IP Updated Successfully'."\n");
+ }else{
+ die('IP Not Updated Successfully'."\n");
+ }
+ }else{
+ die('IP has not changed'."\n");
+ }
+?>
+{% endhighlight %}
