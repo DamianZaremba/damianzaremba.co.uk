@@ -61,9 +61,10 @@ header {
     margin-bottom: 10px;
 }
 
-header > .right {
+header #right {
     position: absolute;
-    top: 30px;
+    top: 5px;
+    margin-right: 10px;
     right: 0;
 }
 
@@ -99,7 +100,7 @@ header h1 span {
 
 /* Header nav stuff */
 header nav {
-    margin-top: 25px;
+    margin-top: 28px;
     margin-left: 5px;
     float: left;
 }
@@ -132,15 +133,10 @@ header nav select {
     margin-bottom: 10px;
 }
 
-header .search {
-    margin-top: 7px;
-    margin-right: 10px;
-}
-
 header .search input[type="text"] {
     background: url('/assests/images/search.png') 10px center no-repeat #FCFCFC;
     border: 1px solid #ddd;
-    padding: 6px 15px 6px 35px;
+    padding: 6px 15px 6px 30px;
     width: 150px;
     -moz-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -264,7 +260,7 @@ article pre code {
 }
 
 /* Post styles */
-ul#related_posts {
+ul#related_posts li {
     list-style: none;
 }
 
@@ -297,4 +293,66 @@ ul#archives h2 {
 
 ul#archives h2:first-of-type {
     margin-top: 0px;
+}
+
+/* Post meta style stuff */
+article.post .meta {
+    margin-left: 5px;
+}
+
+article.post .meta img {
+    margin-right: 5px;
+}
+
+article.post .meta span {
+    margin-right: 5px;
+}
+
+article.post .meta span:last-of-type {
+    margin-right: 0px;
+}
+
+article.post .meta ul#categories {
+    background: url('/assests/images/categories.png') left top no-repeat;
+    padding-left : 20px;
+    margin-left: 5px;
+    display: inline;
+}
+
+article.post .meta ul#categories li {
+    display: inline;
+    list-style: none;
+    margin-left: 0px;
+}
+
+article.post .meta ul#categories li:after {
+    content: ", ";
+}
+
+article.post .meta ul#categories li:last-of-type:after {
+    content: "";
+}
+
+/* Social style stuff */
+header div#right p {
+    top: 3px;
+    margin-bottom: -10px;
+    padding: 0px;
+    text-align: center;
+}
+
+header div#right p a {
+    margin-right: 10px;
+}
+
+header div#right p a:last-of-type {
+    margin-right: 0px;
+}
+
+header div#right p a img {
+    border: 0px;
+}
+
+header div#right p a:hover {
+    text-decoration: none;
 }

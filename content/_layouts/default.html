@@ -89,7 +89,12 @@
             </ul>
         </nav>
 
-        <div class="right">
+        <div id="right">
+            <p>
+                <a href="http://twitter.com/DamianZaremba" title="Twitter"><img src="/assests/images/twitter.png" /></a>
+                <a href="https://github.com/DamianZaremba" title="GitHub"><img src="/assests/images/github.png" /></a>
+                <a href="http://feeds.feedburner.com/DamianZaremba" title="RSS"><img src="/assests/images/rss.png" /></a>
+            </p>
             <form class="search" action="http://google.com/search" method="get">
                 <input class="left" type="text" name="q" results="0">
                 <input type="hidden" name="q" value="site:damianzaremba.co.uk">
@@ -122,6 +127,17 @@
 
 <script type="text/javascript">
     !window.jQuery && document.write(unescape('%3Cscript src="/assests/js/jquery.js"%3E%3C/script%3E'))
+
+    var disqus_shortname = 'damianzaremba';
+    var disqus_script = 'count.js';
+
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
 </script>
 </body>
 </html>
