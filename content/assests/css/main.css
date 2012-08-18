@@ -16,7 +16,7 @@ p {
 
 ul li {
     list-style: circle;
-    
+    margin-left: 20px;
 }
 
 body {
@@ -103,7 +103,8 @@ header nav {
     float: left;
 }
 
-header nav > ul > li {
+ul#main li {
+    margin-left: 0px;
     margin-right: 10px;
     display: -moz-inline-box;
     -moz-box-orient: vertical;
@@ -112,32 +113,16 @@ header nav > ul > li {
     *vertical-align: auto;
 }
 
-header nav > ul > li {
+ul#main li {
     *display: inline;
 }
 
-header nav > ul > li: last-of-type {
+ul#main li: last-of-type {
     margin-right: 0;
 }
 
-header nav > ul > li: hover > a {
+ul#main li: hover > a {
     color: #258fb8;
-}
-
-header nav > ul ul {
-    position: absolute;
-    top: 60px;
-    left: -15px;
-    z-index: 10;
-    white-space: nowrap;
-    background: #ddd;
-    border: 1px solid #ccc;
-    list-style: none;
-    display: none;
-}
-
-header nav > ul ul li > a: hover {
-    color: #000;
 }
 
 /* Header search styles */
@@ -155,7 +140,7 @@ header .search input[type="text"] {
     background: url('/assests/images/search.png') 10px center no-repeat #FCFCFC;
     border: 1px solid #ddd;
     padding: 6px 15px 6px 35px;
-    width: 200px;
+    width: 150px;
     -moz-transition: 0.3s;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
@@ -180,8 +165,8 @@ footer {
 }
 
 /* Footer ads stuff */
-footer ul.ads li {
-    margin-right: 2px;
+ul#ads li {
+    margin-left: 0px;
     display: -moz-inline-box;
     -moz-box-orient: vertical;
     display: inline-block;
@@ -189,8 +174,16 @@ footer ul.ads li {
     *vertical-align: auto;
 }
 
-footer ul.ads li {
+ul#ads li {
     *display: inline;
+}
+
+ul#ads li:after {
+    content: " | ";
+}
+
+ul#ads li:last-of-type:after {
+    content: "";
 }
 
 /* Page nav styles */
@@ -292,12 +285,9 @@ section#related, section#comment {
 }
 
 /* Archive styles */
-ul#archives {
+ul#archives li {
     list-style: none;
-}
-
-ul#archives >li {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 ul#archives h2 {

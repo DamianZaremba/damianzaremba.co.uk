@@ -1,11 +1,7 @@
 ---
 comments: true
-date: 2010-02-28 00:54:20
 layout: post
-published: false
-slug: motivation-and-work
 title: Motivation and Work
-wordpress_id: 17
 categories:
 - General
 ---

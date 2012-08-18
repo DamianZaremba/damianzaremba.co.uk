@@ -1,11 +1,7 @@
 ---
 comments: true
-date: 2010-04-17 18:27:42
 layout: post
-published: false
-slug: internet-world-2010
 title: Internet world 2010
-wordpress_id: 29
 categories:
 - Fun
 - Work

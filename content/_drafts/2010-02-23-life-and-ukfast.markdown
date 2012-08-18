@@ -1,11 +1,7 @@
 ---
 comments: true
-date: 2010-02-23 06:16:48
 layout: post
-published: false
-slug: life-and-ukfast
 title: Life and UKFast
-wordpress_id: 15
 categories:
 - Work
 tags:
