@@ -1,0 +1,14 @@
+permalink: /:year/:month/:title/
+server_port: 4039
+
+markdown: rdiscount
+pygments: true
+lsi: true
+
+exclude: README.md
+source: content
+paginate: 3
+
+project_dir: projects
+category_dir: category
+tag_dir: tag
