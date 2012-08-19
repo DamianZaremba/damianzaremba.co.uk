@@ -19,13 +19,13 @@ This started out as part of a tree trunk which got removed and split with an axe
 
 
 
-	
+    
   * Spoon knife - for rounding the handle and scraping out the dip
 
-	
+    
   * 9" knife - for taking off the thick outer and bark
 
-	
+    
   * Gerber STL 2.5 knife - for taking tiny slivers off the handle and smoothing out some of the head
 
 

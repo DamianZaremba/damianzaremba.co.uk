@@ -10,16 +10,16 @@ tags:
 
 
 
-	
+    
   * [GitHub](http://GitHub.com)
 
-	
+    
   * [Wordpress](http://Wordpress.com)
 
-	
+    
   * [Ohloh](http://Ohloh.net)
 
-	
+    
   * [CloudFlux](http://CloudFlux.net)
 
 
@@ -29,34 +29,34 @@ The main advantage to using Nginx is it's event-driven (asynchronous) architectu
 
 Some features you'll probably love:
 
-	
+    
   * Modules for load balancing
 
-	
+    
   * Direct memcached integration
 
-	
+    
   * Simple proxy configuration
 
-	
+    
   * Passenger integration
 
-	
+    
   * Ability to serve over 50,000 simultaneous connections
 
-	
+    
   * Statistics module
 
-	
+    
   * Low memory footprint
 
-	
+    
   * Clean simple to edit configuration files
 
-	
+    
   * Zero downtime configuration and binary updates
 
-	
+    
   * PCRE based rewrite rules
 
 

@@ -40,19 +40,19 @@ Accepted formats are:
 
 
 
-	
+    
   * xml
 
-	
+    
   * json
 
-	
+    
   * yaml
 
-	
+    
   * php (serialize of an array)
 
-	
+    
   * plain
 
 
@@ -72,16 +72,16 @@ Example usage:
 
 
 
-	
+    
   1. Because I can
 
-	
+    
   2. Because .info domains were on special offer ($1.87!)
 
-	
+    
   3. The servers hosting the site are in London and Manchester not the US (latency)
 
-	
+    
   4. The secondary service I was using previously no longer exists (I like basic redundancy)
 
 

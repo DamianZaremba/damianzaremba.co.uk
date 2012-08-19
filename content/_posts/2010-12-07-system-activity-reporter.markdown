@@ -114,28 +114,28 @@ As the name suggests it's not for reporting io data, it is mainly for reporting 
 
 
 
-	
+    
   * CPU
 
-	
+    
   * Load avg
 
-	
+    
   * Memory usage
 
-	
+    
   * Inode/file/kernel table usage
 
-	
+    
   * Swapping stats
 
-	
+    
   * Process statistics
 
-	
+    
   * TTY device activity
 
-	
+    
   * Much much more....
 
 

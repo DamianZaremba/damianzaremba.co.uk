@@ -17,21 +17,21 @@ layout: default
 
 {% if site.related_posts %}
 <section id="related">
-	<h2>Related posts</h2>
-	<ul id="related_posts">
-	{% for post in site.related_posts limit:3 %}
-		<li>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-	</ul>
+    <h2>Related posts</h2>
+    <ul id="related_posts">
+    {% for post in site.related_posts limit:3 %}
+        <li>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
 </section>
 {% endif %}
 
 {% if page.comments %}
 <section id="comment">
-	<h2>Comments</h2>
-	<div id="disqus_thread" aria-live="polite">
-		<noscript>Please enable JavaScript to view the comments</noscript>
-	</div>
+    <h2>Comments</h2>
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the comments</noscript>
+    </div>
 </section>
 
 <script type="text/javascript">
