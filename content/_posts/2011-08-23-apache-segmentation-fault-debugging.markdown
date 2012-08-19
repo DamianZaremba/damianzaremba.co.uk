@@ -22,22 +22,22 @@ This means for some reason the child thread/fork has segfaulted when trying to p
 
 By default apache won't give you any more info than this. To get core dumps you will need to do the following.
 
-1) Enable system coredumps for the apache user.
+1. Enable system coredumps for the apache user.
 In /etc/security/limits.conf ensure the following line is present:
 
 {% highlight text %}
 apache soft core 10000
 {% endhighlight %}
 
-2) Tell apache what directory to put dumps into, do this with the following config line:
+2. Tell apache what directory to put dumps into, do this with the following config line:
 
 {% highlight text %}
 CoreDumpDirectory /var/apache/coredumps/
 {% endhighlight %}
 
-3) Ensure the dump directory is writeable by the apache user (if not then you will get no dumps!).
+3. Ensure the dump directory is writeable by the apache user (if not then you will get no dumps!).
 
-4) Restart apache and wait for a segfault.
+4. Restart apache and wait for a segfault.
 
 Now if you look in your specified CoreDumpDirectory you should see a number of .dump files.
 

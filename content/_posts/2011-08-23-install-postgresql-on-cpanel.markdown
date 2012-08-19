@@ -13,10 +13,11 @@ tags:
 ---
 
 To install PostgreSQL on a cPanel server you can perform the following:
-1) Run /scripts/installpostgres
-2) Go to SQL services -> Postgre config and click Install config
-3) Configure a root password for Postgre
-4) Enable Postgre with chkconfig postgres on; service postgres restart
+
+1. Run /scripts/installpostgres
+2. Go to SQL services -> Postgre config and click Install config
+3. Configure a root password for Postgre
+4 Enable Postgre with chkconfig postgres on; service postgres restart
 
 Now you would think that is it, right?
 Well if you already have users on the box you will now need to add them into postgre otherwise they will have no access.

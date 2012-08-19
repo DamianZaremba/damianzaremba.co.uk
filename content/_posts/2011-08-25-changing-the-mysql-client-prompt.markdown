@@ -36,7 +36,7 @@ pass = "someubersecurepassword"
 prompt=mysql [\\u@\\h - \\d]>
 {% endhighlight %}
 
-Now when you use the client the prompt will show mysql [<user>@<host> - <database>]>:
+Now when you use the client the prompt will show mysql [user@host - database]>:
 {% highlight bash %}
 mysql [test1@localhost - test_database]>
 {% endhighlight %}

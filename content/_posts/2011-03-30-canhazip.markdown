@@ -12,14 +12,12 @@ I was a little bored this afternoon so made [canhazip.info](http://canhazip.info
 
 #### Basic Usage
 
-
 [http://canhazip.info/](http://canhazip.info/)
 
 This will return your public IP - if you have dual stack (IPv4 and IPv6) then it will return your v6 address.
 
 
 #### Specific IP type
-
 
 [http://ipv4.canhazip.info/](http://ipv4.canhazip.info/)
 
@@ -68,45 +66,26 @@ Example usage:
 
 ##### icanhazip exists, why another service that does the same thing?
 
-
-
-
-
-    
   1. Because I can
-
-    
   2. Because .info domains were on special offer ($1.87!)
-
-    
   3. The servers hosting the site are in London and Manchester not the US (latency)
-
-    
   4. The secondary service I was using previously no longer exists (I like basic redundancy)
 
 
-
-
 ##### Do you keep logs
-
 
 I have logs from the web server which I keep for a few days just in case there is any abuse. These are not shared with anyone and access to the server is heavily restricted.
 
 
 ##### Why different formats?
 
-
 For developers wanting more than plain text. I plan to add in extended information such as GeoIP and the option to specify an IP to get the info for. This will appear in time as I get randomly bored.
-
 
 ##### Is this reliable
 
-
 I make no guarantee but the 2 servers are split between two data centres with multiple A/AAAA records per name. The NS servers are also split between 3 providers and in total there are 7.
 
-
 ##### Example usage
-
 
 (I currently use this to keep my TunnelBroker endpoint updated) - It could probably be done much nicer but this kinda just works.
 

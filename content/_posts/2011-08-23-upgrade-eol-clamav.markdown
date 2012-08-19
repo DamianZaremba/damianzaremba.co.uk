@@ -27,10 +27,11 @@ ClamAV have EOL'd all their versions prior to 0.95 - if you see an error like th
 {% endhighlight %}
 
 To upgrade ClamAV on a RHEL based system perform the following:
-1) wget http://pkgs.repoforge.org/clamav/clamav-0.96.1-1.el5.src.rpm
-2) yum install srpm unzip
-3) CFLAGS="-O0" ./configure --disable-zlib-vcheck
-4) make && make install
-5) Update /usr/local/etc/clamd.conf (notably removing the "Example" line and un-commenting the TCP socket line).
+
+1. wget http://pkgs.repoforge.org/clamav/clamav-0.96.1-1.el5.src.rpm
+2. yum install srpm unzip
+3. CFLAGS="-O0" ./configure --disable-zlib-vcheck
+4. make && make install
+5. Update /usr/local/etc/clamd.conf (notably removing the "Example" line and un-commenting the TCP socket line).
 
 ClamAV should now work once again.
