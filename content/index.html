@@ -38,14 +38,14 @@ description: Damian Zaremba's Blog
 	{% endif %}
 {% endif %}
 
+{% if paginator.previous_page or paginator.next_page %}
 <nav id="page_nav">
 	{% if paginator.previous_page %}
-    <a href="{{paginator.next_page}}" class="prev">Previous</a>
+    <a href="{{paginator.prev_page}}" class="prev">Previous</a>
     {% endif %}
-
-    <a href="/archives/" class="center">Blog Archives</a>
 
 	{% if paginator.next_page %}
     <a href="{{paginator.next_page}}" class="next">Next</a>
     {% endif %}
 </nav>
+{% endif %}
