@@ -7,7 +7,7 @@ layout: none
     <link type="application/atom+xml" href="http://damianzaremba.co.uk/feed/" rel="self"/>
     <link type="text" href="http://damianzaremba.co.uk" rel="alternate"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <id>http://damianzaremba.co.uk</id>
+    <id>http://damianzaremba.co.uk/</id>
     <author>
         <name>Damian Zaremba</name>
     </author>
@@ -18,7 +18,7 @@ layout: none
         <link href="http://damianzaremba.co.uk{{ post.url }}/"/>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>http://damianzaremba.co.uk{{ post.url }}/</id>
-        <summary type="html">{{ post.content | xml_escape }}</summary>
+        <summary type="html"><![CDATA[{{ post.content }}]]></summary>
     </entry>
     {% endfor %}
 </feed>
