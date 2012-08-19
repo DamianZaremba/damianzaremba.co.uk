@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: Lots of files to remove?
-categories:
+tags:
 - FOSS
 - How-to
 ---

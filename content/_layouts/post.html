@@ -5,14 +5,9 @@ layout: default
     <div class="meta">
         <span><img src="/assests/images/date.png" />{{ page.date | date_to_string }}</span>
         <span><img src="/assests/images/comments.png" /><a href="{{ page.url }}#disqus_thread">Comments</a></span>
-        {% if page.categories %}
+        {% if page.tags %}
             <ul id="categories">
-            {% for cat in page.categories %}<li><a href='/category/{{ cat | make_tag_url }}'>{{ cat }}</a></li>{% endfor %}</ul>
-        {% else %}
-            {% if page.tags %}
-                <ul id="categories">
-                {% for tag in page.tags %}<li><a href='/tag/{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
-            {% endif %}
+            {% for tag in page.tags %}<li><a href='/tag/{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
         {% endif %}
     </div>
     <div class="entry">

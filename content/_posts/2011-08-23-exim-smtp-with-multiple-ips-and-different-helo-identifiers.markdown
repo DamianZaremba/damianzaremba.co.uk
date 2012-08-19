@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Exim SMTP with multiple IPs and different HELO identifiers
-categories:
+tags:
 - Exim
 - Knowledge Base
 - Linux
 - Software
-tags:
 - email
 - helo
 - multiple ips

@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Spoon!
-categories:
+tags:
 - Camping
 - Fun
 - Knife skills
-tags:
 - hand made
 - soon
 - spoon knife

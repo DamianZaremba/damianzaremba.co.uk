@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: SMTP Authentication in Postfix using local system accounts
-categories:
+tags:
 - FOSS
 - Knowledge Base
 - Linux
 - Postfix
-tags:
 - email
 - smtp
 ---

@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: Quick update
-categories:
+tags:
 - General
 ---
 

@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Changing WordPress tag to category?
-categories:
+tags:
 - FOSS
 - How-to
 - Software
 - Wordpress
-tags:
 - category to tag
 - mysql
 - tag to category

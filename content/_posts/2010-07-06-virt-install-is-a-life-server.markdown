@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: virt-install is a life server
-categories:
+tags:
 - Fun
 - General
-tags:
 - kvm
 - virsh
 ---

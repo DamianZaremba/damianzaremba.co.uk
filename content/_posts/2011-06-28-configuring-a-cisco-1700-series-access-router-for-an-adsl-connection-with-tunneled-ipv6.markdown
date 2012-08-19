@@ -3,9 +3,8 @@ comments: true
 layout: post
 title: Configuring a Cisco 1700 series access router for an ADSL connection with tunneled
   IPv6
-categories:
-- Security
 tags:
+- Security
 - cisco
 - Cisco 1700
 ---

@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: RADIUS authentication on a HP GbE2c L2/L3 Blade Switch
-categories:
+tags:
 - How-to
 - Software
 - Work
-tags:
 - authentication
 - hp
 - network

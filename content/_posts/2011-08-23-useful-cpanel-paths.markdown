@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Useful cPanel paths
-categories:
+tags:
 - cPanel
 - Knowledge Base
 - Linux
-tags:
 - cpanel
 - data
 - paths

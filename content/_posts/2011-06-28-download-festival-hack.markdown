@@ -2,13 +2,12 @@
 comments: true
 layout: post
 title: Download festival hack
-categories:
+tags:
 - FOSS
 - Fun
 - General
 - How-to
-tags:
-- python
+- Python
 - scraper
 ---
 

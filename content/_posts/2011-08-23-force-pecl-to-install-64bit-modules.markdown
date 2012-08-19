@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Force PECL to install 64bit modules
-categories:
+tags:
 - Knowledge Base
 - Linux
 - PHP
-tags:
 - pecl
 - php
 - x64

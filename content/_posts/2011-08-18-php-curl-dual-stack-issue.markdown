@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: PHP CURL dual stack issue
-categories:
+tags:
 - FOSS
 - How-to
 - Linux
-tags:
 - curl
 - php
 ---

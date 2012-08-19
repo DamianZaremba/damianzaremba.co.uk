@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: HTTP basic authentication - Apache
-categories:
+tags:
 - Apache
 - FOSS
 - Knowledge Base
-tags:
 - apache
 - authentication
 - htaccess

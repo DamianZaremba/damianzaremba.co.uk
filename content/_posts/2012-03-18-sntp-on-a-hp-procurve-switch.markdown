@@ -2,9 +2,8 @@
 comments: true
 layout: post
 title: SNTP on a HP ProCurve switch
-categories:
-- How-to
 tags:
+- How-to
 - hp
 - network
 - ntp

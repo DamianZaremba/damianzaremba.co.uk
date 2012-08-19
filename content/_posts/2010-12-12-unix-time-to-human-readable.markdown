@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: Unix time to human readable?
-categories:
+tags:
 - FOSS
 - Knowledge Base
 ---

@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: System activity reporter
-categories:
+tags:
 - FOSS
 ---
 

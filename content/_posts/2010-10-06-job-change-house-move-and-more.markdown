@@ -2,9 +2,8 @@
 comments: true
 layout: post
 title: Job change, house move and more
-categories:
-- Work
 tags:
+- Work
 - 7thA
 - UKFast
 ---

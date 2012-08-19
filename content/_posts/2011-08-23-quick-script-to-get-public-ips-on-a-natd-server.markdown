@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Quick script to get public IPs on a NAT'd server
-categories:
+tags:
 - FOSS
 - Fun
 - Knowledge Base
 - Linux
-tags:
 - bash
 - curl
 - ips

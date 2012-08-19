@@ -2,9 +2,8 @@
 comments: true
 layout: post
 title: Centos 6.0 kickstart partitioning issue
-categories:
-- FOSS
 tags:
+- FOSS
 - anaconda
 - kickstart
 ---

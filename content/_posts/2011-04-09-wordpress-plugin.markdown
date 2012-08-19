@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: Wordpress plugin
-categories:
+tags:
 - Fun
 - General
 ---

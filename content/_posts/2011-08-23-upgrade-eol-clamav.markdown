@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: Upgrade EOL Clamav
-categories:
+tags:
 - Knowledge Base
 - Linux
-tags:
 - clamav
 - eol
 - update

@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Recovering deleted files from the handlers in /proc/
-categories:
+tags:
 - Apache
 - Knowledge Base
 - Linux
-tags:
 - apache
 - deleted files
 - file recovary

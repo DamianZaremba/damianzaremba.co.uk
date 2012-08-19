@@ -2,9 +2,8 @@
 comments: true
 layout: post
 title: Meth stove
-categories:
-- General
 tags:
+- General
 - iscout
 ---
 

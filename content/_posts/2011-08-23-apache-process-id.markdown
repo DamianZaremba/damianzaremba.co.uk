@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Apache process ID
-categories:
+tags:
 - Apache
 - FOSS
 - Knowledge Base
 - Linux
-tags:
 - apache
 - logformat
 - process

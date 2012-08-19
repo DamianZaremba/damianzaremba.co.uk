@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: Coding Help
-categories:
-- Fun
 tags:
-- python
+- Fun
+- Python
 ---
 
 So I'm currently working on a small project which will require authentication. Not really sure how to achieve what I want so here's a quick explanation for anyone if you want to share ideas:

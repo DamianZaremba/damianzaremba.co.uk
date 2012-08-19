@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Changing the MySQL client prompt
-categories:
+tags:
 - FOSS
 - Knowledge Base
 - Linux
 - MySQL
-tags:
 - my.cnf
 - mysql
 - prompt

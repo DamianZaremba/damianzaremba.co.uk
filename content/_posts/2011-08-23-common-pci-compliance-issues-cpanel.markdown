@@ -2,13 +2,12 @@
 comments: true
 layout: post
 title: Common PCI compliance issues - cPanel
-categories:
+tags:
 - Apache
 - cPanel
 - Exim
 - Knowledge Base
 - Linux
-tags:
 - compliance
 - hardening
 - pci

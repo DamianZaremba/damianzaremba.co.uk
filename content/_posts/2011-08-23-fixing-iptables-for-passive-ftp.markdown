@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: Fixing iptables for passive FTP
-categories:
+tags:
 - Knowledge Base
 - Linux
-tags:
 - firewall
 - ftp
 - iptables

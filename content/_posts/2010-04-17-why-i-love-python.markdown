@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: Why I love Python
-categories:
-- Fun
 tags:
-- python
+- Fun
+- Python
 ---
 
 So I've been playing with python a lot recently and it is just so amazing!

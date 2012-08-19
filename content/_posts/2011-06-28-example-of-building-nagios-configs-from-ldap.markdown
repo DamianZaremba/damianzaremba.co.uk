@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: Example of building nagios configs from LDAP
-categories:
+tags:
 - General
 ---
 

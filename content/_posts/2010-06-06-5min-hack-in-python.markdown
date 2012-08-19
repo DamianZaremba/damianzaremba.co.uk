@@ -2,10 +2,9 @@
 comments: true
 layout: post
 title: 5min hack in python
-categories:
-- Fun
 tags:
-- python
+- Fun
+- Python
 ---
 
 So I was trying to test some SELlinux stuff out on my KVM box and was getting flooded by tail -f thanks to someone trying to brute force my box (good luck by the way because a) password auth is disabled and b) root login is disabled >.>) anyway I got bored of this for about 5min then spent the next 5min writing this:

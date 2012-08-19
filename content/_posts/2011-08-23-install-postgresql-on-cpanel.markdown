@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Install PostgreSQL on cPanel
-categories:
+tags:
 - cPanel
 - Knowledge Base
 - PostgreSQL
-tags:
 - cpanel
 - hack
 - pgsql

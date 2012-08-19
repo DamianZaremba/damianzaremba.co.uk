@@ -2,7 +2,7 @@
 comments: true
 layout: post
 title: canhazip
-categories:
+tags:
 - Fun
 - Work
 ---

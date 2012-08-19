@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: MySQL uses no space on cPanel
-categories:
+tags:
 - cPanel
 - Knowledge Base
 - Linux
-tags:
 - cpanel.config
 - mysql
 ---

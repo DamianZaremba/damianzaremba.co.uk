@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: RADIUS authentication on a HP ProCurve switch
-categories:
+tags:
 - How-to
 - Software
 - Work
-tags:
 - authentication
 - hp
 - network

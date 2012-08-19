@@ -2,11 +2,10 @@
 comments: true
 layout: post
 title: Work and scouts
-categories:
+tags:
 - Fun
 - General
 - Work
-tags:
 - 7thA
 - scouts
 ---

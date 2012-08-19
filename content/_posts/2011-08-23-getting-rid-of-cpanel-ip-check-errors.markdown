@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Getting rid of cPanel IP Check errors
-categories:
+tags:
 - cPanel
 - Knowledge Base
 - Linux
 - Software
-tags:
 - error
 - ipcheck
 ---

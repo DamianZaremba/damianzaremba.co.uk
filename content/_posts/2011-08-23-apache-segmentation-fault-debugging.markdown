@@ -2,12 +2,11 @@
 comments: true
 layout: post
 title: Apache segmentation fault debugging
-categories:
+tags:
 - Apache
 - FOSS
 - Knowledge Base
 - Linux
-tags:
 - apache
 - core dumps
 - segfault
