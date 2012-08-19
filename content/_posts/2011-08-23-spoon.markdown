@@ -22,6 +22,6 @@ This started out as part of a tree trunk which got removed and split with an axe
 
 Here are some "early" (4/5 days of on and off work) pictures...
 
-{% postfile IMG_0020.jpg %} {% postfile IMG_0021.jpg %} {% postfile IMG_0022.jpg %}
-{% postfile IMG_0023.jpg %} {% postfile IMG_0024.jpg %} {% postfile IMG_0027.jpg %}
-{% postfile IMG_0028.jpg %}
+![]({% postfile IMG_0020.jpg %}) ![]({% postfile IMG_0021.jpg %}) ![]({% postfile IMG_0022.jpg %})
+![]({% postfile IMG_0023.jpg %}) ![]({% postfile IMG_0024.jpg %}) ![]({% postfile IMG_0027.jpg %})
+![]({% postfile IMG_0028.jpg %})

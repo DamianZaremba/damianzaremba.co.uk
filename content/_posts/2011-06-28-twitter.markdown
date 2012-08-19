@@ -9,12 +9,15 @@ tags:
 It appears twitter decided to have a re-style once again as can be seen below;
 
 **2011**
+
 ![]({% postfile twitter1.png %})
 
 **2010**
+
 ![]({% postfile twitter2.png %})
 
 **2009**
+
 ![]({% postfile twitter3.png %})
 
 They also keep playing with the web theme as well, mainly the homepage which has changed twice this year and the login link colors which last week where orange but are now back to white.
