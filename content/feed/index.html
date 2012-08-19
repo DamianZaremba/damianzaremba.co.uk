@@ -12,7 +12,7 @@ layout: none
         <name>Damian Zaremba</name>
     </author>
     <rights>Copyright 2009-{{ site.time | date: "%Y" }} Damian Zaremba</rights>
-    {% for post in site.posts %}
+    {% for post in site.posts limit:20 %}
     <entry>
         <title>{{ post.title | xml_escape }}</title>
         <link href="http://damianzaremba.co.uk{{ post.url }}/"/>
