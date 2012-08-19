@@ -4,7 +4,7 @@ layout: none
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>damianzaremba.co.uk/</loc>
+		<loc>http://damianzaremba.co.uk/</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -25,7 +25,7 @@ layout: none
     </url>
 
     <url>
-        <loc>/archives</loc>
+		<loc>http://damianzaremba.co.uk/archives/</loc>
         <lastmod>{{ site.time }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -33,19 +33,10 @@ layout: none
 
     {% for post in site.posts %}
     <url>
-        <loc>/{{ post.url }}</loc>
+		<loc>http://damianzaremba.co.uk{{ post.url }}</loc>
         <lastmod>{{ site.time }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
-    {% endfor %}
-
-    {% for tag in site.tags %}
-    <url>
-        <loc>{{ tag | make_tag_url }}</loc>
-        <lastmod>{{ site.time }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.1</priority>
     </url>
     {% endfor %}
 </urlset>
