@@ -4,14 +4,14 @@ layout: post
 title: Common PCI compliance issues - cPanel
 tags:
 - Apache
-- cPanel
+- Cpanel
 - Exim
-- Knowledge Base
+- Knowledge base
 - Linux
-- compliance
-- hardening
-- pci
-- security
+- Compliance
+- Hardening
+- Pci
+- Security
 ---
 
 It is quite common for companies running cPanel to attempt to gain PCI compliance. Here are a few common things to do before submitting a scan request.

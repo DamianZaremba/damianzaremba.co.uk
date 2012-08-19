@@ -4,12 +4,12 @@ layout: post
 title: HTTP basic authentication - Apache
 tags:
 - Apache
-- FOSS
-- Knowledge Base
-- apache
-- authentication
-- htaccess
-- http basic
+- Foss
+- Knowledge base
+- Apache
+- Authentication
+- Htaccess
+- Http basic
 ---
 
 Method 1)

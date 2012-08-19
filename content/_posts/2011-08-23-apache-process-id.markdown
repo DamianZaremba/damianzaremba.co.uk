@@ -4,12 +4,12 @@ layout: post
 title: Apache process ID
 tags:
 - Apache
-- FOSS
-- Knowledge Base
+- Foss
+- Knowledge base
 - Linux
-- apache
-- logformat
-- process
+- Apache
+- Logformat
+- Process
 ---
 
 Sometimes you need to know the Apache PID when trying to track down segfaults or CPU usage issues.

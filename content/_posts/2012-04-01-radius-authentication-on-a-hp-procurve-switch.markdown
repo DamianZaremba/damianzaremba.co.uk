@@ -6,11 +6,11 @@ tags:
 - How-to
 - Software
 - Work
-- authentication
-- hp
-- network
-- radius
-- switch
+- Authentication
+- Hp
+- Network
+- Radius
+- Switch
 ---
 
 To configure a HP ProCurve switch for RADIUS authentication you need to use radius-server with the following syntax.

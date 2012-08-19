@@ -3,13 +3,13 @@ comments: true
 layout: post
 title: Changing the MySQL client prompt
 tags:
-- FOSS
-- Knowledge Base
+- Foss
+- Knowledge base
 - Linux
-- MySQL
-- my.cnf
-- mysql
-- prompt
+- Mysql
+- My.cnf
+- Mysql
+- Prompt
 ---
 
 It is quite easy to get lost in MySQL when working between a lot of databases.

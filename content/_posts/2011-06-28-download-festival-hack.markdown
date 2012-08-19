@@ -3,12 +3,12 @@ comments: true
 layout: post
 title: Download festival hack
 tags:
-- FOSS
+- Foss
 - Fun
 - General
 - How-to
 - Python
-- scraper
+- Scraper
 ---
 
 I didn't make it to download this year but the pictures look awesome, before they disappear into nowhere I wanted to grab a copy so I hacked up a bit of python to do some scraping and it works (not very well, but it was more of a 5min thing rather than a let's make a good job of it thing.). Script is as below:

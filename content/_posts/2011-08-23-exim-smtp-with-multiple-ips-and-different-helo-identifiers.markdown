@@ -4,14 +4,14 @@ layout: post
 title: Exim SMTP with multiple IPs and different HELO identifiers
 tags:
 - Exim
-- Knowledge Base
+- Knowledge base
 - Linux
 - Software
-- email
-- helo
-- multiple ips
-- shared server
-- smtp
+- Email
+- Helo
+- Multiple ips
+- Shared server
+- Smtp
 ---
 
 To enable different helo commands on multiple IPs we need to utilize the Exim router and transport settings, these are available in Exim 4+.

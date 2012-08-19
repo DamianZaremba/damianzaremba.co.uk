@@ -3,14 +3,14 @@ comments: true
 layout: post
 title: Quick script to get public IPs on a NAT'd server
 tags:
-- FOSS
+- Foss
 - Fun
-- Knowledge Base
+- Knowledge base
 - Linux
-- bash
-- curl
-- ips
-- NAT
+- Bash
+- Curl
+- Ips
+- Nat
 ---
 
 A quick one liner to get the public equivalent of internal IPs on a box behind NAT:

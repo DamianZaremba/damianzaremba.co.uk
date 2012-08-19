@@ -3,13 +3,13 @@ comments: true
 layout: post
 title: Install PostgreSQL on cPanel
 tags:
-- cPanel
-- Knowledge Base
-- PostgreSQL
-- cpanel
-- hack
-- pgsql
-- PostgreSQL
+- Cpanel
+- Knowledge base
+- Postgresql
+- Cpanel
+- Hack
+- Pgsql
+- Postgresql
 ---
 
 To install PostgreSQL on a cPanel server you can perform the following:

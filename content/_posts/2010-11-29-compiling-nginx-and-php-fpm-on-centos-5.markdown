@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Compiling nginx and PHP-FPM on CentOS 5
 tags:
-- FOSS
+- Foss
 ---
 
 [Luke Carrier](http://lukecarrier.me/), founder and lead developer at [CloudFlux](http://CloudFlux.net) recently wrote a how-to on compiling Nginx and PHP-FPM (can be found [here](http://lukecarrier.me/?p=59)). Nginx is well known for being a high-performance HTTP server and reverse proxy, in fact this very website is running on-top of Nginx. A few websites you might know that run Nginx are:

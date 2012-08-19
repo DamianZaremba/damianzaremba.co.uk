@@ -3,12 +3,12 @@ comments: true
 layout: post
 title: SMTP Authentication in Postfix using local system accounts
 tags:
-- FOSS
-- Knowledge Base
+- Foss
+- Knowledge base
 - Linux
 - Postfix
-- email
-- smtp
+- Email
+- Smtp
 ---
 
 In /etc/postfix/main.cf ensure the following values are set

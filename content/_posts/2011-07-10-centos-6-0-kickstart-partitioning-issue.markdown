@@ -3,9 +3,9 @@ comments: true
 layout: post
 title: Centos 6.0 kickstart partitioning issue
 tags:
-- FOSS
-- anaconda
-- kickstart
+- Foss
+- Anaconda
+- Kickstart
 ---
 
 In my kickstart files I "cheat" on disk sizes and let them grow automatically rather than figuring out the size, setting it then having to manually expand it later.

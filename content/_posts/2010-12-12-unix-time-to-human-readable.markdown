@@ -3,8 +3,8 @@ comments: true
 layout: post
 title: Unix time to human readable?
 tags:
-- FOSS
-- Knowledge Base
+- Foss
+- Knowledge base
 ---
 
 You can quickly convert Unix time to a human readable format by using the date command. This proves to be very helpful for bash scripts etc when you don't feel like calling out to Perl.

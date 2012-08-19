@@ -4,11 +4,11 @@ layout: post
 title: SNTP on a HP ProCurve switch
 tags:
 - How-to
-- hp
-- network
-- ntp
-- sntp
-- switch
+- Hp
+- Network
+- Ntp
+- Sntp
+- Switch
 ---
 
 Configuring NTP for switches is a rather simple process, however the syntax varies depending on the switch OS.

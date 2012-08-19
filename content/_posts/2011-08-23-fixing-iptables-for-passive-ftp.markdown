@@ -3,12 +3,12 @@ comments: true
 layout: post
 title: Fixing iptables for passive FTP
 tags:
-- Knowledge Base
+- Knowledge base
 - Linux
-- firewall
-- ftp
-- iptables
-- passive ftp
+- Firewall
+- Ftp
+- Iptables
+- Passive ftp
 ---
 
 To make passive FTP work with iptables you need to enable the "ip_conntrack_ftp" module. This is done by editing the /etc/sysconfig/iptables-config and changing

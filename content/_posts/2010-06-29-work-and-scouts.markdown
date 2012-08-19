@@ -6,8 +6,8 @@ tags:
 - Fun
 - General
 - Work
-- 7thA
-- scouts
+- 7tha
+- Scouts
 ---
 
 Many of you probably don't know but I am actually a member of the scout association and enjoy helping out at my "local" scout group. It is not really local group anymore as I went from living in Rossendale to Yorkshire and now Bury and 7th A is in Rochdale but I travel the extra distance because it is where my scouting history is.

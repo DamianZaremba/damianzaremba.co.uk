@@ -4,13 +4,13 @@ layout: post
 title: Restricting access to EdgeCast nodes
 tags:
 - Apache
-- apache
-- cat
-- cdn
-- edgecast
-- linux
-- mod_rewrite
-- sed
+- Apache
+- Cat
+- Cdn
+- Edgecast
+- Linux
+- Mod_rewrite
+- Sed
 ---
 
 Today one of our clients published a mix track that was around 140mb, hosted on their account. This was no problem until he started to get hundreds of people downloading the mix which resulted in silly amounts of bandwidth being used.

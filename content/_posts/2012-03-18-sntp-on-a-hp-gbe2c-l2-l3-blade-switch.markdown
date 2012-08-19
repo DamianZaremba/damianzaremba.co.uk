@@ -4,11 +4,11 @@ layout: post
 title: NTP on a HP GbE2c L2/L3 Blade Switch
 tags:
 - How-to
-- hp
-- network
-- ntp
-- sntp
-- switch
+- Hp
+- Network
+- Ntp
+- Sntp
+- Switch
 ---
 
 To configure a HP GbE2c L2/L3 Ethernet Blade Switch for HP c-Class BladeSystem, you need to use NTP with the following syntax.

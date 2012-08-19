@@ -4,12 +4,12 @@ layout: post
 title: Apache segmentation fault debugging
 tags:
 - Apache
-- FOSS
-- Knowledge Base
+- Foss
+- Knowledge base
 - Linux
-- apache
-- core dumps
-- segfault
+- Apache
+- Core dumps
+- Segfault
 ---
 
 Sometimes you will see lines like this in the Apache error log:

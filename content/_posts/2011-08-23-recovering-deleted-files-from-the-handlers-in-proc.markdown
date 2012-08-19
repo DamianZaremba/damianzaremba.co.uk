@@ -4,12 +4,12 @@ layout: post
 title: Recovering deleted files from the handlers in /proc/
 tags:
 - Apache
-- Knowledge Base
+- Knowledge base
 - Linux
-- apache
-- deleted files
-- file recovary
-- proc
+- Apache
+- Deleted files
+- File recovary
+- Proc
 ---
 
 On compromised servers it is very common for the exploit to delete its self/logs to try and hide its presence.

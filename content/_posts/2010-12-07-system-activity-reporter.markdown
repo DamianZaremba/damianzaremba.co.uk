@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: System activity reporter
 tags:
-- FOSS
+- Foss
 ---
 
 Ever wanted to be able to get historical performance data on your linux system without setting up an entire rrd based graphing system? Maybe you don't even want graphs you just want to know that if needed you can find out what your memory usage was last week.

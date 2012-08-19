@@ -3,12 +3,12 @@ comments: true
 layout: post
 title: Getting rid of cPanel IP Check errors
 tags:
-- cPanel
-- Knowledge Base
+- Cpanel
+- Knowledge base
 - Linux
 - Software
-- error
-- ipcheck
+- Error
+- Ipcheck
 ---
 
 On Linux servers behind NAT you will start getting emails warning that the DNS setup is broken.

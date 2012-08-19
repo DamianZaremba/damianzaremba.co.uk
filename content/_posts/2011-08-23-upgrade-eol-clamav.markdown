@@ -3,11 +3,11 @@ comments: true
 layout: post
 title: Upgrade EOL Clamav
 tags:
-- Knowledge Base
+- Knowledge base
 - Linux
-- clamav
-- eol
-- update
+- Clamav
+- Eol
+- Update
 ---
 
 {% highlight text %}

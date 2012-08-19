@@ -3,12 +3,12 @@ comments: true
 layout: post
 title: Useful cPanel paths
 tags:
-- cPanel
-- Knowledge Base
+- Cpanel
+- Knowledge base
 - Linux
-- cpanel
-- data
-- paths
+- Cpanel
+- Data
+- Paths
 ---
 
 Some common and useful paths for cPanel are as below - please note that these may change at any time.

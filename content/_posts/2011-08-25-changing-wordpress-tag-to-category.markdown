@@ -3,14 +3,14 @@ comments: true
 layout: post
 title: Changing WordPress tag to category?
 tags:
-- FOSS
+- Foss
 - How-to
 - Software
 - Wordpress
-- category to tag
-- mysql
-- tag to category
-- wordpress
+- Category to tag
+- Mysql
+- Tag to category
+- Wordpress
 ---
 
 While there appears to be plugins for converting categories to tags, I can't for the life of me find one to convert tags to categories.

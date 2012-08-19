@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Lots of files to remove?
 tags:
-- FOSS
+- Foss
 - How-to
 ---
 

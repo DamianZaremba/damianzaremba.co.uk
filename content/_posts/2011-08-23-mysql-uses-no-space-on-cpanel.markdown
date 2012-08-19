@@ -3,11 +3,11 @@ comments: true
 layout: post
 title: MySQL uses no space on cPanel
 tags:
-- cPanel
-- Knowledge Base
+- Cpanel
+- Knowledge base
 - Linux
-- cpanel.config
-- mysql
+- Cpanel.config
+- Mysql
 ---
 
 For some reason cPanel decided to start by default excluding sql databases from the disk usage stats.

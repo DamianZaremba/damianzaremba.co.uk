@@ -5,7 +5,7 @@ title: Configuring a Cisco 1700 series access router for an ADSL connection with
   IPv6
 tags:
 - Security
-- cisco
+- Cisco
 - Cisco 1700
 ---
 

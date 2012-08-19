@@ -6,11 +6,11 @@ tags:
 - How-to
 - Software
 - Work
-- authentication
-- hp
-- network
-- radius
-- switch
+- Authentication
+- Hp
+- Network
+- Radius
+- Switch
 ---
 
 To configure a HP GbE2c L2/L3 Ethernet Blade Switch for RADIUS authentication you need to use radius-server with the following syntax.

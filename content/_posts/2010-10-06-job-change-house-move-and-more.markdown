@@ -4,8 +4,8 @@ layout: post
 title: Job change, house move and more
 tags:
 - Work
-- 7thA
-- UKFast
+- 7tha
+- Ukfast
 ---
 
 So yeah it's been a busy few months. I've finished my new server setup, ready to move mail onto it. Moved flats. Made loads of progress in a project and got let go from a job.

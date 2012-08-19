@@ -3,11 +3,11 @@ comments: true
 layout: post
 title: PHP CURL dual stack issue
 tags:
-- FOSS
+- Foss
 - How-to
 - Linux
-- curl
-- php
+- Curl
+- Php
 ---
 
 I had a slightly strange issue this morning with PHP and curl (multi_curl actually but it affects curl too).
