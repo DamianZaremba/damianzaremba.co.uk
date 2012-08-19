@@ -12,7 +12,7 @@ server:
 
 clone:
 	# Remove it not a git repo
-	test -d "_live" && test -d "_live/.git" || rm -rf _live; exit 0
+	test -d "_live" && (test -d "_live/.git" || rm -rf _live); exit 0
 
 	# Update if a git repo
 	test -d "_live" && (cd _live && git pull); exit 0
