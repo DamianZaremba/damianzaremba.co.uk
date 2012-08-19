@@ -1,14 +1,9 @@
 module Jekyll
-    class MakeTagUrlTag < Liquid::Tag
-        def initialize(tag_name, text, tokens)
-            super
-            @text = text
-        end
-
-        def render(context)
-        	"#{@text.downcase.gsub(/\s+/, '-')}"
+	module MakeTagUrlFilter
+		def make_tag_url(tag_name)
+        	 "/tag/#{tag_name.downcase.gsub(/\s+/, '-')}"
         end
     end
 end
 
-Liquid::Template.register_tag('make_tag_url', Jekyll::MakeTagUrlTag)
+Liquid::Template.register_filter(Jekyll::MakeTagUrlFilter)

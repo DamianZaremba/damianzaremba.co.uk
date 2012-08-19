@@ -27,10 +27,10 @@ module Jekyll
       self.data['tag']    = tag
       # Set the title for this page.
       title_prefix             = site.config['tag_title_prefix'] || 'Tag: '
-      self.data['title']       = "#{title_prefix}#{tag}"
+      self.data['title']       = "#{title_prefix} #{tag}"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['tag_meta_description_prefix'] || 'Tag: '
-      self.data['description'] = "#{meta_description_prefix}#{tag}"
+      self.data['description'] = "#{meta_description_prefix} #{tag}"
     end
     
   end

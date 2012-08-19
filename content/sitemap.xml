@@ -40,9 +40,9 @@ layout: none
     </url>
     {% endfor %}
 
-    {% for cat in site.category_urls %}
+    {% for tag in site.tags %}
     <url>
-        <loc>/{{ cat }}</loc>
+        <loc>{{ tag | make_tag_url }}</loc>
         <lastmod>{{ site.time }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>

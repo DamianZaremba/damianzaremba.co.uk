@@ -13,7 +13,7 @@ description: Damian Zaremba's Blog
         	<span><img src="/assests/images/comments.png" /><a href="{{ post.url }}#disqus_thread">Comments</a></span>
     		{% if post.tags %}
 	        	<ul id="categories">
-	        	{% for tag in post.tags %}<li><a href='/tag/{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
+	        	{% for tag in post.tags %}<li><a href='{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
     		{% endif %}
 	    </div>
 	    <div class="entry">
