@@ -6,7 +6,8 @@ module Jekyll
         end
 
         def render(context)
-        	@text.gsub(/\s+/, '-').downcase
+        	@text = @text.gsub(/\s+/, '-')
+        	@text.downcase
         end
     end
 end

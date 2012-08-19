@@ -12,3 +12,9 @@ paginate: 3
 project_dir: projects
 category_dir: category
 tag_dir: tag
+
+tag_title_prefix: Archive for tag
+tag_meta_description_prefix: Damian Zaremba's Blog Tag 
+
+category_title_prefix: Archive for category
+category_meta_description_prefix: Damian Zaremba's Blog Category 
