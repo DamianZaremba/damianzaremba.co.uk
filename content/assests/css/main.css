@@ -11,7 +11,10 @@ a {
 }
 
 p {
-    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 ul li {
@@ -226,7 +229,6 @@ article code {
     -ms-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
-    display: block;
 }
 
 article pre {
