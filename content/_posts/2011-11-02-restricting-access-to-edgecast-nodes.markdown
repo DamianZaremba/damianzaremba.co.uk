@@ -5,7 +5,7 @@ title: Restricting access to EdgeCast nodes
 tags:
 - Apache
 - Cat
-- Cdn
+- CDN
 - Edgecast
 - Linux
 - Mod_rewrite
