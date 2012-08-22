@@ -7,7 +7,7 @@ tags:
 - Python
 ---
 
-So I've been playing with python a lot recently and it is just so amazing!
+So I've been playing with Python a lot recently and it is just so amazing!
 
 Here are some quick example that all took less than 10mins to write:
 
