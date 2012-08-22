@@ -16,7 +16,7 @@ I recentlt was re-designing (if you can call it that) this blog and was looking 
 * wp_head wordpress action for outputting the mint integration code into the header.
 * rss_head, rss2_head, atom_header & the_permalink_rss wordpress actions for integration of birdfeeder.
 
-The script goes out of its way to ensure it does not break html or xml output due to php errors.
+The script goes out of its way to ensure it does not break html or xml output due to PHP errors.
 
 The plugin can be downloaded from [here](http://wordpress.org/extend/plugins/mint/) and offers mint integration into the header (tracking code) & bird feeder integration for the rss feeds.
 Both of these are optional and can be configured from the settings page.

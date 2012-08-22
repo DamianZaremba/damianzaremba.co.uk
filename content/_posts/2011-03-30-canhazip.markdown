@@ -48,7 +48,7 @@ Accepted formats are:
   * yaml
 
     
-  * php (serialize of an array)
+  * PHP (serialize of an array)
 
     
   * plain
