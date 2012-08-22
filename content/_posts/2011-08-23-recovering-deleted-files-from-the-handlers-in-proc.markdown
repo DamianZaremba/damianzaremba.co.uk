@@ -8,7 +8,7 @@ tags:
 - Linux
 - Apache
 - Deleted files
-- File recovary
+- File recovery
 - Proc
 ---
 
