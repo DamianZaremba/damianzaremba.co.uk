@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Changing the MySQL client prompt
 tags:
-- Foss
+- FOSS
 - Knowledge base
 - Linux
 - Mysql

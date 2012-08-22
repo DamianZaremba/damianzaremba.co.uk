@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Changing WordPress tag to category?
 tags:
-- Foss
+- FOSS
 - How-to
 - Software
 - Wordpress

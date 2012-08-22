@@ -4,7 +4,7 @@ layout: post
 title: HTTP basic authentication - Apache
 tags:
 - Apache
-- Foss
+- FOSS
 - Knowledge base
 - Apache
 - Authentication

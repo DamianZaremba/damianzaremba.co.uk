@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Centos 6.0 kickstart partitioning issue
 tags:
-- Foss
+- FOSS
 - Anaconda
 - Kickstart
 ---

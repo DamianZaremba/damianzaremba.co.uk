@@ -4,7 +4,7 @@ layout: post
 title: Apache segmentation fault debugging
 tags:
 - Apache
-- Foss
+- FOSS
 - Knowledge base
 - Linux
 - Apache

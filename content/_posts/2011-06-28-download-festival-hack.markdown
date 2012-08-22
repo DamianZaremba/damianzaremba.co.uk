@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Download festival hack
 tags:
-- Foss
+- FOSS
 - Fun
 - General
 - How-to

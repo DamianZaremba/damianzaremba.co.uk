@@ -3,7 +3,7 @@ comments: true
 layout: post
 title: Quick script to get public IPs on a NAT'd server
 tags:
-- Foss
+- FOSS
 - Fun
 - Knowledge base
 - Linux
