@@ -4,7 +4,7 @@ layout: post
 title: Meth stove
 tags:
 - General
-- Iscout
+- iScout
 ---
 
 I saw pretty cool stove the other day and decided to have a go at it.
