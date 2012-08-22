@@ -3,7 +3,6 @@ comments: true
 layout: post
 title: Apache process ID
 tags:
-- Apache
 - FOSS
 - Knowledge base
 - Linux

@@ -4,7 +4,6 @@ layout: post
 title: Restricting access to EdgeCast nodes
 tags:
 - Apache
-- Apache
 - Cat
 - Cdn
 - Edgecast

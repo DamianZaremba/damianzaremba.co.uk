@@ -3,7 +3,6 @@ comments: true
 layout: post
 title: HTTP basic authentication - Apache
 tags:
-- Apache
 - FOSS
 - Knowledge base
 - Apache
