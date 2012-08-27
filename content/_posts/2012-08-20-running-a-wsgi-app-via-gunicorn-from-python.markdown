@@ -11,7 +11,7 @@ tags:
 ---
 
 Anyone who's familiar with Gunicorn will know just how simple it is to get up
-and running; `gunicorn leonardo.api.wsgi`.
+and running; `gunicorn myapp.wsgi`.
 
 For a little project I'm working on I wanted to take this up a level and run
 Gunicorn from a Python script, passing in any options as required and not
