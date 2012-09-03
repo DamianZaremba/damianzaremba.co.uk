@@ -25,7 +25,7 @@ Professional Experience
 Employment History
 -------------
 ### Sub 6 Limited - Lead Systems Administrator
-*Oct 2011 - Sept 2012*
+*Oct 2011 - Aug 2012*
 
 My primary responsibilities at Sub 6 where around leading the sysadmin side of the company.
 
@@ -44,6 +44,8 @@ A few products/features that come to mind include;
 * Speedyweb - Varnish integration for cPanel to allow automatic updating of rules on new account/IP creation
 
 ### Freelance Linux Systems Administrator
+*Nov 2010 – Oct 2011*
+
 During this time I worked for a number of clients, including managed solution provides, SMBs and end users.
 
 This involved managing RHCS based setups running Tomcat for large media companies to handling account migrations, scripting automation and fixing general issues/reaction to monitoring alerts.
@@ -104,6 +106,7 @@ See Also
 * [Last.fm](http://last.fm/user/damianzaremba4) - damianzaremba4
 * [LinkedIn](http://uk.linkedin.com/in/damianzaremba) - damianzaremba
 * [Random Blog](http://damianzaremba.co.uk)
+
 
 Other Formats
 -------------
