@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 all: build
 
-install: update build clone push
+install: update build minify clone push
 
 build:
 	jekyll
@@ -22,6 +22,13 @@ clone:
 
 clean:
 	test -d _site && rm -rf _site; exit 0
+
+minify:
+	test -f ~/bin/yuicompressor-2.4.2.jar && find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) \
+	| while read f; do java -jar ~/bin/yuicompressor-2.4.2.jar $$f -o $$f --charset utf-8; done
+
+	test -x /usr/bin/convert && find _site/assests/ -type f -iname '*.png' \
+	| while read f; do /usr/bin/convert $$f -quality 70% $$f; done
 
 push:
 	rsync -vr --exclude=.git --delete _site/ _live/
