@@ -36,11 +36,11 @@ description: Damian Zaremba's Blog
 {% if paginator.previous_page or paginator.next_page %}
 <nav id="page_nav">
     {% if paginator.previous_page %}
-    <a href="{{paginator.previous_page}}" class="prev">Previous</a>
+    <a href="{{paginator.previous_page}}" class="prev">&laquo; Previous Page</a>
     {% endif %}
 
     {% if paginator.next_page %}
-    <a href="{{paginator.next_page}}" class="next">Next</a>
+    <a href="{{paginator.next_page}}" class="next">Next Page &raquo;</a>
     {% endif %}
 </nav>
 {% endif %}
