@@ -1,10 +1,12 @@
 SHELL := /bin/bash
 
-all: build
+all: compile
 
-install: update build minify clone push
+install: update compile minify clone push
 
-build:
+build: update compile minify
+
+compile:
 	jekyll
 
 server:
