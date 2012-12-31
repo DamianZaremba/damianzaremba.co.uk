@@ -3,7 +3,7 @@ server_port: 4039
 
 markdown: rdiscount
 pygments: true
-lsi: true
+lsi: false
 
 exclude: README.md
 source: content
