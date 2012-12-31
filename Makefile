@@ -28,18 +28,18 @@ clean:
 minify:
 	# Js/CSS
 	test -f ~/bin/yuicompressor.jar && find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) \
-	| while read f; do java -jar ~/bin/yuicompressor.jar $$f -o $$f --charset utf-8; done
+	| while read f; do java -jar ~/bin/yuicompressor.jar $$f -o $$f --charset utf-8; done; exit 0
 
 	# HTML
 	test -f ~/bin/htmlcompressor.jar && find _site/ -type f -iname '*.html' \
 	| while read f; do java -jar ~/bin/htmlcompressor.jar --type html \
 		--compress-js --compress-css --remove-quotes --js-compressor yui \
-	 	-o $$f $$f; done
+	 	-o $$f $$f; done; exit 0
 
 	# Images
 	test -x /usr/bin/convert && find _site/assests/ -type f \
 		\( -name 'date.png' -o -name 'comments.png' -o -name 'categories.png' \) \
-		| while read f; do /usr/bin/convert $$f -quality 70% $$f; done
+		| while read f; do /usr/bin/convert $$f -quality 70% $$f; done; exit 0
 
 push:
 	rsync -vr --exclude=.git --delete _site/ _live/
@@ -60,7 +60,7 @@ update:
 	echo "---" >> content/cv/index.markdown
 
 	# Cat in the main stuff ignoring the header crap
-	tail -n +9 /tmp/github-damianzaremba-cv-readme >> content/cv/index.markdown
+	tail -n +4 /tmp/github-damianzaremba-cv-readme >> content/cv/index.markdown
 	rm -f /tmp/github-damianzaremba-cv-readme
 
 	# Write out the footer
