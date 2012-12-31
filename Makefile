@@ -27,8 +27,8 @@ clean:
 
 minify:
 	# Js/CSS
-	test -f ~/bin/yuicompressor-2.4.2.jar && find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) \
-	| while read f; do java -jar ~/bin/yuicompressor-2.4.2.jar $$f -o $$f --charset utf-8; done
+	test -f ~/bin/yuicompressor.jar && find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) \
+	| while read f; do java -jar ~/bin/yuicompressor.jar $$f -o $$f --charset utf-8; done
 
 	# HTML
 	test -f ~/bin/htmlcompressor.jar && find _site/ -type f -iname '*.html' \
