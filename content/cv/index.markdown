@@ -4,73 +4,177 @@ title: CV
 description: Damian Zaremba's CV
 ---
 Summary
--------------
-Experienced Linux systems administrator looking for opportunities to further my career where I can expand upon my knowledge and make a difference. I am loyal and committed to any company I work for and have an ability to get the job done under pressure.
+-------
+Experienced, driven and professional Linux Systems Engineer, constantly
+looking to improve service and run at the edge of technology.
 
-What I'm most passionate about is learning and working with cutting edge technologies in order to build awesome solutions. I enjoy designing and building platforms that improve efficiency and that people love to use.
+Most passionate about working with opensource technologies at the cutting
+edge of technology, in order to build awesome platforms that people love to use.
+
+Focused on providing a technically sound solution, great user experience,
+correct expectations and a solution that will outperform requirements.
+
+Constantly looking for opportunities to work on new challenges, especially
+large distributed systems.
+
+Among other things, a lover of Linux, monitoring, metrics, trending and
+graphing.
+
+Outside of work, a Scout leader, Activity instructor (Climbing), Walker and
+general outdoor lover.
+
+Interested in ITIL methodologies, helpdesk workflow, issue escalation
+management, programming and automation of everything.
 
 Professional Experience
--------------
+-----------------------
 * Linux administration on RHEL/Debian based distros
-* Application development/scripting as required
-* Hardware/Software/Network troubleshooting
+* Application development/scripting
+* End-to-End troubleshooting
 * Issue escalation and SLA handling
 * Designing and implementing redundant architecture
 * Server, application and network monitoring via threshold alerting, graphing and trending.
 * Management of tgtd based SANs
-* Programming in Python, Perl, Bash, C
+* Programming in Python, Perl, Bash
 * Config management via Puppet
 * Authentication/authorization management via LDAP/RADIUS
 
+Specialties
+-----------
+* Linux
+* CentOS
+* MySQL
+* Bash
+* Python
+* System design and implementation
+* System security
+* DNS
+
 Employment History
--------------
+------------------
+### MUSIC Group - Systems Engineer
+*Oct 2012 - Current*
+
+Building infrastructure to deliver business value via collaboration, technology and automation.
+
+Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbosound, Behringer and Bugera.
+
 ### Sub 6 Limited - Lead Systems Administrator
 *Oct 2011 - Aug 2012*
 
-My primary responsibilities at Sub 6 where around leading the sysadmin side of the company.
+* Lead the sysadmin side of the UK/US based managed hosting companies
+* Handled escalated issues, complex solutions, monitoring and reporting
+requirements
+* Integrated multiple services into the asset mangement system to cut down on
+manual sets and automate process
+* Introduced continuous integration into the development workflow
+* Rolled out Puppet for configuration management
+* Handled configuration of the switched network (trunk/acess ports, vlans etc)
+* Rolled out LDAP and Radius for centralized authentication
+* Developed custom features for Kayako and WHMCS
+* Introduced Graphite and exposed monitoring metrics to clients
+* Increased security across the entire platform (PBX, DNS, Billing, client
+servers)
+* Implemented rolling password changes on a twice weekly basis
+* Custom built an IP based FTP access manager
+* Custom built a version manage for 4 PHP versions
+* Custom built a gatekeeper service to display holding pages for clients during
+a datacenter move
+* Developed numerous custom solutions for clients
 
-This involved handling escalated issues, reacting to alerts, developing new products/features, automating parts of the infrastructure, building platforms for clients, managing the switched network and a wide verity of other things.
+### AllGamer, LLC - Freelance systems administrator and developer
+*November 2010 - September 2011*
 
-On the network side of things, I implemented a new layer 2 network for the primary datacenter, handled VLAN merging, trunk configurations, RADIUS/RANCID integration and SNMP based monitoring.
+* Advised on system automation and maintenance
+* Integrated systems into the CRM
+* Assisted in service issue diagnostic and resolution
+* Assisted on service and metric monitoring (Nagios, SNMP, RRDTool, SmokePing)
+* Development of community tools
+* Programming of system utilities
 
-Looking more at the sysadmin side of things, I implemented a much more reliable monitoring solution based on Nagios and Graphite, automated a large number of internal tasks, developed new security features, implemented maintenance/password policies/procedures and revamped the PBX/DNS systems.
+### Calyx - Unix/Linux systems administrator
+*April 2011 - May 2011*
 
-A few products/features that come to mind include;
-
-* FTP Enforcer - per user IP restrictions for FTP access on shared hosts
-* PHP Version Manager - PHP 5.2/5.3/5.4 "dual stack" for cPanel servers
-* Gatekeeper - A Nginx based "gatekeeper" used when migrating hardware between datacenters so clients could have a custom maintenance page.
-* MagentoClusterAdmin - A Django based web/API based management interface with Perl scripts to handle updating HAProxy/Pound/Nginx/GlusterFS configurations for a Magento web cluster.
-* Speedyweb - Varnish integration for cPanel to allow automatic updating of rules on new account/IP creation
+* Responsible for a RHEL5 RHCS setup
+* Managed Apache, TomCat, JBos, Orcale 10G, MySQL
+* Provided on-call support
+* Provided users support in a third line capacity
+* Successfully identified and resolved memory leaks within the application
+servers
+* Managed Xen and Citrix Xenserver deployments
+* Debugged tomcat logs to identify root causes of application issues
+* Implemented process monitoring of background workers to ensure a responsive
+* application
 
 ### Freelance Linux Systems Administrator
 *Nov 2010 – Oct 2011*
 
-During this time I worked for a number of clients, including managed solution provides, SMBs and end users.
+* Managed a Red Hat cluster suite setup
+* Handled custom Tomcat/Apache based applications
+* Wrote NimBUS/Nagios based monitoring checks
+* Managed multiple account migrations
+* Automated away process
+* On-call for escalated issues
+* Worked in a structured ITIL based framework for handling change
+* Developed monitoring for application edge cases by working closely
+with 3rd parties
 
-This involved managing RHCS based setups running Tomcat for large media companies to handling account migrations, scripting automation and fixing general issues/reaction to monitoring alerts.
+### CloudFlux - Systems Engineer/Developer
+*October 2010 – May 2011*
 
-I worked an on-call style rotation handling issues as they where escalated up from the NOC after detection though NimBUS/Nagios. This included scripting some extra checks to catch more "edge cases" in the application until the developers could deploy a patched version.
+* Implemented service monitoring and performance graphing
+* Developed a management framework
+* Automated management tasks
+* Managed backups of multiple servers
+* Provided users support in a second/third line capacity
+* Migrated from Xen to KVM
+* Managed a KVM based virtualized server
+* Migration of SVN to Git
 
 ### UKFast - Linux Engineer
 *Feb 2010 – Oct 2010*
 
-During my time at UKFast my main responsibilities where to provide user support, assist with pre-sales, perform server setups and maintain SLAs.
+* Provided support in a 3rd line capacity
+* Handled technical pre-sales and server setups
+* Maintained SLAs
+* On-Call/Out of hours work
+* Managing custom platforms, cPanel, Plesk, IIS, Apache, HAProxy, Nginx, LVS
+* Configured and managed multiple Database and File replication solutions
+* Dealt with multiple, geo-graphically redundant sites with solutions spanning
+across 2 or more
+* Handled network and power issues on a datacenter level
+* Solely responsible for investigating and resolving alerts during out of hours
 
-On a daily basis I was working with solutions ranging from bespoke shared hosting platforms to multi site geo-graphically redundant solutions featuring file and database replication.
+### Rawr IRC - Developer
+*December 2009 – October 2010*
 
-The work ranged from installing and upgrading software to performing disaster recovery and investigating and resolving faults with applications. This could range from troubleshooting a segfaulting binary to recovering a down server.
+* Developed a custom services framework
+* Integrated social media and forums into IRC
+* Designed user engagement tools, such as live mapping of activity
+* Wrote multiple maintenance scripts
+* Managed 2 UnrealIRCd nodes
 
-I also had to deal with out of hours network and power issues on a datacenter wide scale and during periods of my rota I was solely responsible for resolving alerts as they were triggered and maintaining SLA levels.
+### Xinos - Network Administrator
+*January 2009 – February 2010*
+
+* Startup offering shared hosting to Geeks
+* Provided managed Shoutcast, DNS and Web hosting
+* Maintained a KVM and XEN based virtualization environment
+* Managed Nginx, Varnish, Bind9, MySQL, Exim, cPanel
+* Automated parts of the account management system
+* Integrated services for abuse monitoring
+* Wrote custom resource accounting and file scanning services
 
 ### NYCC - Desk side support
 *Oct 2008 – March 2009*
 
-My main responsibilities at NYCC where around providing 4th line "on site" support to end users. This ranged from debugging software issues, deploying new hardware, doing in-place upgrades etc.
-
-I also assisted in writing multiple scripts to automate the job system - this mainly revolved around the 'sign off' form system turning it from having to enter serial numbers for up to 40 devices manually per job to having it automatically propagate out of the database. 
-
-In order to provide hardware support to the network team, I was also involved with the rollout of 100mbps fiber to public sites (libraries/schools etc) - this involved large scale changes around IP addresses, cable runs, configuration of VPN endpoints, fiber testing and a partial datacenter upgrade.
+* Provided 'hands on' support to end users
+* Delivered hardware upgrades
+* Performed device installation/configuration
+* Assisted in large scale network upgrades
+* Worked with multiple teams to ensure issues where resolved
+* Handled the configuration of PGP based encryption for remote devices
+* Working across the county individually and as part of a team
 
 Education
 -------------
@@ -90,22 +194,36 @@ In my spare time I also assisted in the network administration, involving a sing
 
 This involved me writing numerous scripts (bat/vbs) to do simple actions such as mapping drives or configuring proxies via group policy.
 
+Volunteering experience
+-----------------------
+### The Scout Association
+*December 2006 - Current*
+
+* Assistant Scout Leader
+* Assist with program creation and delivery
+* Teach new skills
+* Perform building and equipment maintenance
+* Ensure meetings take place safely
+* Activity instructor for climbing
+* Assist local camp sites, district, county and groups at large events
+
 References
--------------
+----------
 Available upon request
 
 Misc
--------------
+----
 * Full, clean UK driving license
 * UK passport
 * Availability to work "out of hours" as required
 
 See Also
--------------
+--------
 * [GitHub](https://github.com/damianzaremba) - damianzaremba
 * [Last.fm](http://last.fm/user/damianzaremba4) - damianzaremba4
 * [LinkedIn](http://uk.linkedin.com/in/damianzaremba) - damianzaremba
-* [Random Blog](http://damianzaremba.co.uk)
+* [Random Blog](http://damianzaremba.co.uk) - damianzaremba.co.uk
+
 
 
 Other Formats
