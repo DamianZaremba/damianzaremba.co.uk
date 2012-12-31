@@ -103,8 +103,7 @@ a datacenter move
 servers
 * Managed Xen and Citrix Xenserver deployments
 * Debugged tomcat logs to identify root causes of application issues
-* Implemented process monitoring of background workers to ensure a responsive
-* application
+* Implemented process monitoring of background workers to ensure a responsive application
 
 ### Freelance Linux Systems Administrator
 *Nov 2010 – Oct 2011*
