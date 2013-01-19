@@ -4,7 +4,7 @@ all: compile
 
 getdeps:
 	test -d _temp || mkdir -p _temp; exit 0
-	test -f _temp/htmlcompressor.jar || wget 'http://htmlcompressor.googlecode.com/files/htmlcompressor-1.5.3.jar' -O '_temp/htmlcompressor.jar'; exit 0
+	#test -f _temp/htmlcompressor.jar || wget 'http://htmlcompressor.googlecode.com/files/htmlcompressor-1.5.3.jar' -O '_temp/htmlcompressor.jar'; exit 0
 	test -f _temp/yuicompressor.jar || wget 'https://dl.dropbox.com/u/18392386/yuicompressor.jar' -O '_temp/yuicompressor.jar'; exit 0
 
 install: update compile minify clone push
@@ -36,9 +36,9 @@ minify:
 	| while read f; do java -jar _temp/yuicompressor.jar $$f -o $$f --charset utf-8; done
 
 	# HTML
-	find _site/ -type f -iname '*.html' | while read f; do java -jar '_temp/htmlcompressor.jar' \
-	--type html --compress-js --compress-css --remove-quotes --js-compressor yui \
-	-o $$f $$f; done
+	#find _site/ -type f -iname '*.html' | while read f; do java -jar '_temp/htmlcompressor.jar' \
+	#--type html --compress-js --compress-css --remove-quotes --js-compressor yui \
+	#-o $$f $$f; done
 
 	# Images
 	test -x /usr/bin/convert && find _site/assests/ -type f \
