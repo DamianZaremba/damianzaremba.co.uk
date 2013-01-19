@@ -15,7 +15,7 @@ The update appeared to complete successfully, however on trying to connect to my
 Irssi Proxy server nothing appeared to happen.
 
 The output from the server console was something like below
-{% highlight lang:plain %}
+{% highlight text %}
 This is the first connection in this IRC context: using the global server
 setting
 Attempting connection to myirssiproxy.local (RawrIRC) on port 8000
