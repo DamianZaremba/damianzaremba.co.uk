@@ -47,7 +47,7 @@ minify:
 
 push:
 	rsync -vr --exclude=.git --delete _site/ _live/
-	cd _live/ && (touch .nojekyll; git add *; git commit -am "Updated site"; git push origin master)
+	cd _live/ && (touch .nojekyll; git add *; git commit -am "Auto updated site"; git push origin master)
 
 update:
 	# Make sure the dir exists
