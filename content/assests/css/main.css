@@ -313,29 +313,29 @@ article.post .meta span:last-of-type {
     margin-right: 0px;
 }
 
-article.post .meta ul#categories {
+article.post .meta ul.categories {
     background: url('/assests/images/categories.png') left top no-repeat;
     padding-left : 20px;
     margin-left: 5px;
     display: inline;
 }
 
-article.post .meta ul#categories li {
+article.post .meta ul.categories li {
     display: inline;
     list-style: none;
     margin-left: 0px;
 }
 
-article.post .meta ul#categories li:after {
+article.post .meta ul.categories li:after {
     content: ", ";
 }
 
-article.post .meta ul#categories li:last-of-type:after {
+article.post .meta ul.categories li:last-of-type:after {
     content: "";
 }
 
 /* Tag/Cat style stuff */
-ul#tags li, ul#categories li {
+ul#tags li, ul.categories li {
     list-style: none;
     margin-left: 0px;
 }

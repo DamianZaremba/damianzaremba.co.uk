@@ -9,10 +9,10 @@ description: Damian Zaremba's Blog
     <article class="post">
         <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
         <div class="meta">
-            <span><img src="/assests/images/date.png" />{{ post.date | date_to_string }}</span>
-            <span><img src="/assests/images/comments.png" /><a href="{{ post.url }}#disqus_thread">Comments</a></span>
+            <span><img src="/assests/images/date.png" title="Date" alt="Date" />{{ post.date | date_to_string }}</span>
+            <span><img src="/assests/images/comments.png" title="Content" alt="Content" /><a href="{{ post.url }}#disqus_thread">Comments</a></span>
             {% if post.tags %}
-                <ul id="categories">
+                <ul class="categories">
                 {% for tag in post.tags %}<li><a href='{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
             {% endif %}
         </div>

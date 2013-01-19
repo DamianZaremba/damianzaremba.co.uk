@@ -6,7 +6,6 @@
     <!-- General meta data -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-    <meta name="copyright" content=">Copyright 2009-{{ site.time | date: "%Y" }} Damian Zaremba" />
     <meta name="google-site-verification" content="qykIg-4DghoGe78ET4eRjKG1cx6n3gXvu4jF0FvcwRo" />
     <meta name="author" content="Damian Zaremba" />
     <link rel="alternate" type="application/rss+xml" title="Damian Zaremba's Blog" href="http://feeds.feedburner.com/DamianZaremba" />
@@ -15,13 +14,6 @@
     <meta name="robots" content="INDEX" />
     <meta name="robots" content="FOLLOW" />
     <meta name="robots" content="INDEX,FOLLOW" />
-    <meta name="revisit" content="7 days" />
-
-    <!-- M$ meta data -->
-    <meta name="classification" content="GENERAL" />
-    <meta name="distribution" content="GLOBAL" />
-    <meta name="audience" content="all" />
-    <meta name="MSSmartTagsPreventParsing" content="TRUE" />
 
     <!-- CSS files -->
     <link href="/assests/css/main.css" rel="stylesheet" type="text/css" />
@@ -74,14 +66,24 @@
 
         <div id="right">
             <p>
-                <a href="http://twitter.com/DamianZaremba" title="Twitter"><img src="/assests/images/twitter.png" /></a>
-                <a href="https://plus.google.com/110559147647328161061" title="GooglePlus"><img src="/assests/images/googleplus.png" /></a>
-                <a href="http://facebook.com/DamianZaremba" title="Facebook"><img src="/assests/images/facebook.png" /></a>
-                <a href="https://github.com/DamianZaremba" title="GitHub"><img src="/assests/images/github.png" /></a>
-                <a href="http://feeds.feedburner.com/DamianZaremba" title="RSS"><img src="/assests/images/rss.png" /></a>
+                <a href="http://twitter.com/DamianZaremba">
+                    <img src="/assests/images/twitter.png" alt="Twitter" />
+                </a>
+                <a href="https://plus.google.com/110559147647328161061">
+                    <img src="/assests/images/googleplus.png" alt="GooglePlus" />
+                </a>
+                <a href="http://facebook.com/DamianZaremba">
+                    <img src="/assests/images/facebook.png" alt="Facebook" />
+                </a>
+                <a href="https://github.com/DamianZaremba">
+                    <img src="/assests/images/github.png" alt="GitHub" />
+                </a>
+                <a href="http://feeds.feedburner.com/DamianZaremba">
+                    <img src="/assests/images/rss.png" alt="RSS" />
+                </a>
             </p>
             <form class="search" action="http://google.com/search" method="get">
-                <input class="left" type="text" name="q" results="0">
+                <input class="left" type="text" name="q">
                 <input type="hidden" name="q" value="site:damianzaremba.co.uk">
             </form>
         </div>
@@ -93,13 +95,11 @@
 
 <footer>
     <p class="copyright">Copyright 2009-{{ site.time | date: "%Y" }} <a href="http://damianzaremba.co.uk">Damian Zaremba</a></p>
-    <p class="ads">
-        <ul id="ads">
-            <li>Need error logging? Try <a href="https://getsentry.com/signup/r_D0ZW/">Sentry</a></li>
-            <li>Need hosting? Try <a href="http://www.vision108.com/">Vision180</a></li>
-            <li>Want my website? <a href="http://github.com/DamianZaremba/damianzaremba.co.uk/">Source</a></li>
-        </ul>
-    </p>
+    <ul id="ads">
+        <li>Need error logging? Try <a href="https://getsentry.com/signup/r_D0ZW/">Sentry</a></li>
+        <li>Need hosting? Try <a href="http://www.vision108.com/">Vision180</a></li>
+        <li>Want my website? <a href="http://github.com/DamianZaremba/damianzaremba.co.uk/">Source</a></li>
+    </ul>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
