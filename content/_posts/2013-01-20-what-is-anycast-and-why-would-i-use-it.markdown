@@ -16,9 +16,9 @@ While I'm not a network dude, hopefully this post will give you an overview of w
 
 Overview
 --------
-Firstly to clear up some confusion, Anycast is not a protocol (TCP/UDP) or a transport method (Unicast/Multicast/Broadcast).
+Firstly to clear up some confusion, Anycast is not a protocol (TCP/UDP) or protocol version (IPv4/IPv6), but a type of addressing such as Unicast or Broadcast.
 
-It is a method of configuring your routing (normally via BGP) so that an IP is 'advertised' in multiple locations. As far as the 'client' is concerned, they are talking unicast (to a single node), but this may be routed to different nodes depending on the routing table.
+As far as the 'client' is concerned, they are talking unicast (to a single node), but this may be routed to one of many nodes depending on the routing table.
 
 A quick example of this happening can be seen if you traceroute to an Anycast IP address from different locations in the world as seen below
 
