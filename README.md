@@ -8,7 +8,7 @@ The site is generated via Jekyll, inspired by [David Cramer](http://justcramer.c
 License
 -------
 
-The following directories and their contents are Copyright 2009-2012 Damian Zaremba. You may not reuse anything within them without my permission:
+The following directories and their contents are Copyright 2009-2013 Damian Zaremba. You may not reuse anything within them without my permission:
 
 * content/_posts/
 * content/_postfiles/
