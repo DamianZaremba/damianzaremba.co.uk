@@ -214,45 +214,18 @@ ul#ads li:last-of-type:after {
 }
 
 /* Article pre styles */
-article code {
-    background: #ddd;
-    border: 1px solid #C0C0C0;
-    font-size: 0.9em;
-    padding: 1px 3px;
-    margin: 0 3px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -o-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;
-}
-
 article pre {
-    font-size: 1/0.9em;
-    line-height: 1.5;
+    background: #ddd;
+    border: 1px solid #C0C0C0;
     padding: 5px 15px;
-    overflow-x: auto;
+    margin-top: 10px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -o-border-radius: 5px;
     -ms-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
-    display: block;
-}
-
-article pre code {
-    background: #ddd;
-    border: 1px solid #C0C0C0;
-    padding: 0;
-    margin: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    -o-border-radius: 0;
-    -ms-border-radius: 0;
-    -khtml-border-radius: 0;
-    border-radius: 0;
+    overflow-x: auto;
     display: block;
 }
 
