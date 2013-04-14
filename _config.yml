@@ -5,7 +5,7 @@ markdown: rdiscount
 pygments: true
 lsi: false
 
-exclude: README.md
+exclude: README.md get_tags.py
 source: content
 paginate: 5
 
