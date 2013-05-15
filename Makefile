@@ -7,7 +7,7 @@ getdeps:
 	test -f _temp/htmlcompressor.jar || wget 'https://dl.dropbox.com/u/18392386/htmlcompressor.jar' -O '_temp/htmlcompressor.jar'; exit 0
 	test -f _temp/yuicompressor.jar || wget 'https://dl.dropbox.com/u/18392386/yuicompressor.jar' -O '_temp/yuicompressor.jar'; exit 0
 
-stage: update compile minify clone
+stage: update compile minify clone stash
 
 install: stage push
 
@@ -47,9 +47,12 @@ minify:
 		\( -name 'date.png' -o -name 'comments.png' -o -name 'categories.png' \) \
 		| while read f; do /usr/bin/convert $$f -quality 70% $$f; done; exit 0
 
-push:
+stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
-	cd _live/ && (touch .nojekyll; git add *; git commit -am "Auto updated site"; git push origin master)
+	cd _live/ && (touch .nojekyll
+
+push:
+	cd _live/ && (git add *; git commit -am "Auto updated site"; git push origin master)
 
 update:
 	# Make sure the dir exists
