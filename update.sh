@@ -10,7 +10,6 @@ POST_HASH=$(git rev-parse HEAD)
 
 if [ "$PRE_HASH" != "$POST_HASH" ];
 then
-	sed -i 's/lsi:\s*false/lsi: true/' _config.yml
 	make install
 fi
 rm -f ~/.running

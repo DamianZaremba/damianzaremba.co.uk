@@ -1,16 +1,14 @@
 permalink: /:year/:month/:title/
-server_port: 4039
+port: 4039
 
 markdown: rdiscount
 pygments: true
-lsi: false
+lsi: true
 
-exclude: README.md get_tags.py
+exclude: ["README.md", "get_tags.py", ".git", ".svn"]
 source: content
 paginate: 5
 
-project_dir: projects
 tag_dir: tag
-
 tag_title_prefix: Archive for
 tag_meta_description_prefix: Damian Zaremba's Blog Archive For 
