@@ -49,7 +49,7 @@ minify:
 
 stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
-	cd _live/ && (touch .nojekyll
+	cd _live/ && touch .nojekyll
 
 push:
 	cd _live/ && (git add *; git commit -am "Auto updated site"; git push origin master)
