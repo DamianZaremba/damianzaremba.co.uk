@@ -4,7 +4,7 @@ all: compile
 
 getdeps:
 	test -d _temp || mkdir -p _temp; exit 0
-	#test -f _temp/htmlcompressor.jar || wget 'http://htmlcompressor.googlecode.com/files/htmlcompressor-1.5.3.jar' -O '_temp/htmlcompressor.jar'; exit 0
+	test -f _temp/htmlcompressor.jar || wget 'https://dl.dropbox.com/u/18392386/htmlcompressor.jar' -O '_temp/htmlcompressor.jar'; exit 0
 	test -f _temp/yuicompressor.jar || wget 'https://dl.dropbox.com/u/18392386/yuicompressor.jar' -O '_temp/yuicompressor.jar'; exit 0
 
 install: update compile minify clone push
