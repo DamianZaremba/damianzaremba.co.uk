@@ -12,10 +12,10 @@ install: update compile minify clone push
 build: update compile minify
 
 compile: getdeps
-	jekyll
+	jekyll build
 
 server:
-	jekyll --server
+	jekyll serve --watch --drafts --config _config.yml,_config_dev.yml
 
 clone:
 	# Remove it not a git repo
