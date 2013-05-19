@@ -30,7 +30,7 @@ clone:
 	test -d "_live" && (cd _live && git pull); exit 0
 
 	# Clone if it doesn't exist
-	test -d "_live" || git clone git@github.com:DamianZaremba/damianzaremba.github.com.git _live; exit 0
+	test -d "_live" || git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
 	test -d _site && rm -rf _site; exit 0
