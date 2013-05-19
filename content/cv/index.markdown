@@ -5,26 +5,19 @@ description: Damian Zaremba's CV
 ---
 Summary
 -------
-Experienced, driven and professional Linux Systems Engineer, constantly
-looking to improve service and run at the edge of technology.
+Experienced, driven and professional Linux Systems Engineer, constantly looking
+to improve service and run at the edge of technology.
 
-Most passionate about working with opensource technologies at the cutting
-edge of technology, in order to build awesome platforms that people love to use.
+Passionate about complex high throughput distributed systems (especially low
+latency/real time), solution design, testing, Linux, opensource, monitoring,
+metrics and graphing.
 
-Focused on providing a technically sound solution, great user experience,
-correct expectations and a solution that will outperform requirements.
+Interested in ITIL methodologies for service management, Agile methodologies for
+development life cycle/workflows and software testing/building strategies.
 
-Constantly looking for opportunities to work on new challenges, especially
-large distributed systems.
-
-Among other things, a lover of Linux, monitoring, metrics, trending and
-graphing.
-
-Outside of work, a Scout leader, Activity instructor (Climbing), Walker and
-general outdoor lover.
-
-Interested in ITIL methodologies, helpdesk workflow, issue escalation
-management, programming and automation of everything.
+Technical goals include attaining CCNA, CCNP, RHCA, RHCDS and RHCSS
+certification as well as learning C and focusing on kernel level
+optimisation/modules.
 
 Professional Experience
 -----------------------
@@ -34,30 +27,48 @@ Professional Experience
 * Issue escalation and SLA handling
 * Designing and implementing redundant architecture
 * Server, application and network monitoring via threshold alerting, graphing and trending.
-* Management of tgtd based SANs
 * Programming in Python, Perl, Bash
 * Config management via Puppet
 * Authentication/authorization management via LDAP/RADIUS
+* Software versioning/build management
+* System integration
 
 Specialties
 -----------
-* Linux
-* CentOS
-* MySQL
-* Bash
-* Python
-* System design and implementation
-* System security
-* DNS
+* Linux distributions (Red Hat, CentOS, Debian etc)
+* Software packages such as Apache, Nginx, HAProxy, LVS, KVM, Pacemaker, MySQL, DNS,
+Exim, Icinga, RANCID, etc.
+* Solution design
+* Service monitoring
+* Metric collection/graphing/trending/reporting
+* Bespoke configurations including HA and clustering
 
 Employment History
 ------------------
 ### MUSIC Group - Systems Engineer
 *Oct 2012 - Current*
 
-Building infrastructure to deliver business value via collaboration, technology and automation.
-
 Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbosound, Behringer and Bugera.
+
+* Mixed Operations/engineering role covering all levels of the infrastructure
+* Managing a complex heterogeneous infrastructure based upon VMware
+* Implementing service monitoring and metric collection systems (MRTG, Smokeping, Icinga, Graphite, PRTG)
+* Troubleshooting layer 2/3 network issues across multiple sites (combination of P2P MPLS links (L2 & 3),
+MPLS cloud and GRE tunnels connected via a mix of OSPF and static routes)
+* Developed custom integration (Icinga to ServiceDesk for ticketing, Pagerduty ack's to Icinga ack's for alerts),
+plugins (VMware hardware checking, Oracle ESSO transaction level checking) and templates (network devices,
+server roles etc) for monitoring systems
+* Developed a custom roster system based around email DL's for Openfire, based on business requirements
+* Developed numerous scripts for auditing and policy enforcement purposes
+* Automated manual tasks to increase reliability
+* Maintained binlog based replication on multiple MySQL clusters
+* Dealt with multiple outages relating to VMware/DNS/Network/Disk availability
+* Developed strategies for operating system deployment and management globally
+* Packaged and maintained numerous pieces of software into DEB and RPM files for distribution
+* Developed strategies for enforcing change control within a configuration management setup
+(gating/testing changesets, peer review, environment isolation)
+* Diagnosed multiple issues with an Oracle ESSO deployment
+* Implemented RANCID based backups for network device configs
 
 ### Sub 6 Limited - Lead Systems Administrator
 *Oct 2011 - Aug 2012*
@@ -189,7 +200,8 @@ This resulted in my gaining Comptia A+, CEH and LPIC level 1/2 certifications.
 
 I completed GCSEs in ICT (A), Mathematics (D) and key skills exams.
 
-In my spare time I also assisted in the network administration, involving a single windows server 2003 DC, two Linux servers and around 50-70 desktops running a mix of windows 2000 and XP pro.
+In my spare time I also assisted in the network administration, involving a single windows server 2003 DC,
+two Linux servers and around 50-70 desktops running a mix of windows 2000 and XP pro.
 
 This involved me writing numerous scripts (bat/vbs) to do simple actions such as mapping drives or configuring proxies via group policy.
 
@@ -212,16 +224,15 @@ Available upon request
 
 Misc
 ----
-* Full, clean UK driving license
+* Full UK driving license
 * UK passport
-* Availability to work "out of hours" as required
 
 See Also
 --------
 * [GitHub](https://github.com/damianzaremba) - damianzaremba
 * [Last.fm](http://last.fm/user/damianzaremba4) - damianzaremba4
 * [LinkedIn](http://uk.linkedin.com/in/damianzaremba) - damianzaremba
-* [Random Blog](http://damianzaremba.co.uk) - damianzaremba.co.uk
+* [Website](http://damianzaremba.co.uk) - damianzaremba.co.uk
 
 
 
