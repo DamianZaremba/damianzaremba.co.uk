@@ -2,7 +2,7 @@
 import yaml
 import os
 
-tags = []
+tags = {}
 post_files = []
 source_dirs = ['content/_drafts/', 'content/_posts/']
 
@@ -38,8 +38,9 @@ for pfile in post_files:
         if 'tags' in data.keys():
             for tag in data['tags']:
                 if tag not in tags:
-                    tags.append(tag)
+                    tags[tag] = 0
+                tags[tag] += 1
 
 print "Current tags in use:"
-for tag in tags:
-    print tag
+for tag,count in tags.items():
+    print "%s (%d)" % (tag, count)
