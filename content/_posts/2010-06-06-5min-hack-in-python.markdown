@@ -17,7 +17,7 @@ bannedHosts = []
 failedHosts = []
 ignoredIPs = []
 failLimit = 0 # Better change this
-bannedChain = "Hackor"
+bannedChain = "BadIp"
 
 os.system("iptables -N %s &>/dev/null" % (bannedChain))
 iptables = os.popen("iptables --list %s -n | egrep -v \"target.+prot.+opt.+source.+destination\" | egrep -v \"Chain %s .+ references\" | awk '{print $4}'" % (bannedChain, bannedChain))
@@ -51,7 +51,7 @@ print "%s not allready banned, banning for %s failed attempts" % (host, number)
 
 Which happens to nicely do the job as can be seen below:
 {% highlight bash %}
-[root@virtual1 ~]# ./die_hackorz.py
+[root@virtual1 ~]# ./check_bad_ip.py
 213.225.207.41 is currently over fail limit, processing
 mx-pool207-res41.momax.it not allready banned, banning for 15 failed attempts
 88.191.92.219 is currently over fail limit, processing
@@ -75,9 +75,9 @@ sd-15684.dedibox.fr not already banned, banning for 1014 failed attempts
 
 Oh yeah and I know the code is rubbish, it was very much a make it work thing ;) Also even though this "makes" the chain in iptables you still need to do:
 {% highlight bash %}
-iptables -I INPUT -j Hackor
-iptables -I OUTPUT -j Hackor
-iptables -I FORWARD -j Hackor
+iptables -I INPUT -j BadIp
+iptables -I OUTPUT -j BadIp
+iptables -I FORWARD -j BadIp
 {% endhighlight %}
 
 Because I didn't add in any code to check if they existed, nor the chain for that matter. Without them traffic won't get processed by these rules, also make sure they go near the top above any other allow rule C=
