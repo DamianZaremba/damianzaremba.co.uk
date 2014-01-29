@@ -15,49 +15,43 @@ metrics and graphing.
 Interested in ITIL methodologies for service management, Agile methodologies for
 development life cycle/workflows and software testing/building strategies.
 
-Technical goals include attaining CCNA, CCNP, RHCA, RHCDS and RHCSS
-certification as well as learning C and focusing on kernel level
-optimisation/modules.
-
-Professional Experience
------------------------
-* Linux administration on RHEL/Debian based distros
-* Application development/scripting
-* End-to-End troubleshooting
-* Issue escalation and SLA handling
-* Designing and implementing redundant architecture
-* Server, application and network monitoring via threshold alerting, graphing and trending.
-* Programming in Python, Perl, Bash
-* Config management via Puppet
-* Authentication/authorization management via LDAP/RADIUS
-* Software versioning/build management
-* System integration
-
-Specialties
------------
-* Linux distributions (Red Hat, CentOS, Debian etc)
-* Software packages such as Apache, Nginx, HAProxy, LVS, KVM, Pacemaker, MySQL, DNS,
-Exim, Icinga, RANCID, etc.
-* Solution design
-* Service monitoring
-* Metric collection/graphing/trending/reporting
-* Bespoke configurations including HA and clustering
+Driven to impact change where required and deliver things done properly.
 
 Employment History
 ------------------
-### MUSIC Group - Systems Engineer
-*Oct 2012 - Current*
+### MUSIC Group - Software Engineer (Midas/Klark Teknik)
+*July 2013 - Current*
+
+Working on new Midas/Klark Teknik products and supporting infrastructure.
+
+* Deployed an isolated 3 node (2 HA controllers) Openstack Havana setup using NetApp ONTAP storage.
+* Designed and implemented a small 'collapsed-core' network architecture - using Cisco technologies - to provide an isolated R&D network, inside an existing (unsecure) corporate network.
+* Performed data recovery on R&D servers/data and developed workarounds for internal services during a 4 month long global TECH service failure.
+* Developed a testing jig for boards using a raspberry PI with GPIO controlled relays, for automated boot loader re-programming and boot timing on changes.
+* Developed and implemented backup/restore procedure for critical data (source code, tickets, build configurations).
+* Rearchitected the current 2 server setup (unmonitored, running on raid 0, constrained by disk/CPU) into a 3 node Openstack setup and re-purposed older servers (removed from service during a transition from CVS to Git) as disposable build agents.
+* Implemented configuration management (Puppet, Saltstack) and service/change monitoring (Icinga/Rancid).
+* Reduced build times and implemented a new strategy for componentised builds.
+* Designed a framework and strategy for increasing confidence in code and speeding up the release cycle.
+* Developed software against x86, STM32 and ARM based platforms, including control for switches/FPGAs/DSPs
+* Exposure to proprietary binary based communications protocols and their pitfalls vs open, standards based communications protocols and their benefits
+* Performed maintenance on LFS and Ltib systems for building products
+* Debugged and rectified issues in C++/Python/Perl code and shell/Sed/Awk scripting
+* Investigated web technologies, updating/deployment methodologies, RFB reverse tunnelling, SELinux and performance analysis/containment.
+* Utilised kernel features to enhance new products (control groups, SELinux, nftables)
+* Documented processes for developers (board reprogramming/bootup)
+* Ported numerous internal apps from x86 to ARM
+
+### MUSIC Group - Systems Engineer (Global Enterprise Engineering)
+*Oct 2012 - July 2013*
 
 Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbosound, Behringer and Bugera.
 
 * Mixed Operations/engineering role covering all levels of the infrastructure
 * Managing a complex heterogeneous infrastructure based upon VMware
 * Implementing service monitoring and metric collection systems (MRTG, Smokeping, Icinga, Graphite, PRTG)
-* Troubleshooting layer 2/3 network issues across multiple sites (combination of P2P MPLS links (L2 & 3),
-MPLS cloud and GRE tunnels connected via a mix of OSPF and static routes)
-* Developed custom integration (Icinga to ServiceDesk for ticketing, Pagerduty ack's to Icinga ack's for alerts),
-plugins (VMware hardware checking, Oracle ESSO transaction level checking) and templates (network devices,
-server roles etc) for monitoring systems
+* Troubleshooting layer 2/3 network issues across multiple sites (combination of P2P MPLS links (L2 & 3), MPLS cloud and GRE tunnels connected via a mix of OSPF and static routes)
+* Developed custom integration (Icinga to ServiceDesk for ticketing, Pagerduty ack's to Icinga ack's for alerts), plugins (VMware hardware checking, Oracle ESSO transaction level checking) and templates (network devices, server roles etc) for monitoring systems
 * Developed a custom roster system based around email DL's for Openfire, based on business requirements
 * Developed numerous scripts for auditing and policy enforcement purposes
 * Automated manual tasks to increase reliability
@@ -65,10 +59,22 @@ server roles etc) for monitoring systems
 * Dealt with multiple outages relating to VMware/DNS/Network/Disk availability
 * Developed strategies for operating system deployment and management globally
 * Packaged and maintained numerous pieces of software into DEB and RPM files for distribution
-* Developed strategies for enforcing change control within a configuration management setup
-(gating/testing changesets, peer review, environment isolation)
+* Developed strategies for enforcing change control within a configuration management setup (gating/testing changesets, peer review, environment isolation)
 * Diagnosed multiple issues with an Oracle ESSO deployment
 * Implemented RANCID based backups for network device configs
+
+### Freelancer: Architecture, Infrastructure, Linux Deployment, Network Design, Software Development
+*Nov 2008 – Current*
+
+End to end management and design of infrastructure, heavily Linux and Network focused.
+
+Provide software development as required (Python, Perl, PHP, C, C++, Shell, node.js, Django, Ruby), all custom work - some opensource. Primary focus on Python (including Django), Perl, Shell and C++.
+
+Deployed Linux solutions at edge and core, covering all aspects from SOHO up to multi datacenter. Areas including PXE, kickstart/preseed, Puppet, Cobbler, Saltstack, asset tracking, lifecycle management, testing, custom Linux distributions and bespoke auditing tools.
+
+Designed networks to specification (cost or functionality), familiar with large layer 2/3 deployments including STP, DTP, LACP protocols, vlan tagging, trunking, layer 2 protections (arp, dhcp, bpdu guard), static routing, dynamic routing (RIP, OSPF, EIGRP, BGP), MPLS (P2P and 'cloud'), QOS, ASA firewalls, ACL management, redundancy, performance optimisation, asynchronous routing, remote troubleshooting, issue diagnostics (layer 1-8) and vendor interaction/management (global).
+
+Re-designed and migrated data-centre architecture for hosting providers and global companies including co-ordination with onsite resources for physical relocation, design and implementation of redundant core and distribution network services, designing SPOFs out, isolating management connectivity into segregated failure domains (physically, up to a separate BGP mix with different routes), design of troubleshooting tools for helpdesk staff, auditing equipment, implementation of off-site backup arrangements, low level migration tools (redirection of network traffic to holding servers, DDOS protection, distributed caching, automated null-routing tools, automated firewall rule distribution tools), power usage profiling and cost reduction.
 
 ### Sub 6 Limited - Lead Systems Administrator
 *Oct 2011 - Aug 2012*
@@ -115,19 +121,6 @@ servers
 * Managed Xen and Citrix Xenserver deployments
 * Debugged tomcat logs to identify root causes of application issues
 * Implemented process monitoring of background workers to ensure a responsive application
-
-### Freelance Linux Systems Administrator
-*Nov 2010 – Oct 2011*
-
-* Managed a Red Hat cluster suite setup
-* Handled custom Tomcat/Apache based applications
-* Wrote NimBUS/Nagios based monitoring checks
-* Managed multiple account migrations
-* Automated away process
-* On-call for escalated issues
-* Worked in a structured ITIL based framework for handling change
-* Developed monitoring for application edge cases by working closely
-with 3rd parties
 
 ### CloudFlux - Systems Engineer/Developer
 *October 2010 – May 2011*
@@ -208,7 +201,7 @@ This involved me writing numerous scripts (bat/vbs) to do simple actions such as
 Volunteering experience
 -----------------------
 ### The Scout Association
-*December 2006 - Current*
+*December 2006 - January 2014*
 
 * Assistant Scout Leader
 * Assist with program creation and delivery
@@ -233,7 +226,6 @@ See Also
 * [Last.fm](http://last.fm/user/damianzaremba4) - damianzaremba4
 * [LinkedIn](http://uk.linkedin.com/in/damianzaremba) - damianzaremba
 * [Website](http://damianzaremba.co.uk) - damianzaremba.co.uk
-
 
 
 Other Formats
