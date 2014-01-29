@@ -22,8 +22,10 @@ How to build
 
 Install the dependencies:
 
+* apt-get install rubygems ruby-gsl
 * gem install jekyll
 * gem install rdiscount
+* gem install gsl
 
 Build the content (including drafts) and serve it locally:
 
