@@ -27,7 +27,7 @@ clone:
 	test -d "_live" && (test -d "_live/.git" || rm -rf _live); exit 0
 
 	# Update if a git repo
-	test -d "_live" && (cd _live && git pull); exit 0
+	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
 
 	# Clone if it doesn't exist
 	test -d "_live" || git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
@@ -55,7 +55,7 @@ stash:
 	cd _live/ && touch .nojekyll
 
 push:
-	cd _live/ && (git rm -f $(git ls-files --deleted); git add .; git commit -am "Auto updated site"; git push origin master)
+	cd _live/ && (git ls-files --deleted | while read file; do git rm -f "$file"; done; git add .; git commit -am "Auto updated site"; git push origin master)
 
 update:
 	# Make sure the dir exists
