@@ -6,7 +6,7 @@ markdown: rdiscount
 pygments: true
 lsi: true
 
-exclude: ["README.md", "get_tags.py", ".git", ".svn"]
+exclude: ["README.md", "get_tags.py", ".git", ".gitignore", ".gitkeep"]
 source: content
 paginate: 5
 
