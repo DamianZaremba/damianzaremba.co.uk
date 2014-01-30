@@ -242,3 +242,7 @@ See Also
 Other Formats
 -------------
 Available on [GitHub](https://github.com/DamianZaremba/cv)
+
+Other Formats
+-------------
+Available on [GitHub](https://github.com/DamianZaremba/cv)

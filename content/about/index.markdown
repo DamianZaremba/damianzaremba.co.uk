@@ -47,7 +47,7 @@ Anyone can have a blog or an email account by just clicking buttons, that's huge
 ### 'Real' managed service.
 Lots of companies do 'managed service', install a server for you, stick some monitoring on it, fix it when it breaks.
 
-Managed service tend to fall into 2 categories:
+Managed services tend to fall into 2 categories:
 
 * No changes are made after implementation as the risk it deemed too high
 * Rolling updates are applied with little/no understanding of the service interaction

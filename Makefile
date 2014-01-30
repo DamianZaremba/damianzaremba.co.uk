@@ -55,7 +55,11 @@ stash:
 	cd _live/ && touch .nojekyll
 
 push:
-	cd _live/ && (git ls-files --deleted | while read file; do git rm -f "$file"; done; git add .; git commit -am "Auto updated site"; git push origin master)
+	cd _live/ && \
+		git ls-files --deleted | while read file; do git rm -f "${file}"; done && \
+		git add . && \
+		git commit -am "Auto updated site" && \
+		git push origin master
 
 update:
 	# Make sure the dir exists
