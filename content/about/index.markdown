@@ -15,7 +15,7 @@ Damian's skills include Linux (OS level debugging, performance tuning etc), laye
 
 Take a look at Damian's [CV](/cv) for more information and work experience.
 
-A few places that Damian can be found online are below:
+A few places that Damian can be found online are below
 
 [![Twitter](/assests/images/logos/twitter.png)](http://twitter.com/DamianZaremba)
 [![Facebook](/assests/images/logos/facebook.png)](http://facebook.com/DamianZaremba)
