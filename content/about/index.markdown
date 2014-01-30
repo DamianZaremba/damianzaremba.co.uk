@@ -11,7 +11,7 @@ Experience in a wide variety of operational, engineering, research and developme
 
 With a passion for complex/distributed systems, automation, solution design, testing strategies, Linux, open source methodologies, monitoring, metrics, graphing and AI, Damian is a strong asset to any team looking to architect, implement and scale infrastructure while ensuring continuous service delivery.
 
-Damian's skills include Linux (OS level debugging, performance tuning etc), layer 2/3/4 network design and application implementations across a large set of technologies.
+Damian's skills include Linux (OS level debugging, performance tuning etc.), layer 2/3/4 network design and application implementations across a large set of technologies.
 
 Take a look at Damian's [CV](/cv) for more information and work experience.
 
@@ -48,6 +48,7 @@ Anyone can have a blog or an email account by just clicking buttons, that's huge
 Lots of companies do 'managed service', install a server for you, stick some monitoring on it, fix it when it breaks.
 
 Managed service tend to fall into 2 categories:
+
 * No changes are made after implementation as the risk it deemed too high
 * Rolling updates are applied with little/no understanding of the service interaction
 
@@ -61,7 +62,7 @@ When thinking in configuration management, don't think in services but think in 
 
 Need to perform software upgrades?
 
-1. Spin up a clone of the production setup from configuration management in a private cloud
+1. Spin up a clone of the production set-up from configuration management in a private cloud
 2. Apply the updates to the clone via configuration management
 3. Have monitoring validate the clone's services are up (via service monitoring)
 4. Have monitoring validate the clone is functional (via the integration tests)
@@ -70,8 +71,11 @@ Need to perform software upgrades?
 If something still goes wrong?
 
 1. Roll back the production servers to the previous point in configuration management
-2. Roll the database back to the snapshot (if required, really try to use a schema that works across app versions... since at scale not everything is consistent if you want 0 downtime updates)
+2. Roll the database back to the snapshot (if required, really try to use a schema that works across application versions... since at scale not everything is consistent if you want 0 downtime updates)
 3. Write tests to cover what was deemed broken
 4. Start the upgrade steps from scratch
 
 This must be a better, more stable way of rolling updates. Lots of companies follow a similar model internally, but Damian is convinced this can be applied to managed service and will become the next generation of managed service.
+
+
+Damian would also love to be able to spend more time working on open source software and interacting with the fantastic communities around the world, even if this means just having more free time to spend on those activities.
