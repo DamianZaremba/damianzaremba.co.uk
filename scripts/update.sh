@@ -34,10 +34,6 @@ then
 	# Copy the latest to the target
 	rsync -avr "$CLONE_DIR/_site/" "$DEST_DIR/"
 
-	# Cleanup any stuff we don't want in the public repo
-	find "$DEST_DIR" -name '.git' -delete
-	find "$DEST_DIR" -name '.gitignore' -delete
-
 	# Fix permissions/ownership
 	chown nobody.nobody -R "$DEST_DIR/"
 	find "$DEST_DIR/" -type f -exec chmod 644 {} \;
