@@ -206,8 +206,9 @@ Volunteering experience
 * Assisted with the build out for FOSDEM, prior to the event.
 * Assisted with the clean up of the ULB in Brussels, post FOSDEM.
 * Assisted with any misc tasks as required during the conference, based on organiser requirements.
-* Worked with a multi-national team of people (50+) to accomplish build out in ~10 hours and clean-up in ~4 hours for ~23 rooms across the ULB campus.
-* Co-ordinated via Email, IRC, Twitter and Phone to provide assistance where required.
+* Assisted with the initial video editing for Saturday's raw footage.
+* Moderated multiple talks (keynotes/main tracks) in the Jason building (1400 seat capacity).
+* Worked with a multi-national team of volunteers (50+) to help deliver 512 talks over 22 rooms in 2 days.
 
 ### The Scout Association
 *December 2006 - January 2014*
