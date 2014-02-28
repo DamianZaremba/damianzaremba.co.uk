@@ -19,8 +19,13 @@ Driven to impact change where required and deliver things done properly.
 
 Employment History
 ------------------
-### MUSIC Group - Software Engineer (Midas/Klark Teknik)
-*July 2013 - Current*
+### TravelJigsaw (rentalcars.com) - Linux Systems Administrator
+*February 2014 - Present*
+
+Doing things with stuff powered by striped cats and dolphins.
+
+### MUSIC Group - Software Engineer (RnD - Midas/Klark Teknik)
+*July 2013 - February 2014*
 
 Working on new Midas/Klark Teknik products and supporting infrastructure.
 
@@ -44,7 +49,7 @@ Working on new Midas/Klark Teknik products and supporting infrastructure.
 * Managed Atlassian developer tools (Jira, Stash, Bamboo, Fisheye)
 
 ### MUSIC Group - Systems Engineer (Global Enterprise Engineering)
-*Oct 2012 - July 2013*
+*October 2012 - July 2013*
 
 Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbosound, Behringer and Bugera.
 
@@ -65,7 +70,7 @@ Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbos
 * Implemented RANCID based backups for network device configurations.
 
 ### Freelancer: Architecture, Infrastructure, Linux Deployment, Network Design, Software Development
-*Nov 2008 – Current*
+*November 2008 - Current*
 
 End to end management and design of infrastructure, heavily Linux and Network focused.
 
@@ -78,7 +83,7 @@ Designed networks to specification (cost or functionality), familiar with large 
 Re-designed and migrated data-centre architecture for hosting providers and global companies including co-ordination with on-site resources for physical relocation, design and implementation of redundant core and distribution network services, designing SPOFs out, isolating management connectivity into segregated failure domains (physically, up to a separate BGP mix with different routes), design of troubleshooting tools for help desk staff, auditing equipment, implementation of off-site backup arrangements, low level migration tools (redirection of network traffic to holding servers, DDOS protection, distributed caching, automated null-routing tools, automated firewall rule distribution tools), power usage profiling and cost reduction.
 
 ### Sub 6 Limited - Lead Systems Administrator
-*Oct 2011 - Aug 2012*
+*October 2011 - August 2012*
 
 * Lead the system administration/management side of the UK/US based managed hosting companies.
 * Handled escalated issues, complex solutions, monitoring and reporting
@@ -124,7 +129,7 @@ servers.
 * Implemented process monitoring of background workers to ensure a responsive application.
 
 ### CloudFlux - Systems Engineer/Developer
-*October 2010 – May 2011*
+*October 2010 - May 2011*
 
 * Implemented service monitoring and performance graphing.
 * Developed a management framework.
@@ -136,7 +141,7 @@ servers.
 * Migration of SVN to Git.
 
 ### UKFast - Linux Engineer
-*Feb 2010 – Oct 2010*
+*February 2010 - October 2010*
 
 * Provided support in a 3rd line capacity.
 * Handled technical pre-sales and server set-up.
@@ -150,7 +155,7 @@ across 2 or more.
 * Solely responsible for investigating and resolving alerts during out of hours.
 
 ### Rawr IRC - Developer
-*December 2009 – October 2010*
+*December 2009 - October 2010*
 
 * Developed a custom services framework.
 * Integrated social media and forums into IRC.
@@ -159,7 +164,7 @@ across 2 or more.
 * Managed 2 UnrealIRCd nodes.
 
 ### Xinos - Network Administrator
-*January 2009 – February 2010*
+*January 2009 - February 2010*
 
 * Start-up offering shared hosting to Geeks.
 * Provided managed Shoutcast, DNS and Web hosting.
@@ -170,7 +175,7 @@ across 2 or more.
 * Wrote custom resource accounting and file scanning services.
 
 ### NYCC - Desk side support
-*Oct 2008 – March 2009*
+*October 2008 - March 2009*
 
 * Provided 'hands on' support to end users.
 * Delivered hardware upgrades.
@@ -180,8 +185,14 @@ across 2 or more.
 * Handled the configuration of PGP based encryption for remote devices.
 * Working across the county individually and as part of a team.
 
+Professional certifications
+---------------------------
+* LPIC-1 - LPI000199836 (dxaf9wwwdt) - Expires April 2015
+* LPIC-2 - LPI000199836 (84nk9rech3) - Expires April 2015
+* Certified Ethical Hacker v6 - Expired December 2013
+
 Education
--------------
+---------
 ### Firebrand Training
 *2010*
 
@@ -229,7 +240,7 @@ Available upon request.
 
 Misc
 ----
-* Full UK driving license.
+* Full UK driving licence.
 * UK passport.
 * Available out of hours.
 
