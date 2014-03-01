@@ -9,7 +9,7 @@ getdeps:
 
 stage: update compile minify clone stash
 
-install: stage push
+install: stage push cacheclear
 
 build: update compile minify
 
@@ -60,6 +60,21 @@ push:
 		git add . && \
 		git commit -am "Auto updated site" && \
 		git push origin master
+
+cacheclear:
+	# Lazy clear the cloudflare cache
+	cd _live/ && \
+	git log --name-only --pretty=oneline -1 | tail -n+2 | while read path; \
+	do \
+		echo "Clearing cache for $$path" && \
+		curl https://www.cloudflare.com/api_json.html \
+			-d 'a=zone_file_purge' \
+			-d 'tkn='`cat ~/.cloudflare.token` \
+			-d 'email=damian@damianzaremba.co.uk' \
+			-d 'z=damianzaremba.co.uk' \
+			-d 'url=http://damianzaremba.co.uk/'$$path; \
+		echo; echo; \
+	done
 
 update:
 	# Make sure the dir exists
