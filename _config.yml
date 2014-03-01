@@ -15,3 +15,13 @@ excerpt_separator:
 tag_dir: tag
 tag_title_prefix: Archive for
 tag_meta_description_prefix: Damian Zaremba's Blog Archive For 
+
+sitemap:
+    exclude:
+        - "/feed.xml"
+        - "/cf-pages/10xx.html"
+        - "/cf-pages/5xx.html"
+        - "/cf-pages/always_online.html"
+        - "/cf-pages/blocked.html"
+        - "/cf-pages/security_pitstop.html"
+        - "/cf-pages/under_attack.html"
