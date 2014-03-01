@@ -58,8 +58,7 @@ push:
 	cd _live/ && \
 		git ls-files --deleted | while read file; do git rm -f "${file}"; done && \
 		git add . && \
-		git commit -am "Auto updated site" && \
-		(git push origin master; exit 0)
+		(git commit -am "Auto updated site" && git push origin master; exit 0)
 
 cacheclear:
 	# Lazy clear the cloudflare cache
