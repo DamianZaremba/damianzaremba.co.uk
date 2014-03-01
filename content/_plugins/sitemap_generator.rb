@@ -213,7 +213,7 @@ module Jekyll
 
       lastmod = REXML::Element.new "lastmod"
       if page_or_post.instance_of?(Jekyll::Page)
-        lastmod.text = File.mtime(path)
+        lastmod.text = File.mtime(path).iso8601
       else
         lastmod.text = page_or_post.date.iso8601
       end
