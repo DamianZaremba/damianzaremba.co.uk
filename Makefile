@@ -46,9 +46,9 @@ minify:
 	#-o $$f $$f; done
 
 	# Images
-	test -x /usr/bin/convert && find _site/assests/ -type f \
-		\( -name 'date.png' -o -name 'comments.png' -o -name 'categories.png' \) \
-		| while read f; do /usr/bin/convert $$f -quality 70% $$f; done; exit 0
+	#test -x /usr/bin/convert && find _site/assests/ -type f \
+	#	\( -name 'date.png' -o -name 'comments.png' -o -name 'categories.png' \) \
+	#	| while read f; do /usr/bin/convert $$f -quality 70% $$f; done; exit 0
 
 stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
@@ -59,12 +59,12 @@ push:
 		git ls-files --deleted | while read file; do git rm -f "${file}"; done && \
 		git add . && \
 		git commit -am "Auto updated site" && \
-		git push origin master
+		(git push origin master; exit 0)
 
 cacheclear:
 	# Lazy clear the cloudflare cache
 	cd _live/ && \
-	git log --name-only --pretty=oneline -1 | tail -n+2 | while read path; \
+	git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | while read path; \
 	do \
 		echo "Clearing cache for $$path" && \
 		curl https://www.cloudflare.com/api_json.html \
@@ -84,19 +84,28 @@ update:
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
 
 	# Write out the header
-	echo "---" > content/cv/index.markdown
-	echo "layout: default" >> content/cv/index.markdown
-	echo "title: CV" >> content/cv/index.markdown
-	echo "description: Damian Zaremba's CV" >> content/cv/index.markdown
-	echo "---" >> content/cv/index.markdown
+	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
+	echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
 
 	# Cat in the main stuff ignoring the header crap
-	tail -n +4 /tmp/github-damianzaremba-cv-readme >> content/cv/index.markdown
+	tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
 	rm -f /tmp/github-damianzaremba-cv-readme
 
 	# Write out the footer
-	echo >> content/cv/index.markdown
-	echo >> content/cv/index.markdown
-	echo "Other Formats" >> content/cv/index.markdown
-	echo "-------------" >> content/cv/index.markdown
-	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> content/cv/index.markdown
+	echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
+
+	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
+	then \
+		echo "Updating CV"; \
+		mv /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown; \
+	else \
+		echo "CV up to date"; \
+		rm -f /tmp/github-damianzaremba-cv-readme.markdown; \
+	fi
