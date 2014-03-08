@@ -14,13 +14,13 @@ install: stage push cacheclear
 build: update compile minify
 
 compile: getdeps
-	jekyll build
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
 
 server:
-	jekyll serve --watch --drafts --config _config.yml,_config_dev.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --drafts --config _config.yml,_config_dev.yml
 
 prod-server:
-	jekyll serve --watch --config _config.yml,_config_dev.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --config _config.yml,_config_dev.yml
 
 clone:
 	# Remove it not a git repo
