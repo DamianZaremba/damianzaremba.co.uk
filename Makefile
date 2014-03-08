@@ -108,3 +108,7 @@ update:
 		echo "CV up to date"; \
 		rm -f /tmp/github-damianzaremba-cv-readme.markdown; \
 	fi
+
+publishpending_script:
+	./scripts/publish_pending.py
+publishpending: publishpending_script stage
