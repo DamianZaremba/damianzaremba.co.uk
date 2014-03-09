@@ -71,8 +71,8 @@ module Jekyll
 
     # Config defaults
     SITEMAP_FILE_NAME = "/sitemap.xml"
-    EXCLUDE = ["/feed.xml", "/feed/index.xml", "/cf-pages/"]
-    INCLUDE_POSTS = ["/index.html"]
+    EXCLUDE = ["/atom.xml", "/feed.xml", "/feed/index.xml"]
+    INCLUDE_POSTS = ["/index.html"] 
     CHANGE_FREQUENCY_NAME = "change_frequency"
     PRIORITY_NAME = "priority"
     
@@ -167,6 +167,8 @@ module Jekyll
       lastmod = fill_last_modified(site, page_or_post)
       url.add_element(lastmod) if lastmod
 
+
+
       if (page_or_post.data[@config['change_frequency_name']])
         change_frequency = 
           page_or_post.data[@config['change_frequency_name']].downcase
@@ -199,8 +201,7 @@ module Jekyll
     # Returns the location of the page or post
     def fill_location(site, page_or_post)
       loc = REXML::Element.new "loc"
-      url = site.config['url']
-      loc.text = page_or_post.location_on_server(url)
+      loc.text = page_or_post.location_on_server('http://damianzaremba.co.uk')
 
       loc
     end
@@ -212,10 +213,21 @@ module Jekyll
       path = page_or_post.full_path_to_source
 
       lastmod = REXML::Element.new "lastmod"
-      if page_or_post.instance_of?(Jekyll::Page)
-        lastmod.text = File.mtime(path).iso8601
+      date = File.mtime(path)
+      latest_date = find_latest_date(date, site, page_or_post)
+
+      if @last_modified_post_date == nil
+        # This is a post
+        lastmod.text = latest_date.iso8601
       else
-        lastmod.text = page_or_post.date.iso8601
+        # This is a page
+        if posts_included?(site, page_or_post.path_to_source)
+          # We want to take into account the last post date
+          final_date = greater_date(latest_date, @last_modified_post_date)
+          lastmod.text = final_date.iso8601
+        else
+          lastmod.text = latest_date.iso8601
+        end
       end
       lastmod
     end

@@ -84,6 +84,7 @@ update:
 
 	# Write out the header
 	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
+	echo "date: `date "+%a %b %d %H:%M:%S +0000 %Y"`" >> /tmp/github-damianzaremba-cv-readme.markdown
 	echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
 	echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
 	echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
@@ -100,7 +101,11 @@ update:
 	echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
 	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
 
-	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
+	# Copy to tmp files
+	grep -Ev '^date: ' /tmp/github-damianzaremba-cv-readme.markdown > /tmp/github-damianzaremba-cv-readme.markdown.new.diff
+	grep -Ev '^date: ' content/cv/index.markdown > /tmp/github-damianzaremba-cv-readme.markdown.current.diff
+
+	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown.new.diff /tmp/github-damianzaremba-cv-readme.markdown.current.diff`" != "" ]; \
 	then \
 		echo "Updating CV"; \
 		mv /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown; \
@@ -108,6 +113,10 @@ update:
 		echo "CV up to date"; \
 		rm -f /tmp/github-damianzaremba-cv-readme.markdown; \
 	fi
+
+	# Cleanup
+	rm -f /tmp/github-damianzaremba-cv-readme.markdown.new.diff
+	rm -f /tmp/github-damianzaremba-cv-readme.markdown.current.diff
 
 publishpending_script:
 	./scripts/publish_pending.py

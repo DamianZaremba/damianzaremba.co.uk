@@ -1,4 +1,5 @@
 ---
+date: Sat Mar 01 15:19:39 +0000 2014
 layout: default
 title: Projects
 description: Damian Zaremba's Projects
@@ -16,7 +17,7 @@ References:
 [Pypi](https://pypi.python.org/pypi?name=sentry-trello)
 
 #### Puppet Sentry Plugin
-[Puppet](https://puppetlabs.com/) reporter that sends run issues to [Sentry](https://www.getsentry.com/) 
+[Puppet](https://puppetlabs.com/) reporter that sends run issues to [Sentry](https://www.getsentry.com/)
 
 References:
 [Source](https://github.com/DamianZaremba/sentry-puppet)
@@ -259,7 +260,7 @@ Deployed numerous Dell R720 based sans in a 'one per rack' configuration combine
 #### BFD
 Re-designed and existing tool to automatically detect and block brute force attacks against email services.
 
-Configurable pattern based detection, supports Dovecot, Courier and Exim out the box. 
+Configurable pattern based detection, supports Dovecot, Courier and Exim out the box.
 
 Provided a simple command line interface to manage the blocks for helpdesk staff, hooks to notify the central NOC API of a block (so attacks against multiple targets could be blocked globally based...more
 
