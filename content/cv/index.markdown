@@ -1,5 +1,4 @@
 ---
-date: Sun Mar 09 00:54:37 +0000 2014
 layout: default
 title: CV
 description: Damian Zaremba's CV

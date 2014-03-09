@@ -16,9 +16,11 @@ layout: nil
     <entry>
         <title>{{ post.title }}</title>
         <link href="http://damianzaremba.co.uk{{ post.url }}"/>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>http://damianzaremba.co.uk{{ post.id }}</id>
-        <content type="html">{{ post.content | html_escape | xml_escape }}</content>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
     </entry>
     {% endfor %}
 </feed>

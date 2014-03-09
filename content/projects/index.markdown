@@ -1,5 +1,4 @@
 ---
-date: Sat Mar 01 15:19:39 +0000 2014
 layout: default
 title: Projects
 description: Damian Zaremba's Projects
