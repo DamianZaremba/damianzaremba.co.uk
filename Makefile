@@ -111,4 +111,4 @@ update:
 
 publishpending_script:
 	./scripts/publish_pending.py
-publishpending: publishpending_script stage
+publishpending: publishpending_script install
