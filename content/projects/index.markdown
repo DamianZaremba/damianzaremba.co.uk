@@ -12,14 +12,14 @@ Opensource Projects
 [Sentry](https://www.getsentry.com/) plugin that creates
 [Trello](https://trello.com/) cards for events.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/sentry-trello) |
 [Pypi](https://pypi.python.org/pypi?name=sentry-trello)
 
 #### Puppet Sentry Plugin
 [Puppet](https://puppetlabs.com/) reporter that sends run issues to [Sentry](https://www.getsentry.com/)
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/sentry-puppet)
 
 #### Wikimedia Labs Bots MySQL creator
@@ -27,14 +27,14 @@ Development of an automated system to grant MySQL rights (including the ability 
 
 This has now been superseded by the tools project with associated database setup.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/labs-bots-mysql-creator)
 
 #### Wikimedia Labs Bots vHost Builder
 Python script to create public_html folders for users of the Bots project on
 [Wikimedia Labs](https://wikitech.wikimedia.org/).
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/labs-bots-vhost-builder)
 
 #### Wikimedia Labs Nagios Config Builder
@@ -44,7 +44,7 @@ Python script to create [Nagios](http://www.nagios.org) config files for
 Supports autodiscovery of instances and services (based on puppet
 manifests) as well as templating based on meta data.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/labsnagiosbuilder) |
 [Gerrit](https://gerrit.wikimedia.org/r/#/q/project:labs/nagios-builder,n,z) |
 [GitBlit](https://git.wikimedia.org/summary/labs%2Fnagios-builder)
@@ -56,7 +56,7 @@ References:
 Written for [sentry-trello](https://github.com/DamianZaremba/sentry-trello), but should work with any
 [django-social-auth](https://github.com/omab/django-social-auth/) install.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/django-social-auth-trello) |
 [Pypi](https://pypi.python.org/pypi?name=django-social-auth-trello)
 
@@ -66,7 +66,7 @@ groups based on purchased products.
 
 Allows communities to give elevated game access to donors etc.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/McMyAdmin-WHMCS)
 
 #### Craft Bukkit User Log
@@ -74,12 +74,12 @@ A very simple proof of concept plugin for Craftbukkit that writes out the curren
 
 Designed for a customer to parse externally/extend, enabling them to relay notifications to IRC/Twitter/their website in real time.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/craftbukkit-userlog)
 
 #### Symbiosis real time DNS
 Realtime DNS updater based on inotify for Symbiosis. Replaces the default hour cron job, enabling much faster update times for DNS changes in an automated way.
-References:
+Links:
 [Source](https://github.com/DamianZaremba/symbiosis-realtime-dns)
 
 #### Wordpress Mint plugin
@@ -87,7 +87,7 @@ Integrated the Mint Analytics's platform into Wordpress based on client requirem
 
 Upon installation the plugin auto injected the required code into page headers and rendered a stats overview in the Admin panel.
 
-References:
+Links:
 [Source](http://plugins.svn.wordpress.org/mint/)
 
 Projects I Contribute To
@@ -98,7 +98,7 @@ Sentry is a realtime event logging and aggregation platform. It specializes in
 monitoring errors and extracting all the information needed to do a proper
 post-mortem without any of the hassle of the standard user feedback loop.
 
-References:
+Links:
 [Upstream Source](https://github.com/getsentry/sentry) |
 [Working Repo](https://github.com/DamianZaremba/sentry) |
 [Get Sentry](https://www.getsentry.com/)
@@ -111,7 +111,7 @@ Salt accomplishes this via its ability to handle larger loads of information,
 and not just dozens, but hundreds, or even thousands of individual servers. It
 handles them quickly and through a simple yet manageable interface.
 
-References:
+Links:
 [Upstream Source](https://github.com/saltstack/salt) |
 [Working Repo](https://github.com/DamianZaremba/salt) |
 [Salt Stack Community](http://saltstack.org)
@@ -121,7 +121,7 @@ The Salt API system is used to expose the fundamental aspects of Salt control to
 external sources. salt-api acts as the bridge between Salt itself and REST,
 Websockets, etc.
 
-References:
+Links:
 [Upstream Source](https://github.com/saltstack/salt-api) |
 [Working Repo](https://github.com/DamianZaremba/salt-api) |
 [Salt Stack Community](http://saltstack.org)
@@ -130,7 +130,7 @@ References:
 OSM is a [MediaWiki](http://www.mediawiki.org/) extension designed to manage
 [OpenStack](http://www.openstack.org/) deployments.
 
-References:
+Links:
 [Gerrit](https://gerrit.wikimedia.org/r/#/q/project:mediawiki/extensions/OpenStackManager,n,z) |
 [GitBlit](https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FOpenStackManager) |
 [MediaWiki Page](http://www.mediawiki.org/wiki/Extension:OpenStackManager)
@@ -138,7 +138,7 @@ References:
 #### LDAP Authentication Extension
 Provides LDAP authentication, and some authorization functionality for MediaWiki
 
-References:
+Links:
 [Gerrit](https://gerrit.wikimedia.org/r/#/q/project:mediawiki/extensions/LdapAuthentication,n,z) |
 [GitBlit](https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FLdapAuthentication) |
 [MediaWiki Page](http://www.mediawiki.org/wiki/Extension:LDAP_Authentication)
@@ -146,7 +146,7 @@ References:
 #### Elevator
 Setuid wrapper that elevates a program to run as a target user.
 
-References:
+Links:
 [Upstream Source](https://github.com/LukeCarrier/elevator) |
 [Working Repo](https://github.com/DamianZaremba/elevator)
 
@@ -155,7 +155,7 @@ Very simple node.js based IRC relay designed to poll an API endpoint on the foru
 
 Used to increase forum responsiveness successfully.
 
-References:
+Links:
 [Source](https://github.com/DamianZaremba/xenforo-irc-relay)
 
 #### ClueMon
@@ -163,7 +163,7 @@ Set of scripts to rebuild [SmokePing](http://oss.oetiker.ch/smokeping/) and
 [Nagios](http://www.nagios.org/) configs for [ClueNet](http://cluenet.org),
 based on a blend of LDAP and MediaWiki data.
 
-References:
+Links:
 [Source](https://github.com/cluenet/cluemon)
 
 #### ClueBot NG/ClueBot III
@@ -175,7 +175,7 @@ Over 2.5 million edits on Wikipedia (number 6 in the number of edits by a bot, n
 
 Score output is used by a number of other Human orientated tools, notably Huggle and Stiki.
 
-References:
+Links:
 [NG Source](https://github.com/damianzaremba/cluebotng) |
 [III Source](https://github.com/damianzaremba/cluebot3)
 
