@@ -131,7 +131,13 @@ module Jekyll
         end
 
         path = post.full_path_to_source
-        date = File.mtime(path)
+        git_date = `git log -1 --format="%ad" --date=iso8601 -- '#{path}'`
+        if $?.success?
+          date = Time.new(git_date)
+        else
+          date = File.mtime(path)
+        end
+
         last_modified_date = date if last_modified_date == nil or date > last_modified_date
       end
 
@@ -216,7 +222,12 @@ module Jekyll
       	if @last_modified_post_date
       	  lastmod.text = @last_modified_post_date.iso8601
       	else
-          lastmod.text = File.mtime(path).iso8601
+          git_date = `git log -1 --format="%ad" --date=iso8601 -- '#{path}'`
+          if $?.success?
+            lastmod.text = git_date
+          else
+            lastmod.text = File.mtime(path).iso8601
+          end
         end
       else
         lastmod.text = page_or_post.date.iso8601
@@ -233,7 +244,12 @@ module Jekyll
       layout = layouts[page_or_post.data["layout"]]
       while layout
         path = layout.full_path_to_source
-        date = File.mtime(path)
+        git_date = `git log -1 --format="%ad" --date=iso8601 -- '#{path}'`
+        if $?.success?
+          date = Time.new(git_date)
+        else
+          date = File.mtime(path)
+        end
 
         latest_date = date if (date > latest_date)
 
