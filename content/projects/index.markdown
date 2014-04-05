@@ -319,3 +319,12 @@ Also provided tools for checking which machines could be logged into remotely to
 Built a set of tools to load test a HTTP based service in a repeatable manner.
 
 Largely used JMeter - extended with its scripting interface - along with ApacheBench and a number of result processing tools.
+
+#### Openstack Havana Deployment
+Deployed an isolated 3 node (2 HA controllers) Openstack Havana setup using NetApp ONTAP storage.
+
+Built from nothing to a full network, storage and compute implementation.
+
+Utilised Cisco 3750x/2960 switches (core/access) and the ASA 5515-X security appliance in a collapsed core design, providing redundant Gb access for core devices (EtherChannel bundles) and 192 Gb access ports.
+
+Redundant upstream connections to the firewall provided Gb access to the internal corporate network (100Mb access to remote RnD sites) and 100Mb public IPv4/IPv6 transit.
