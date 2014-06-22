@@ -10,28 +10,28 @@ Professional
 ------------
 ### 2014
 
-* Red Hat Certified System Administrator (May)
-* Red Hat Certified Engineer (July)
+* Red Hat Certified System Administrator
+* Red Hat Certified Engineer
 * Red Hat Certificate of Expertise in Server Hardening
-* Red Hat Certificate of Expertise in Performance Tuning (September)
-* LPIC-303 (June)
+* Red Hat Certificate of Expertise in Performance Tuning
+* LPIC-303
 * LPIC-304
-* Oracle Certified Professional, MySQL 5.6 Database Administrator (August)
-* Cisco 200-120 CCNA (June)
-* Cisco 642-813 SWITCH (CCNP) (October)
-* 642-832 TSHOOT (CCNP) (November)
+* Oracle Certified Professional, MySQL 5.6 Database Administrator
+* Cisco 200-120 CCNA
+* Cisco 642-813 SWITCH (CCNP)
+* 642-832 TSHOOT (CCNP)
 
 ### 2015
-* Red Hat Certificate of Expertise in Deployment and Systems Management (January)
-* Red Hat Certificate of Expertise in Directory Services and Authentication (March)
-* Red Hat Certificate of Expertise in Clustering and Storage Management (April)
-* 642-902 ROUTE (CCNP) (February)
-* 642-813 SWITCH (CCNP) (May)
-* ITIL certification (June)
-* CCIE Routing and Switching Written Exam (August)
+* Red Hat Certificate of Expertise in Deployment and Systems Management
+* Red Hat Certificate of Expertise in Directory Services and Authentication
+* Red Hat Certificate of Expertise in Clustering and Storage Management
+* 642-902 ROUTE (CCNP)
+* 642-813 SWITCH (CCNP)
+* ITIL certification
+* CCIE Routing and Switching Written Exam
 
 ### 2016 
-* CCIE Routing and Switching Lab Exam (January)
+* CCIE Routing and Switching Lab Exam
 
 Personal
 --------
