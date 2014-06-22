@@ -4,7 +4,7 @@ host: 127.0.0.1
 port: 4039
 
 markdown: rdiscount
-pygments: true
+highlighter: pygments
 lsi: true
 
 exclude: ["README.md", "get_tags.py", ".git", ".gitignore", ".gitkeep"]
@@ -12,6 +12,9 @@ source: content
 paginate: 5
 
 excerpt_separator:
+
+gems:
+  - jekyll-sitemap
 
 tag_dir: tag
 tag_title_prefix: Archive for
