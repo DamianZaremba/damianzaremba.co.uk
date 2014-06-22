@@ -56,7 +56,7 @@ stash:
 
 push:
 	cd _live/ && \
-		git ls-files --deleted | while read file; do git rm -f "${file}"; done && \
+		git ls-files --deleted | while read file; do if [ "${file}" != "" ]; then git rm -rf "${file}"; fi; done && \
 		git add . && \
 		(git commit -am "Auto updated site" && git push origin master; exit 0)
 
