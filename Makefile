@@ -56,9 +56,11 @@ stash:
 
 push:
 	cd _live/ && \
-		git ls-files --deleted | while read file; do if [ "${file}" != "" ]; then git rm -rf "${file}"; fi; done && \
-		git add . && \
-		(git commit -am "Auto updated site" && git push origin master; exit 0)
+		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
+			git ls-files --deleted | while read file; do if [ "$file" != "" ]; then git rm -rf "$file"; fi; done && \
+			git add . && \
+			(git commit -am "Auto updated site" && git push origin master; exit 0); \
+		fi
 
 cacheclear:
 	# Lazy clear the cloudflare cache
