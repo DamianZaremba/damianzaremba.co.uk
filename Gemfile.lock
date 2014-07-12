@@ -21,6 +21,8 @@ GEM
     fast-stemmer (1.0.2)
     ffi (1.9.3)
     git (1.2.7)
+    gsl (1.15.3)
+      narray (>= 0.5.9)
     jekyll (2.1.0)
       classifier (~> 1.3)
       colorator (~> 0.1)
@@ -46,12 +48,14 @@ GEM
     jekyll-watch (1.0.0)
       listen (~> 2.7)
     kramdown (1.4.0)
+    libv8 (3.16.14.3)
     liquid (2.6.1)
     listen (2.7.9)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.3)
+    narray (0.6.0.9)
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.8)
@@ -61,9 +65,14 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rdiscount (2.1.7.1)
     redcarpet (3.1.2)
+    ref (1.0.5)
     safe_yaml (1.0.3)
     sass (3.3.9)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
     timers (1.1.0)
     toml (0.1.1)
       parslet (~> 1.5.0)
@@ -75,8 +84,12 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  execjs
   git
+  gsl
   jekyll
   jekyll-sitemap
   pygments.rb
+  rdiscount
+  therubyracer
   zip
