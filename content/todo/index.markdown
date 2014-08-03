@@ -16,8 +16,9 @@ Professional
 * Red Hat Certificate of Expertise in Performance Tuning
 * LPIC-303
 * LPIC-304
-* Oracle Certified Professional, MySQL 5.6 Database Administrator
-* Cisco 200-120 CCNA
+* ITIL foundation
+* Cisco 100-101 (ICND1) CCENT
+* Cisco 200-101 (ICND2) CCNA Routing and Switching
 * Cisco 642-813 SWITCH (CCNP)
 * 642-832 TSHOOT (CCNP)
 
@@ -27,11 +28,15 @@ Professional
 * Red Hat Certificate of Expertise in Clustering and Storage Management
 * 642-902 ROUTE (CCNP)
 * 642-813 SWITCH (CCNP)
-* ITIL certification
+* ITIL intermediate (Service Operation/Continual Service Improvement)
 * CCIE Routing and Switching Written Exam
 
-### 2016 
+### 2016
 * CCIE Routing and Switching Lab Exam
+* CCDP
+* ITIL intermediate (Operational Support and Analysis/Release, Control and Validation)
+* ITIL Managing Across the Lifecycle
+* Oracle Certified Professional, MySQL 5.7(?) Database Administrator
 
 Personal
 --------
@@ -43,7 +48,7 @@ Personal
 * Go scuba diving
 * Spend 2+ years in Europe
 * Spend 2+ years in California
-* Attend FOSDEM
+* ~~Attend FOSDEM~~
 * Attend DEFCON
 * Attend PyCon
 * Attend DjangoCon
@@ -60,7 +65,7 @@ Work
 * Work for Facebook (amazing platform and great scale)
 * Work for Akamai (probably one of the largest anycast networks/cdn in the world)
 * Work for Spotify (fun company, doing something new and interesting with music)
-* Work on an embedded product
+* ~~Work on an embedded product~~
 * Build a company from nearly nothing to multi-datacenter scale
 * Work on a life changing production
 * Work on a next generation network platform
