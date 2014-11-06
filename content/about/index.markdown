@@ -7,7 +7,7 @@ description: About Damian Zaremba
 
 Damian is a Linux sysadmin at heart, with a deep desire to automate systems and scale platforms.
 
-Experience in a wide variety of operational, engineering, research and development roles have empowered Damian to design and implement infrastructure solutions that meet business requirements at reduced cost and complexity.
+Experience in a wide variety of operational, engineering and R&D roles have empowered Damian to design and implement infrastructure solutions that meet business requirements at reduced cost and complexity.
 
 With a passion for complex/distributed systems, automation, solution design, testing strategies, Linux, open source methodologies, monitoring, metrics, graphing and AI, Damian is a strong asset to any team looking to architect, implement and scale infrastructure while ensuring continuous service delivery.
 
@@ -25,8 +25,8 @@ A few places that Damian can be found online are below
 
 Interested? What's Damian Looking For?
 --------------------------------------
-Damian is looking for opportunities to work with bleeding edge technologies that empower the end users to achieve anything
-they can imagine.
+Damian is looking for opportunities to work with bleeding edge technologies that
+empower the end users to achieve anything they can imagine.
 
 This breaks down into multiple levels, but essentially fits into 3 areas.
 
