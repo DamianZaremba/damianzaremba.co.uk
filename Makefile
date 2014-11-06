@@ -1,11 +1,21 @@
-SHELL := /bin/bash
+# YUI Compressor
+YUI_COMPRESSOR_VERSION := 2.4.8
+YUI_COMPRESSOR_URL := http://central.maven.org/maven2/com/yahoo/platform/yui/yuicompressor/$(YUI_COMPRESSOR_VERSION)/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
+YUI_COMPRESSOR_TARGET := _temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
+
+# HTML Compressor
+HTML_COMPRESSOR_VERSION := 1.5.2
+HTML_COMPRESSOR_URL := http://central.maven.org/maven2/com/googlecode/htmlcompressor/htmlcompressor/$(HTML_COMPRESSOR_VERSION)/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
+HTML_COMPRESSOR_TARGET := _temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
 
 all: compile
 
 getdeps:
 	test -d _temp || mkdir -p _temp; exit 0
-	#test -f _temp/htmlcompressor.jar || wget 'https://dl.dropbox.com/u/18392386/htmlcompressor.jar' -O '_temp/htmlcompressor.jar'; exit 0
-	test -f _temp/yuicompressor.jar || wget 'https://dl.dropbox.com/u/18392386/yuicompressor.jar' -O '_temp/yuicompressor.jar'; exit 0
+	# HTML Compressor
+	test -f '$(HTML_COMPRESSOR_TARGET)' || wget '$(HTML_COMPRESSOR_URL)' -O '$(HTML_COMPRESSOR_TARGET)' || (rm -f '$(HTML_COMPRESSOR_TARGET)'; exit 1)
+	# YUI Compressor
+	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)'; exit 1)
 
 stage: update compile minify clone stash
 
@@ -38,17 +48,11 @@ clean:
 minify:
 	# Js/CSS
 	find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) \
-	| while read f; do java -jar _temp/yuicompressor.jar $$f -o $$f --charset utf-8; done
+	| while read f; do java -jar '_temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar' $$f -o $$f --charset utf-8; done
 
 	# HTML
-	#find _site/ -type f -iname '*.html' | while read f; do java -jar '_temp/htmlcompressor.jar' \
-	#--type html --compress-js --compress-css --remove-quotes --js-compressor yui \
-	#-o $$f $$f; done
-
-	# Images
-	#test -x /usr/bin/convert && find _site/assests/ -type f \
-	#	\( -name 'date.png' -o -name 'comments.png' -o -name 'categories.png' \) \
-	#	| while read f; do /usr/bin/convert $$f -quality 70% $$f; done; exit 0
+	java -jar '_temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar' --type html --remove-quotes --recursive \
+		--compress-js --compress-css --remove-quotes --js-compressor yui -o _site/ _site/
 
 stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
