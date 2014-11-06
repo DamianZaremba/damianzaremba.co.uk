@@ -5,26 +5,43 @@ description: Damian Zaremba's CV
 ---
 Summary
 -------
-Experienced, driven and professional Linux Systems Engineer, constantly looking
-to improve service and run at the edge of technology.
+Experienced, driven and professional Linux Systems Administrator, constantly looking to improve
+service and run at the edge of technology.
 
-Passionate about complex high throughput distributed systems (especially low
-latency/real time), solution design, testing, automation, Linux, open source,
-monitoring, metrics and graphing.
+Passionate about networking, complex distributed systems, solution design, testing, automation,
+Linux, open source, monitoring, metrics and graphing.
 
-Interested in ITIL methodologies for service management, Agile methodologies for
-development life cycle/work flows and software testing/building strategies.
+Interested in ITIL methodologies for service management, Agile methodologies for development life
+cycle/work flows and software testing/building strategies.
 
-Driven to impact change where required and deliver things done properly.
-
-Not interested in red tape or project management which gets in the way of progress.
+Driven to impact change where required and deliver things done efficiently.
 
 Employment History
 ------------------
 ### TravelJigsaw (rentalcars.com) - Linux Systems Administrator
 *February 2014 - Present*
 
-Doing things with stuff powered by striped cats and dolphins.
+Working in a small team of 6 scaling out and managing the 1k+ of servers that make up the infrastructure.
+
+* Manage/deploy a heterogeneous infrastructure consisting of bare metal rack mount and blade servers
+(HP/Dell) alongside VMWare ESX, KVM, Docker and EC2 based instances
+* Refactored a Puppet 2.x setup into a Puppet 3.7.x setup using the latest language standards and a
+principle of state convergence on first run
+* Support the internal tools written in Python/Ruby including the Django based asset management tool
+* Provide out of hours support to the business via an 'on-call' rota
+* Assist in the development of the deployment system, supporting sub 5 min deployments to the tomcat
+based front end application servers
+* Introduced CI to operations for RPM builds and puppet testing
+* Coordinate with datacenter and network teams to ensure changes are completed as required by the business
+* Deployed anti-virus scanning and DKIM signing of outbound messages using Exim routers to ensure
+external facing email meets validation/verification levels requested by the business
+* Developed multiple fabric based scripts for real time auditing and remediation of servers
+(firmware versions, log file cleanup etc)
+* Troubleshooted multiple issues over php-fpm, Tomcat, Java 7/8, Nginx, Apache & F5 setups
+* Champion the use of upstream packages and versions of core software
+* Worked closely with development teams to test new software and build a path into production
+* Developed kickstart files and custom initrd files for server installation
+* Developed acceptance tests for hardware using PyUnit and Fabric
 
 ### MUSIC Group - Software Engineer (RnD - Midas/Klark Teknik)
 *July 2013 - February 2014*
@@ -90,27 +107,28 @@ checking) and templates (network devices, server roles etc.) for monitoring syst
 
 End to end management and design of infrastructure, heavily Linux and Network focused.
 
-Provide software development as required (Python, Perl, PHP, C, C++, Shell, node.js, Django, Ruby),
-all custom work - some open source. Primary focus on Python (including Django), Perl, Shell and C++.
+Provide software development as required in Python (including Django), Perl, PHP, C++ & Ruby. Primary
+focus on extending open source solutions and API services.
 
-Deployed Linux solutions at edge and core, covering all aspects from SOHO up to multi datacenter.
-Areas including PXE, kickstart/preseed, Puppet, Cobbler, Salt stack, asset tracking, life cycle
-management, testing, custom Linux distributions and bespoke auditing tools.
+Previously deployed Linux solutions at edge and core, covering all aspects from small office up to
+multi datacenter setups. Solutions including PXE (kickstart/preseed/Cobbler), Katello, Puppet,
+Saltstack, asset tracking, lifecycle management, testing, custom Linux distributions and bespoke
+auditing tools.
 
 Designed networks to specification (cost or functionality), familiar with large layer 2/3 deployments
-including STP, DTP, LACP protocols, VLAN tagging, trunking, layer 2 protections (ARP, DHCP, BPDU guard),
-static routing, dynamic routing (RIP, OSPF, EIGRP, BGP), MPLS (P2P and 'cloud'), QOS, ASA firewalls,
+including STP, DTP, LACP protocols, vlan tagging, trunking, layer 2 protections (arp, dhcp, bpdu guard),
+static routing, dynamic routing (RIP, OSPF, EIGRP, BGP), MPLS (L2 and L3 VPNs, LSPs), QOS, ASA firewalls,
 ACL management, redundancy, performance optimisation, asynchronous routing, remote troubleshooting,
 issue diagnostics (layer 1-8) and vendor interaction/management (global).
 
 Re-designed and migrated data-centre architecture for hosting providers and global companies including
-co-ordination with on-site resources for physical relocation, design and implementation of redundant
-core and distribution network services, designing SPOFs out, isolating management connectivity into
-segregated failure domains (physically, up to a separate BGP mix with different routes), design of
-troubleshooting tools for help desk staff, auditing equipment, implementation of off-site backup
-arrangements, low level migration tools (redirection of network traffic to holding servers, DDOS
-protection, distributed caching, automated null-routing tools, automated firewall rule distribution
-tools), power usage profiling and cost reduction.
+co-ordination with onsite resources for physical relocation, design and implementation of redundant
+core and distribution network services, designing single points of failure out, isolating management
+connectivity into segregated failure domains (physically, up to a separate BGP mix with different routes),
+design of troubleshooting tools for helpdesk staff, auditing equipment, implementation of off-site backup
+arrangements, low level migration tools (redirection of network traffic to holding servers, DDOS protection,
+distributed caching, automated route adjustment tools, automated firewall rule distribution tools),
+power usage profiling and cost reduction.
 
 ### Sub 6 Limited - Lead Systems Administrator
 *October 2011 - August 2012*
@@ -179,63 +197,11 @@ automate process.
 * Handled network and power issues on a datacenter level.
 * Solely responsible for investigating and resolving alerts during out of hours.
 
-### Rawr IRC - Developer
-*December 2009 - October 2010*
-
-* Developed a custom services framework.
-* Integrated social media and forums into IRC.
-* Designed user engagement tools, such as live mapping of activity.
-* Wrote multiple maintenance scripts.
-* Managed 2 UnrealIRCd nodes.
-
-### Xinos - Network Administrator
-*January 2009 - February 2010*
-
-* Start-up offering shared hosting to Geeks.
-* Provided managed Shoutcast, DNS and Web hosting.
-* Maintained a KVM and XEN based virtualization environment.
-* Managed Nginx, Varnish, Bind9, MySQL, Exim, cPanel.
-* Automated parts of the account management system.
-* Integrated services for abuse monitoring.
-* Wrote custom resource accounting and file scanning services.
-
-### NYCC - Desk side support
-*October 2008 - March 2009*
-
-* Provided 'hands on' support to end users.
-* Delivered hardware upgrades.
-* Performed device installation/configuration.
-* Assisted in large scale network upgrades.
-* Worked with multiple teams to ensure issues where resolved.
-* Handled the configuration of PGP based encryption for remote devices.
-* Working across the county individually and as part of a team.
-
 Professional certifications
 ---------------------------
 * LPIC-1 - LPI000199836 (dxaf9wwwdt) - Expires April 2015
 * LPIC-2 - LPI000199836 (84nk9rech3) - Expires April 2015
 * Certified Ethical Hacker v6 - Expired December 2013
-
-Education
----------
-### Firebrand Training
-*2010*
-
-I completed a number of courses at Firebrand to expand my knowledge on computer security and hardware
-fundamentals.
-
-This resulted in my gaining Comptia A+, CEH and LPIC level 1/2 certifications.
-
-### Rossendale School
-*2002 - 2009*
-
-I completed GCSEs in ICT (A), Mathematics (D) and key skills exams.
-
-In my spare time I also assisted in the network administration, involving a single windows server
-2003 DC, two Linux servers and around 50-70 desktops running a mix of windows 2000 and XP pro.
-
-This involved me writing numerous scripts (bat/vbs) to do simple actions such as mapping drives or
-configuring proxies via group policy.
 
 Volunteering experience
 -----------------------

@@ -8,8 +8,6 @@ Very random todo list that has previously been spread across many places.
 
 Professional
 ------------
-### 2014
-
 * Red Hat Certified System Administrator
 * Red Hat Certified Engineer
 * Red Hat Certificate of Expertise in Server Hardening
@@ -21,8 +19,6 @@ Professional
 * Cisco 200-101 (ICND2) CCNA Routing and Switching
 * Cisco 642-813 SWITCH (CCNP)
 * 642-832 TSHOOT (CCNP)
-
-### 2015
 * Red Hat Certificate of Expertise in Deployment and Systems Management
 * Red Hat Certificate of Expertise in Directory Services and Authentication
 * Red Hat Certificate of Expertise in Clustering and Storage Management
@@ -30,8 +26,6 @@ Professional
 * 642-813 SWITCH (CCNP)
 * ITIL intermediate (Service Operation/Continual Service Improvement)
 * CCIE Routing and Switching Written Exam
-
-### 2016
 * CCIE Routing and Switching Lab Exam
 * CCDP
 * ITIL intermediate (Operational Support and Analysis/Release, Control and Validation)
