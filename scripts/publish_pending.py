@@ -7,6 +7,7 @@ import time
 import yaml
 import re
 import os
+import smtplib
 
 source_dirs = ['content/_drafts/singles/']
 target_dir = 'content/_posts/'
@@ -111,7 +112,7 @@ def publish(file_path, block_data, post_data):
     git_message = 'Publishing %s from drafts to content' % target_post_name.replace("'", "\\'")
     os.system('git commit -m \'%s\'' % git_message)
 
-    return True
+    return target_file_path
 
 if __name__ == '__main__':
     has_publish = False
@@ -127,3 +128,14 @@ if __name__ == '__main__':
 
                 if has_publish:
                     break # First loop
+
+    if has_publish:
+        try:
+            server = smtplib.SMTP('localhost')
+            server.set_debuglevel(1)
+            msg = "From: publish_pending@damianzaremba.co.uk\r\nTo: damian@damianzaremba.co.uk\r\n"
+            msg += "Subject: New post published\r\n\r\n%s" % has_publish
+            server.sendmail("publish_pending@damianzaremba.co.uk", "damian@damianzaremba.co.uk", msg)
+            server.quit()
+        except:
+            pass

@@ -17,7 +17,7 @@ getdeps:
 	# YUI Compressor
 	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)')
 	# SSH wrapper
-	test -f _temp/ssh || (echo 'exec ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $*' > _temp/ssh; chmod 755 _temp/ssh)
+	test -f _temp/ssh || (echo 'exec ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $$*' > _temp/ssh; chmod 755 _temp/ssh)
 
 stage: update compile minify clone stash
 
@@ -45,7 +45,9 @@ clone:
 	test -d "_live" || GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
-	test -d _site && rm -rf _site; exit 0
+	test -d _site && rm -rf _site || true
+	test -d _live && rm -rf _live || true
+	test -d _temp && rm -rf _temp || true
 
 minify:
 	# Js/CSS
@@ -59,6 +61,9 @@ minify:
 stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
 	cd _live/ && touch .nojekyll
+
+push_source:
+	GIT_SSH=_temp/ssh git push origin master
 
 push:
 	cd _live/ && \
@@ -123,4 +128,5 @@ update:
 
 publishpending_script:
 	./scripts/publish_pending.py
-publishpending: publishpending_script install
+
+publishpending: getdeps publishpending_script push_source install
