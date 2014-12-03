@@ -13,9 +13,11 @@ all: compile
 getdeps:
 	test -d _temp || mkdir -p _temp; exit 0
 	# HTML Compressor
-	test -f '$(HTML_COMPRESSOR_TARGET)' || wget '$(HTML_COMPRESSOR_URL)' -O '$(HTML_COMPRESSOR_TARGET)' || (rm -f '$(HTML_COMPRESSOR_TARGET)'; exit 1)
+	test -f '$(HTML_COMPRESSOR_TARGET)' || wget '$(HTML_COMPRESSOR_URL)' -O '$(HTML_COMPRESSOR_TARGET)' || (rm -f '$(HTML_COMPRESSOR_TARGET)')
 	# YUI Compressor
-	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)'; exit 1)
+	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)')
+	# SSH wrapper
+	test -f _temp/ssh || (echo 'exec ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $*' > _temp/ssh; chmod 755 _temp/ssh)
 
 stage: update compile minify clone stash
 
@@ -63,7 +65,7 @@ push:
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
 			git ls-files --deleted | while read file; do if [ "$$file" != "" ]; then git rm -rf "$$file"; fi; done && \
 			git add . && \
-			(git commit -am "Auto updated site" && git push origin master; exit 0); \
+			(git commit -am "Auto updated site" && GIT_SSH=../_temp/ssh git push origin master; exit 0); \
 		fi
 
 cacheclear:
