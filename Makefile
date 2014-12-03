@@ -11,7 +11,7 @@ HTML_COMPRESSOR_TARGET := _temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
 all: compile
 
 getdeps:
-	test -d _temp || mkdir -p _temp; exit 0
+	test -d _temp || mkdir -p _temp
 	# HTML Compressor
 	test -f '$(HTML_COMPRESSOR_TARGET)' || wget '$(HTML_COMPRESSOR_URL)' -O '$(HTML_COMPRESSOR_TARGET)' || (rm -f '$(HTML_COMPRESSOR_TARGET)')
 	# YUI Compressor
@@ -42,7 +42,7 @@ clone:
 	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
 
 	# Clone if it doesn't exist
-	test -d "_live" || git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
+	test -d "_live" || GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
 	test -d _site && rm -rf _site; exit 0
@@ -63,8 +63,7 @@ stash:
 push:
 	cd _live/ && \
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
-			git ls-files --deleted | while read file; do if [ "$$file" != "" ]; then git rm -rf "$$file"; fi; done && \
-			git add . && \
+			git add --all . && \
 			(git commit -am "Auto updated site" && GIT_SSH=../_temp/ssh git push origin master; exit 0); \
 		fi
 
