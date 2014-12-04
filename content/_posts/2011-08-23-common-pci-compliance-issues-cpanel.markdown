@@ -58,7 +58,7 @@ ServerTokens Prod
 FileETag None
 {% endhighlight %}
 
-Also diable the TRACE method. To do this go into WHM -> Service configuration -> Apache -> Global configuration and set TraceEnable to off.
+Also disable the TRACE method. To do this go into WHM -> Service configuration -> Apache -> Global configuration and set TraceEnable to off.
 
 Notes:
 Passing a PCI scan does not mean your server is secure. It means you have passed the very small set of tests they have available.

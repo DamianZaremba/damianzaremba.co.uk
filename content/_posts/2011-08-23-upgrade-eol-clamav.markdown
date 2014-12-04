@@ -32,6 +32,6 @@ To upgrade ClamAV on a RHEL based system perform the following:
 2. yum install srpm unzip
 3. CFLAGS="-O0" ./configure --disable-zlib-vcheck
 4. make && make install
-5. Update /usr/local/etc/clamd.conf (notably removing the "Example" line and un-commenting the TCP socket line).
+5. Update /usr/local/etc/clamd.conf (notably removing the "Example" line and uncommenting the TCP socket line).
 
 ClamAV should now work once again.

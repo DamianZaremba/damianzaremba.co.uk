@@ -11,7 +11,7 @@ So I've been playing with Python a lot recently and it is just so amazing!
 
 Here are some quick example that all took less than 10mins to write:
 
-SMTP proxy to allow you to connect to a server via the specified port and it be silently forwarded to another server on another port! (Note it's a bad idea to use localhost as it will make you an open proxy)
+SMTP proxy to allow you to connect to a server via the specified port and have it silently forwarded to another server on another port! (Note: it's a bad idea to use localhost as it will make you an open proxy)
 {% highlight python %}
 #!/usr/bin/python
 '''
@@ -29,7 +29,7 @@ smtpd.PureProxy(('localhost', 2535), ('mail.damianzaremba.co.uk', 25))
 asyncore.loop()
 {% endhighlight %}
 
-Email parser to allow you to process email using a IMAP connection. This is really slow atm and would be improved massively by threading but it's still really cool and took about 10min to write!
+Email parser to allow you to process email using a IMAP connection. This is really slow currently and would be improved massively by threading but it's still really cool and took about 10min to write!
 {% highlight python %}
 #!/usr/bin/python
 '''

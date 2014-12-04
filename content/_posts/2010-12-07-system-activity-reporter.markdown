@@ -43,7 +43,7 @@ xvdb 0.92 14.90 10.14 134403952 91524480
 xvdc 0.91 12.16 10.53 109676480 95014488
 {% endhighlight %}
 
-The above output is avg history since last boot, now if your debugging a current issue on the system this probably isin't helpful to you so lets get the current values at 2 second intervals instead:
+The above output is avg history since last boot, now if your debugging a current issue on the system this probably isn't helpful to you so lets get the current values at 2 second intervals instead:
 
 {% highlight bash %}
 [root@xxx ~]# iostat -d 2

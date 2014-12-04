@@ -7,7 +7,7 @@ tags:
 - Python
 ---
 
-So I was trying to test some SELlinux stuff out on my KVM box and was getting flooded by tail -f thanks to someone trying to brute force my box (good luck by the way because a) password auth is disabled and b) root login is disabled >.>) anyway I got bored of this for about 5min then spent the next 5min writing this:
+So I was trying to test some SELlinux stuff out on my KVM box and was getting flooded by tail -f thanks to someone trying to brute force my box (good luck by the way because a) password authentication is disabled and b) root login is disabled >.>) anyway I got bored with this after about 5min and then spent the next 5min writing this:
 {% highlight python %}
 #!/usr/bin/python
 import os
@@ -40,7 +40,7 @@ if ip in bannedHosts:
  continue
 
 if ip in ignoredIPs:
- print "%s is an ingored ip, ignoring" % (ip)
+ print "%s is an ignored ip, ignoring" % (ip)
  continue
 
 print "%s not allready banned, banning for %s failed attempts" % (host, number)

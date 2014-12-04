@@ -15,7 +15,7 @@ Some notes about this script:
 
 
     
-  * Currently we don't store attributes in the servers entry relating to what services to monitor, this is something I'm looking at implimenting
+  * Currently we don't store attributes in the servers entry relating to what services to monitor, this is something I'm looking at implementing
 
     
   * IP addresses and SSH ports are stored in LDAP

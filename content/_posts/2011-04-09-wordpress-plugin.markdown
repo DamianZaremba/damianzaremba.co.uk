@@ -11,7 +11,7 @@ Hi to anyone that reads this.
 
 I wasn’t going to post about this as it is not something I think it neat or I should be proud of, but I seem to be getting a few links though to this blog so I thought I should post something!
 
-I recentlt was re-designing (if you can call it that) this blog and was looking to integrate mint. The plugin utilizes;
+I recently was re-designing (if you can call it that) this blog and was looking to integrate mint. The plugin utilizes;
 * admin_menu & admin_notices wordpress actions for displaying/allowing editing of settings.
 * wp_head wordpress action for outputting the mint integration code into the header.
 * rss_head, rss2_head, atom_header & the_permalink_rss wordpress actions for integration of birdfeeder.

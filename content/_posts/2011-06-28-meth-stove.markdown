@@ -111,7 +111,7 @@ Another thing that was done differently was the number of burners - this will pr
 
 ### Other
 
-I'm going to light this on thursday and see if it works fine - It might explode or work fine. I think I slightly crimped the inner wall while fitting it together.
+I'm going to light this on Thursday and see if it works fine - It might explode or work fine. I think I slightly crimped the inner wall while fitting it together.
 
 If it works fine I'll probably build another and document it better else I'll do a design review. As long as my phone doesn't die on me I'll try to get a video of lighting it which could turn out quite funny...
 

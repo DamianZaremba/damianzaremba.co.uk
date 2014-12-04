@@ -46,7 +46,7 @@ traceroute to ian.ns.cloudflare.com (173.245.59.118), 30 hops max, 60 byte packe
  7  ian.ns.cloudflare.com (173.245.59.118)  0.523 ms  0.670 ms  0.493 ms
 {% endhighlight %}
 
-Note the the DNS (ian.ns.cloudflare.com) resolves to the same IP (173.245.59.118), but the traffic goes to different routers (141.101.74.253 vs 195.66.225.179).
+Note that the DNS (ian.ns.cloudflare.com) resolves to the same IP (173.245.59.118), but the traffic goes to different routers (141.101.74.253 vs 195.66.225.179).
 
 The 'magic' here happens at the routing layer, a router will have multiple 'paths' to the IP (173.245.59.118) and chooses the best one based on its metrics.
 
@@ -59,15 +59,15 @@ Imagine you have 3 offices configured in a L2 triangle for redundancy:
 
 Your gateway is England, Scotland and Wales need to access it if either of their links fail. You also have servers in each of the offices and want to access them as fast as possible.
 
-Keeping the links at layer 2 and blocking one (via something like STP) would give you gateway redundancy - if link A failed, link B would un-block and start forwarding traffic.
+Keeping the links at layer 2 and blocking one (via something like STP) would give you gateway redundancy - if link A failed, link B would unblock and start forwarding traffic.
 
 ![]({% postfile e-s-w_triangle-l2-failover.jpeg %})
 
-The problem here is you are having to go via Scotland to access Wales from England, when they have a directly link. You can't have both links up because you'd cause a loop and no traffic would pass.
+The problem here is you are having to go via Scotland to access Wales from England, when they have a direct link. You can't have both links up because you'd cause a loop and no traffic would pass.
 
 The solution is to make both links layer 3 and use a routing protocol to advertise the ranges over the top of them - there are reasons you'd want to use layer 2, or have one layer 2 and one layer 3, this is outside the scope of this example though.
 
-I'm not going to get into how to configure a routing protocol - there are a few to choose from, for this use case it doesn't hugely matter. Lets assume both links are the same speed and are direct (1 hop away).
+I'm not going to get into how to configure a routing protocol - there are a few to choose from, for this use case it doesn't hugely matter. Let's assume both links are the same speed and are direct (1 hop away).
 
 The topology looks something like
 
@@ -77,7 +77,7 @@ This means if any of the offices want to talk to another office, they are only 1
 
 ![]({% postfile e-s-w_triangle-l3-routes-failure.jpeg %})
 
-In summary using routing between the 3 offices allows for transparent failover and best-performance access. In a more complicated topology this is very useful.
+In summary using routing between the 3 offices allows for transparent fail over and best-performance access. In a more complicated topology this is very useful.
 
 Essentially, this is also how 'Anycast' works - the main difference being is we're dealing with multiple nodes, rather than just re-advertising a single node (route). The routing doesn't care either way - it will choose the 'best' path based on what it knows about.
 
@@ -126,7 +126,7 @@ ns3	360	IN	A	172.16.0.1
 
 These NS records would then be "glued" on the root nameservers, so the first resolver can find the NS servers IP address.
 
-Now there are 2 problems with this, if you loose a server the resolver (client) will be slow to failover (probably timing out a few requests) and a user in the US might end up going to the server in APAC rather than the 'local' one to them.
+Now there are 2 problems with this, if you loose a server the resolver (client) will be slow to fail over (probably timing out a few requests) and a user in the US might end up going to the server in APAC rather than the 'local' one to them.
 
 Anycast helps to solve both these issues.
 
@@ -174,7 +174,7 @@ Once this propagates out routing will take care of sending your traffic to the r
 
 This is slightly oversimplified as there is a certain level of tuning needed to stop flapping, which can cause your updates to be delayed (due to dampening timers etc).
 
-I won't go into the BGP configuration in this post as it's a little lengthy to explain/draw how routing ables look, essentially you configure your neighbours and send them /32 routes - [cisco](http://www.cisco.com/en/US/tech/tk365/technologies_configuration_example09186a008009456d.shtml) have a nice example for configuring BGP on IOS. Be careful (use filters) when dealing with BGP/EGP protocols as you can do really weird things ;)
+I won't go into the BGP configuration in this post as it's a little lengthy to explain/draw how routing tables look, essentially you configure your neighbours and send them /32 routes - [cisco](http://www.cisco.com/en/US/tech/tk365/technologies_configuration_example09186a008009456d.shtml) have a nice example for configuring BGP on IOS. Be careful (use filters) when dealing with BGP/EGP protocols as you can do really weird things ;)
 
 The routing after we start using 'Anycast' IPs
 
