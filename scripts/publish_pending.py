@@ -112,6 +112,9 @@ def publish(file_path, block_data, post_data):
     git_message = 'Publishing %s from drafts to content' % target_post_name.replace("'", "\\'")
     os.system('git commit -m \'%s\'' % git_message)
 
+    # Push
+    os.system('git push origin master')
+
     return target_file_path
 
 if __name__ == '__main__':

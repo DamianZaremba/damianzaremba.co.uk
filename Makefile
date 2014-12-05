@@ -62,9 +62,6 @@ stash:
 	rsync -vr --exclude=.git --delete _site/ _live/
 	cd _live/ && touch .nojekyll
 
-push_source:
-	GIT_SSH=_temp/ssh git push origin master
-
 push:
 	cd _live/ && \
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
@@ -129,4 +126,4 @@ update:
 publishpending_script:
 	./scripts/publish_pending.py
 
-publishpending: getdeps publishpending_script push_source install
+publishpending: getdeps publishpending_script install
