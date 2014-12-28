@@ -20,8 +20,8 @@ Professional
 * Cisco 642-813 SWITCH (CCNP)
 * 642-832 TSHOOT (CCNP)
 * Red Hat Certificate of Expertise in Deployment and Systems Management
-* Red Hat Certificate of Expertise in Directory Services and Authentication
 * Red Hat Certificate of Expertise in Clustering and Storage Management
+* Red Hat Certified Virtualization Administrator
 * 642-902 ROUTE (CCNP)
 * 642-813 SWITCH (CCNP)
 * ITIL intermediate (Service Operation/Continual Service Improvement)
