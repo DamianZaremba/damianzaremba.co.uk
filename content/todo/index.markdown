@@ -8,13 +8,10 @@ Very random todo list that has previously been spread across many places.
 
 Professional
 ------------
-* Red Hat Certified System Administrator
+* ~~Red Hat Certified System Administrator~~
 * Red Hat Certified Engineer
 * Red Hat Certificate of Expertise in Server Hardening
 * Red Hat Certificate of Expertise in Performance Tuning
-* LPIC-303
-* LPIC-304
-* ITIL foundation
 * Cisco 100-101 (ICND1) CCENT
 * Cisco 200-101 (ICND2) CCNA Routing and Switching
 * Cisco 642-813 SWITCH (CCNP)
@@ -24,12 +21,8 @@ Professional
 * Red Hat Certified Virtualization Administrator
 * 642-902 ROUTE (CCNP)
 * 642-813 SWITCH (CCNP)
-* ITIL intermediate (Service Operation/Continual Service Improvement)
 * CCIE Routing and Switching Written Exam
 * CCIE Routing and Switching Lab Exam
-* CCDP
-* ITIL intermediate (Operational Support and Analysis/Release, Control and Validation)
-* ITIL Managing Across the Lifecycle
 * Oracle Certified Professional, MySQL 5.7(?) Database Administrator
 
 Personal
