@@ -4,16 +4,13 @@ title: Todo
 description: Damian's Todo list
 ---
 
-Very random todo list that has previously been spread across many places.
-
 Professional
 ------------
 * ~~Red Hat Certified System Administrator~~
-* Red Hat Certified Engineer
+* _[Booked]_ Red Hat Certified Engineer
 * Red Hat Certificate of Expertise in Server Hardening
 * Red Hat Certificate of Expertise in Performance Tuning
-* Cisco 100-101 (ICND1) CCENT
-* Cisco 200-101 (ICND2) CCNA Routing and Switching
+* _[Booked]_ Cisco 200-120 (CCNA)
 * Cisco 642-813 SWITCH (CCNP)
 * 642-832 TSHOOT (CCNP)
 * Red Hat Certificate of Expertise in Deployment and Systems Management
@@ -27,7 +24,6 @@ Professional
 
 Personal
 --------
-* Go free soloing on a big rock
 * Go sky diving
 * Go BASE jumping
 * Go wingsuit flying
