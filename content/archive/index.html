@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Blog Archives
-description: Damian Zaremba's Blog Archives
+title: Blog Archive
+description: Damian Zaremba's Blog Archive
 ---
 
-<ul id="archives">
+<ul id="archive">
 {% for post in site.posts %}
     {% unless post.next %}
         <h2>{{ post.date | date: '%Y' }}</h2>
