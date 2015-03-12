@@ -26,7 +26,10 @@ body > .container {
 
 .social-icons a img.github {
   width: 40px;
-  margin-right: 6px;
+}
+
+.social-icons a img.twitter {
+  width: 40px;
 }
 
 /* Footer stuff */
