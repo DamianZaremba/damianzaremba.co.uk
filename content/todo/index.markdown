@@ -24,10 +24,10 @@ Professional
 
 Personal
 --------
-* Go sky diving
+* Go skydiving
 * Go BASE jumping
-* Go wingsuit flying
-* Go highlining
+* Go wing suit flying
+* Go high lining
 * Go scuba diving
 * Spend 2+ years in Europe
 * Spend 2+ years in California
@@ -36,7 +36,6 @@ Personal
 * Attend PyCon
 * Attend DjangoCon
 * Spend a year writing a blog entry at least once a week
-* Spend a week in Vagas
 * Contribute a significant number of patches to the Linux kernel
 * Become a package maintainer for Fedora/EPEL
 * Write a Linux kernel driver from scratch
@@ -49,7 +48,7 @@ Work
 * Work for Akamai (probably one of the largest anycast networks/cdn in the world)
 * Work for Spotify (fun company, doing something new and interesting with music)
 * ~~Work on an embedded product~~
-* Build a company from nearly nothing to multi-datacenter scale
 * Work on a life changing production
 * Work on a next generation network platform
 * Work on a next generation automation platform
+* Work on core infrastructure in a multi datacenter setup at large scale

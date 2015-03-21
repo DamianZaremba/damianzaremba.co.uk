@@ -4,10 +4,13 @@ title: Projects
 description: Damian Zaremba's Projects
 ---
 
-Opensource Projects
-===================
+Many projects I have a sensible amount of time to work on are proprietary or under NDA agreements.
 
-A large number of projects I have a sensible amount of time to work on are prapiatry or under NDA agreements. This page highlights a small number of open projects.
+This page highlights a few open projects that I'm involved with, you can also find some on my
+[Github])(https://github.com/DamianZaremba?tab=repositories) profile.
+
+Projects I created
+------------------
 
 #### Puppet Sentry Plugin
 [Puppet](https://puppetlabs.com/) reporter that sends run issues to [Sentry](https://www.getsentry.com/)
@@ -19,8 +22,8 @@ Links:
 Python script to create [Nagios](http://www.nagios.org) config files for
 [Wikimedia Labs](https://wikitech.wikimedia.org/).
 
-Supports autodiscovery of instances and services (based on puppet
-manifests) as well as templating based on meta data.
+Supports auto discovery of instances and services (based on puppet
+manifests) as well as templating based on metadata.
 
 Links:
 [Source](https://github.com/DamianZaremba/labsnagiosbuilder) |
@@ -28,7 +31,7 @@ Links:
 [GitBlit](https://git.wikimedia.org/summary/labs%2Fnagios-builder)
 
 #### Trello backend for Django Social Auth
-[Trello](https://trello.com) backend for
+[Trello](https://trello.com) back end for
 [django-social-auth](https://github.com/omab/django-social-auth/).
 
 Written for [sentry-trello](https://github.com/DamianZaremba/sentry-trello), but should work with any
@@ -38,20 +41,11 @@ Links:
 [Source](https://github.com/DamianZaremba/django-social-auth-trello) |
 [Pypi](https://pypi.python.org/pypi?name=django-social-auth-trello)
 
-#### McMyAdmin WHMCS Module
-WHMCS plugin that (via MCMA) allows users to be assigned to Minecraft
-groups based on purchased products.
-
-Allows communities to give elevated game access to donors etc.
-
-Links:
-[Source](https://github.com/DamianZaremba/McMyAdmin-WHMCS)
-
 Projects I Contribute To
 ------------------------
 
 #### ClueBot NG/ClueBot III
-Currently run the ClueBot NG and ClueBot III instances on wikimedia tool labs.
+Currently run the ClueBot NG and ClueBot III instances on Wikimedia tool labs.
 
 Actively patch the bot/core/relay/report interface components to ensure it keeps running.
 
@@ -64,7 +58,7 @@ Links:
 [III Source](https://github.com/damianzaremba/cluebot3)
 
 #### Sentry
-Sentry is a realtime event logging and aggregation platform. It specializes in
+Sentry is a real-time event logging and aggregation platform. It specializes in
 monitoring errors and extracting all the information needed to do a proper
 post-mortem without any of the hassle of the standard user feedback loop.
 
@@ -95,14 +89,6 @@ Links:
 [GitBlit](https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FOpenStackManager) |
 [MediaWiki Page](http://www.mediawiki.org/wiki/Extension:OpenStackManager)
 
-#### LDAP Authentication Extension
-Provides LDAP authentication, and some authorization functionality for MediaWiki
-
-Links:
-[Gerrit](https://gerrit.wikimedia.org/r/#/q/project:mediawiki/extensions/LdapAuthentication,n,z) |
-[GitBlit](https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FLdapAuthentication) |
-[MediaWiki Page](http://www.mediawiki.org/wiki/Extension:LDAP_Authentication)
-
 #### Elevator
 Setuid wrapper that elevates a program to run as a target user.
 
@@ -110,19 +96,22 @@ Links:
 [Upstream Source](https://github.com/LukeCarrier/elevator) |
 [Working Repo](https://github.com/DamianZaremba/elevator)
 
-#### ClueMon
-Set of scripts to rebuild [SmokePing](http://oss.oetiker.ch/smokeping/) and
-[Nagios](http://www.nagios.org/) configs for [ClueNet](http://cluenet.org),
-based on a blend of LDAP and MediaWiki data.
+Proprietary Projects I Lead
+---------------------------
 
-Links:
-[Source](https://github.com/cluenet/cluemon)
+#### Multi Region, Multi AZ AWS Deployment
+Highly available e-commerce set-up using Java/PHP on the public facing aspects and Java/MSSQL/Kafka/RabbitMQ on the back end.
 
-Proprietary Projects
-====================
+Deployed in a CI/CD manner, using Bamboo/CloudFormation/Code deploy to build and update stacks in the cloud. Tested via
+Chaos monkey and bespoke JMeter/Selenium based acceptance/load tests.
+
+Monitored via Cloudwatch, New relic and Pingdom; alerting via pager duty.
+
+'Light' front ends deployed in multiple regions, back end apps deployed in a single region with multiple AZs. Front end to
+back end communication via a mesh of IPSEC based VPNs providing inter-region connectivity.
 
 #### Openstack Havana Deployment
-Deployed an isolated 3 node (2 HA controllers) Openstack Havana setup using NetApp ONTAP storage.
+Deployed an isolated 3 node (2 HA controllers) Openstack Havana set-up using NetApp ONTAP storage.
 
 Built from nothing to a full network, storage and compute implementation.
 
@@ -143,7 +132,7 @@ Logic to aggregate record stats and provide zone related stats (zone/subdomain v
 Handled >10 million DNS requests in POC stage with minimal issues.
 
 #### Hosting migration tools
-Developed a number of email and DNS migration tools for a company that was splitting away from its parent. Highly customised due to the source setup, migrated to a much more standard setup to improve on-going support.
+Developed a number of email and DNS migration tools for a company that was splitting away from its parent. Highly customised due to the source setup, migrated to a much more standard setup to improve ongoing support.
 
 Processed >15k DNS zones at the record level.
 
@@ -153,12 +142,12 @@ Developed integration with internal monitoring, auditing and ticketing systems f
 Enriched the client experience by providing always correct, up to date information about their services.
 
 #### clook.net
-Development of custom pages for the clook.net website and integration of wordpress into the bespoke php based engine. All pages are dynamic based on section (ie a single job advert can be made active or inactive by flipping a flag in the config).
+Development of custom pages for the clook.net website and integration of WordPress into the bespoke php based engine. All pages are dynamic based on section (ie a single job advert can be made active or inactive by flipping a flag in the config).
 
-Active use of the wordpress integration (http://www.clook.net/blog/) as well as other pages (http://www.clook.net/company/careers, http://www.clook.net/services/complex-solutions etc) continue to this day.
+Active use of the WordPress integration (http://www.clook.net/blog/) as well as other pages (http://www.clook.net/company/careers, http://www.clook.net/services/complex-solutions etc) continue to this day.
 
 #### FTP Enforcer
-Custom pureauth-wrapper based security system for FTP. Designed for Shared/Reseller cPanel based hosting servers.
+Custom pureauth wrapper based security system for FTP. Designed for Shared/Reseller cPanel based hosting servers.
 
 Provides a cPanel and WHM interface, empowering end users and resellers alike to manage their FTP security.
 
@@ -189,11 +178,6 @@ An Exchange 2010 custom transport agent, designed to rewrite all inbound and out
 Functionality currently provided outbound by CodeTwo, which doesn't support Inbound rewriting and is rather quite flaky.
 
 Never deployed outside of a test setup.
-
-#### Bacula Meta Restore
-Developed a set of tools to restore meta data from Bacula. Main target focus was file permission/ownership information to aid in the fast restore of service post client 'accidents', without having to revert the file contents.
-
-Surprisingly useful in a hosting provider environment.
 
 #### Openfire DL based roster
 Developed a bespoke roster management system for Openfire based on business requirements.

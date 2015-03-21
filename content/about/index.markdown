@@ -15,29 +15,8 @@ Damian's skills include Linux (OS level debugging, performance tuning etc.), lay
 
 Take a look at Damian's [CV](/cv) for more information and work experience.
 
-A few places that Damian can be found online are below
-
 [![Twitter](/assests/images/logos/twitter.png)](http://twitter.com/DamianZaremba)
 [![Facebook](/assests/images/logos/facebook.png)](http://facebook.com/DamianZaremba)
 [![LastFM](/assests/images/logos/lastfm.png)](http://lastfm.com/user/DamianZaremba4)
 [![LinkedIn](/assests/images/logos/linkedin.png)](http://uk.linkedin.com/in/damianzaremba)
 [![YouTube](/assests/images/logos/youtube.png)](http://www.youtube.com/user/DamianZaremba)
-
-Interested? What's Damian Looking For?
---------------------------------------
-Damian is looking for opportunities to work with bleeding edge technologies that
-empower the end users to achieve anything they can imagine.
-
-This breaks down into multiple levels, but essentially fits into 3 areas.
-
-### Providing technologies that are easily accessible.
-Easily usable APIs with well documented SDKs. Shared backbone of services to enable fast (decoupled) development.
-
-### Providing well designed service implementations to end users.
-For those not wanting to do development. Clean interfaces to services, ranging from internal service dashboards to design applications.
-
-### 'Real' managed service.
-Supporting infrastructure to scale a service globally. Automation, monitoring and feedback are all key areas. One of the best areas in IT, rooting back to core design principles and risk management.
-
-
-Damian would also love to be able to spend more time working on open source software and interacting with the fantastic communities around the world, even if this means just having more free time to spend on those activities.
