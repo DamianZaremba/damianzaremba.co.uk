@@ -7,7 +7,7 @@ description: Damian's Todo list
 Professional
 ------------
 * ~~Red Hat Certified System Administrator~~
-* _[Booked]_ Red Hat Certified Engineer
+* ~~Red Hat Certified Engineer~~
 * Red Hat Certificate of Expertise in Server Hardening
 * Red Hat Certificate of Expertise in Performance Tuning
 * _[Booked]_ Cisco 200-120 (CCNA)
