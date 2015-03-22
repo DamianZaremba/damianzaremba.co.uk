@@ -20,3 +20,6 @@ Take a look at Damian's [CV](/cv) for more information and work experience.
 [![LastFM](/assests/images/logos/lastfm.png)](http://lastfm.com/user/DamianZaremba4)
 [![LinkedIn](/assests/images/logos/linkedin.png)](http://uk.linkedin.com/in/damianzaremba)
 [![YouTube](/assests/images/logos/youtube.png)](http://www.youtube.com/user/DamianZaremba)
+
+![RHCSA](/assests/images/logos/rhcsa.png)
+![RHCE](/assests/images/logos/rhce.png)
