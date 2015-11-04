@@ -17,6 +17,7 @@ excerpt_separator:
 
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
 
 tag_dir: tag
 tag_title_prefix: Archive for

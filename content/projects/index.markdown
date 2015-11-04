@@ -7,7 +7,7 @@ description: Damian Zaremba's Projects
 Many projects I have a sensible amount of time to work on are proprietary or under NDA agreements.
 
 This page highlights a few open projects that I'm involved with, you can also find some on my
-[Github])(https://github.com/DamianZaremba?tab=repositories) profile.
+[Github](https://github.com/DamianZaremba?tab=repositories) profile.
 
 Projects I created
 ------------------

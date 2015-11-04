@@ -13,7 +13,7 @@ module Jekyll
         priority :lowest
 
         def generate(site)
-            site.posts.each do |post|
+            site.posts.docs.each do |post|
                 postfile_id = post.id.gsub(/(\d{4})\/(\d\d)\/(.*)/, '\1-\2-\3')
                 postfile_dir = File.expand_path(File.join(site.config['source'], '_postfiles', postfile_id))
 

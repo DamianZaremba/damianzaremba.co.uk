@@ -3,3 +3,4 @@ _live
 _temp
 *~
 *.py[co]
+.jekyll-metadata
