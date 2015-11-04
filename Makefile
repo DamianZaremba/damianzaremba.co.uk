@@ -21,7 +21,7 @@ getdeps:
 
 stage: update compile minify clone stash
 
-install: stage check_git push cacheclear
+install: stage check_git push cacheclear primecache
 
 build: update compile minify
 
@@ -147,6 +147,9 @@ update:
 	else \
 		echo "Working directory dirty, not committing CV"; \
 	fi
+
+primecache:
+	./scripts/prime_cache.py
 
 publishpending_script:
 	./scripts/publish_pending.py
