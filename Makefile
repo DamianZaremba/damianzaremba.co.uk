@@ -78,12 +78,14 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	if [ "`cd _live/ && git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2`" -gt 100 ]; then \
+	@if [ "`cd _live/ && git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | wc -l`" -gt 90 ]; then \
+		echo "Large change: purging whole zone"; \
 		curl https://www.cloudflare.com/api_json.html \
 			-d 'a=fpurge_ts' \
 			-d 'tkn='`cat ~/.cloudflare.token` \
 			-d 'email=damian@damianzaremba.co.uk' \
 			-d 'z=damianzaremba.co.uk' \
+			-d 'v=1'; \
 	else \
 		cd _live/ && \
 		git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | while read path; \
