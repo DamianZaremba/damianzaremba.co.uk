@@ -26,7 +26,11 @@ install: stage check_git push cacheclear
 build: update compile minify
 
 check_git:
-	@git diff --exit-code &> /dev/null || (echo "[!! Un-comitted git changes !!]"; git status --porcelain; exit 1)
+	@if [ ! -z "`git status --porcelain`" ]; then \
+		echo "[!! Un-comitted git changes !!]"; \
+		git status --porcelain; \
+		exit 1; \
+	fi
 
 compile: getdeps
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
@@ -103,25 +107,25 @@ update:
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
 
 	# Write out the header
-	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
-	echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
 
 	# Cat in the main stuff ignoring the header crap
-	tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
-	rm -f /tmp/github-damianzaremba-cv-readme
+	@tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
+	@rm -f /tmp/github-damianzaremba-cv-readme
 
 	# Write out the footer
-	echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
+	@echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
 
 	# Copy over if new
-	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
+	@if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
 	then \
 		echo "Updating CV"; \
 		mv /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown; \
@@ -133,6 +137,13 @@ update:
 	# Cleanup
 	rm -f /tmp/github-damianzaremba-cv-readme.markdown.new.diff
 	rm -f /tmp/github-damianzaremba-cv-readme.markdown.current.diff
+
+	# Commit the update if the working dir is clean
+	@if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ]; then \
+		git commit -m "Updating CV from source" content/cv/index.markdown; \
+	else \
+		echo "Working directory dirty, not committing CV"; \
+	fi
 
 publishpending_script:
 	./scripts/publish_pending.py
