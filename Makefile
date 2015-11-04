@@ -21,9 +21,12 @@ getdeps:
 
 stage: update compile minify clone stash
 
-install: stage push cacheclear
+install: stage check_git push cacheclear
 
 build: update compile minify
+
+check_git:
+	@git diff --exit-code &> /dev/null || (echo "[!! Un-comitted git changes !!]"; git status --porcelain; exit 1)
 
 compile: getdeps
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
@@ -71,18 +74,26 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	cd _live/ && \
-	git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | while read path; \
-	do \
-		echo "Clearing cache for $$path" && \
+	if [ "`cd _live/ && git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2`" -gt 100 ]; then \
 		curl https://www.cloudflare.com/api_json.html \
-			-d 'a=zone_file_purge' \
+			-d 'a=fpurge_ts' \
 			-d 'tkn='`cat ~/.cloudflare.token` \
 			-d 'email=damian@damianzaremba.co.uk' \
 			-d 'z=damianzaremba.co.uk' \
-			-d 'url=http://damianzaremba.co.uk/'$$path; \
-		echo; echo; \
-	done
+	else \
+		cd _live/ && \
+		git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | while read path; \
+		do \
+			echo "Clearing cache for $$path" && \
+			curl https://www.cloudflare.com/api_json.html \
+				-d 'a=zone_file_purge' \
+				-d 'tkn='`cat ~/.cloudflare.token` \
+				-d 'email=damian@damianzaremba.co.uk' \
+				-d 'z=damianzaremba.co.uk' \
+				-d 'url=http://damianzaremba.co.uk/'$$path; \
+			echo; echo; \
+		done \
+	fi
 
 update:
 	# Make sure the dir exists
