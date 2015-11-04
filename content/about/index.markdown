@@ -15,11 +15,11 @@ Damian's skills include Linux (OS level debugging, performance tuning etc.), lay
 
 Take a look at Damian's [CV](/cv) for more information and work experience.
 
-[![Twitter](/assests/images/logos/twitter.png)](http://twitter.com/DamianZaremba)
-[![Facebook](/assests/images/logos/facebook.png)](http://facebook.com/DamianZaremba)
-[![LastFM](/assests/images/logos/lastfm.png)](http://lastfm.com/user/DamianZaremba4)
-[![LinkedIn](/assests/images/logos/linkedin.png)](http://uk.linkedin.com/in/damianzaremba)
-[![YouTube](/assests/images/logos/youtube.png)](http://www.youtube.com/user/DamianZaremba)
+[![Twitter]({% cdn_url /assests/images/logos/twitter.png %})](http://twitter.com/DamianZaremba)
+[![Facebook]({% cdn_url /assests/images/logos/facebook.png %})](http://facebook.com/DamianZaremba)
+[![LastFM]({% cdn_url /assests/images/logos/lastfm.png %})](http://lastfm.com/user/DamianZaremba4)
+[![LinkedIn]({% cdn_url /assests/images/logos/linkedin.png %})](http://uk.linkedin.com/in/damianzaremba)
+[![YouTube]({% cdn_url /assests/images/logos/youtube.png %})](http://www.youtube.com/user/DamianZaremba)
 
-![RHCSA](/assests/images/logos/rhcsa.png)
-![RHCE](/assests/images/logos/rhce.png)
+![RHCSA]({% cdn_url /assests/images/logos/rhcsa.png %})
+![RHCE]({% cdn_url /assests/images/logos/rhce.png %})
