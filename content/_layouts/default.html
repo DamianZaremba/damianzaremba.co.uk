@@ -19,8 +19,8 @@
     <meta name="robots" content="INDEX,FOLLOW" />
 
     <!-- CSS files -->
-    <link href="{{ cdn_url }}/assests/css/bootstrap.min.css?v1" rel="stylesheet">
-    <link href="{{ cdn_url }}/assests/css/main.css?v1" rel="stylesheet">
+    <link href="{% cdn_url /assests/css/bootstrap.min.css %}" rel="stylesheet">
+    <link href="{% cdn_url /assests/css/main.css %}" rel="stylesheet">
 
     <!--
     RIPA NOTICE: No consent is given for the interception of this page transmission
@@ -52,13 +52,13 @@
 
             <div class="social-icons navbar-right">
               <a href="http://twitter.com/DamianZaremba">
-                <img class="twitter" src="{{ cdn_url }}/assests/images/twitter.png?v1" alt="Twitter" />
+                <img class="twitter" src="{% cdn_url /assests/images/twitter.png %}" alt="Twitter" />
               </a>
               <a href="https://github.com/DamianZaremba">
-                <img class="github" src="{{ cdn_url }}/assests/images/github.png?v1" alt="GitHub" />
+                <img class="github" src="{% cdn_url /assests/images/github.png %}" alt="GitHub" />
               </a>
               <a href="http://feeds.feedburner.com/DamianZaremba">
-                <img class="rss" src="{{ cdn_url }}/assests/images/rss.png?v1" alt="RSS" />
+                <img class="rss" src="{% cdn_url /assests/images/rss.png %}" alt="RSS" />
               </a>
             </div>
           </div>
@@ -84,8 +84,8 @@
     </footer>
 
     <!-- JS scripts -->
-    <script src="{{ cdn_url }}/assests/js/jquery.min.js?v1"></script>
-    <script src="{{ cdn_url }}/assests/js/bootstrap.min.js?v1"></script>
+    <script src="{% cdn_url /assests/js/jquery.min.js %}"></script>
+    <script src="{% cdn_url /assests/js/bootstrap.min.js %}"></script>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -113,8 +113,8 @@
     </script>
 
     <!--[if lt IE 9]>
-      <script src="{{ cdn_url }}/assests/js/html5shiv.min.js?v1"></script>
-      <script src="{{ cdn_url }}/assests/js/respond.min.js?v1"></script>
+      <script src="{% cdn_url /assests/js/html5shiv.min.js %}"></script>
+      <script src="{% cdn_url /assests/js/respond.min.js %}"></script>
     <![endif]-->
   </body>
 </html>

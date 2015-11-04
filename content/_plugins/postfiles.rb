@@ -15,7 +15,7 @@ module Jekyll
         def generate(site)
             site.posts.docs.each do |post|
                 postfile_id = post.id.gsub(/(\d{4})\/(\d\d)\/(.*)/, '\1-\2-\3')
-                postfile_dir = File.expand_path(File.join(site.config['source'], '_postfiles', postfile_id))
+                postfile_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', '_postfiles', postfile_id))
 
                 Dir[File.join(postfile_dir, '/*')].each{|pf|
                     site.static_files << PostFile.new(site, postfile_dir, post.url, File.basename(pf))
