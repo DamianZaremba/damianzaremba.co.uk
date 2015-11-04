@@ -6,7 +6,7 @@ port: 4039
 
 markdown: rdiscount
 highlighter: pygments
-lsi: true
+lsi: false
 
 exclude: ["README.md", "get_tags.py", ".git", ".gitignore", ".gitkeep"]
 source: content
