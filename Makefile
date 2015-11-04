@@ -66,6 +66,7 @@ minify:
 		--compress-js --compress-css --remove-quotes --js-compressor yui -o _site/ _site/
 
 stash:
+	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
 	rsync -vr --exclude=.git --delete _site/ _live/
 	cd _live/ && touch .nojekyll
 
@@ -78,7 +79,7 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	@if [ "`cd _live/ && git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | wc -l`" -gt 90 ]; then \
+	@if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
 		echo "Large change: purging whole zone"; \
 		curl https://www.cloudflare.com/api_json.html \
 			-d 'a=fpurge_ts' \
@@ -88,7 +89,7 @@ cacheclear:
 			-d 'v=1'; \
 	else \
 		cd _live/ && \
-		git log --name-only --since=1.minutes --pretty=oneline -1 | tail -n+2 | while read path; \
+		git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
 		do \
 			echo "Clearing cache for $$path" && \
 			curl https://www.cloudflare.com/api_json.html \
@@ -149,8 +150,12 @@ update:
 	fi
 
 primecache:
-	./scripts/prime_cache.py
-
+	if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+		./scripts/prime_cache.py --full; \
+	else \
+		files=$(git diff --name-only $(LIVE_SHA1_PRE)...HEAD | tr "\n" " "); \
+		test -z "$files" || ./scripts/prime_cache.py --files $files; \
+	fi
 publishpending_script:
 	./scripts/publish_pending.py
 
