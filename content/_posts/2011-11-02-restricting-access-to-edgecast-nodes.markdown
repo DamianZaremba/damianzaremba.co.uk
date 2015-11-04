@@ -24,7 +24,7 @@ In comes mod_rewrite. Now it appears EdgeCast don't publish their IP ranges in a
 
 Linux to the rescue! First we just copy the list into a file:
 
-{% highlight bash %}
+```bash
 [damian@finnix ~]$ cat > edgecast_ranges
 Asia Hong Kong 117.18.234.0 - 117.18.234.255
 110.232.176.0 - 110.232.176.255
@@ -95,33 +95,33 @@ Other N/A 72.21.80.0 - 72.21.80.255
 117.18.237.0 - 117.18.237.255
 117.18.238.0 - 117.18.238.255
 117.18.239.0 - 117.18.239.255
-{% endhighlight %}
+```
 
 Next we need to clear out all the names etc that are randomly dumped in the file:
 
-{% highlight bash %}
+```bash
 [damian@finnix ~]$ sed -i 's/^.*\s.*\s//g' edgecast_ranges # Get rid of place names
 [damian@finnix ~]$ sed -i '/^\s*$/d' edgecast_ranges # Get rid of blank lines
-{% endhighlight %}
+```
 
 Now let's actually turn these IP ranges into something Apache can understand (they are all /24's so we can cheat):
 
-{% highlight bash %}
+```bash
 [damian@finnix ~]$ sed -i 's/^/RewriteCond %{REMOTE_ADDR} !^/g' edgecast_ranges # Add the rewrite cond
 [damian@finnix ~]$ sed -i 's/\.255$/.*$/g' edgecast_ranges # Add the wildcard
-{% endhighlight %}
+```
 
 Now let's create the actual htaccess file:
 
-{% highlight bash %}
+```bash
 [damian@finnix ~]$ echo 'RewriteEngine On' >> .htaccess
 [damian@finnix ~]$ cat edgecast_ranges >> .htaccess
 [damian@finnix ~]$ echo 'RewriteRule ^downloads/(.*)$ http://media.example.com/$1 [R,L]' >> .htaccess
-{% endhighlight %}
+```
 
 You should end up with something looking like this:
 
-{% highlight bash %}
+```bash
 RewriteEngine On
 RewriteCond %{REMOTE_ADDR} !^117.18.234.*$
 RewriteCond %{REMOTE_ADDR} !^110.232.176.*$
@@ -192,7 +192,7 @@ RewriteCond %{REMOTE_ADDR} !^117.18.237.*$
 RewriteCond %{REMOTE_ADDR} !^117.18.238.*$
 RewriteCond %{REMOTE_ADDR} !^117.18.239.*$
 RewriteRule ^downloads/(.*)$ http://media.example.com/$1 [R,L]
-{% endhighlight %}
+```
 
 If you browse to http://example.com/downloads/ you should be redirected to http://media.example.com/ unless you are coming from an Edgecast IP range.
 

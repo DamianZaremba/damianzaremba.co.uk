@@ -10,7 +10,8 @@ tags:
 ---
 
 So on one of my many servers that sit around doing nothing all day I have KVM installed, recently I've been playing about with this quite a bit. Still trying to figure out libvirt and the api to it which is like a black hole when it comes to documented functions as the Python classes (which is what I'm using) are generated pretty much straight off the C api stuff. Anyway as I was playing with that and rrdtool trying to make a cool graphing utility, I got bored with having to type loads to install a new dom. So thanks to the power of lighttpd to serve my kickstats, virt-install to do the leg work and the amazing thing called lvm I hacked up a bash script to do the hard work for me. Find it as follows:
-{% highlight bash %}
+
+```bash
 #!/bin/bash
 VG='/dev/virtual_disks'
 KS_ADDR='http://192.168.100.1:5843/kickstarts'
@@ -81,10 +82,11 @@ case "$1" in
  exit 2
  ;;
 esac
-{% endhighlight %}
+```
 
 Example usage:
-{% highlight bash %}
+
+```bash
 [root@virtual1 ~]# ./vm_install.sh fedora 50 1024 CharityHosting1 basic
 Installing vm CharityHosting1 with 50G disk and 1024 ram allocation passing kernel arguments 'auto=true hostname=CharityHosting1 domain='' ks=http://192.168.100.1:5843/kickstarts/fedora_basic.ks'
  Logical volume "CharityHosting1" created
@@ -96,7 +98,7 @@ Creating domain... | 0 B 00:00
 Domain installation still in progress. You can reconnect to
 the console to complete the installation process.
 :0
-{% endhighlight %}
+```
 
 The :0 thrown out at the end is the VNC port you can connect to which is pretty much the console on the vm. Bear in mind this does very very little validation, if a domain is already defined it will error out at that stage so your pretty safe but for example if you tell it to use a lvm that already exists it will error but carry on installing and wipe everything off :-)
 
@@ -110,7 +112,8 @@ The other thing I do along side this is make dnsmasq hand out "static" ips to se
 
 Setup for dnsmasq/the script to make the assignments static are as follows:
 DNSMASQ config:
-{% highlight text %}
+
+```text
 domain-needed
 bogus-priv
 strict-order
@@ -120,10 +123,11 @@ except-interface=lo
 dhcp-range=192.168.100.2,192.168.100.254
 dhcp-lease-max=253
 conf-dir=/etc/dnsmasq.d/
-{% endhighlight %}
+```
 
 /root/fix_leases.py script (this runs every 2min)
-{% highlight python %}
+
+```python
 #!/usr/bin/python
 import os
 leases = {}
@@ -177,7 +181,7 @@ for mac in new_leases:
 hosts.close()
 print "Updating done :)"
 os.system('service dnsmasq reload')
-{% endhighlight %}
+```
 
 To make the above work I run dnsmasq outside of libvirt which is not the default (you have to enable dhcp in libvirt to do it) but it works pretty well for me, just have to clear the leases out every now and then ;-)
 

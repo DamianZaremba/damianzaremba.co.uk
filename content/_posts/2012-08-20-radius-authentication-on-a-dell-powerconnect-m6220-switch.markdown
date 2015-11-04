@@ -21,10 +21,11 @@ I also had to setup some Dell PowerConnect M6220 switches; these proved to be
 slightly more complicated than the HP's, but followed the Cisco style config.
 
 First we need add a custom login and enable method
-{% highlight text %}
+
+```text
 aaa authentication login "LineName" radius local
 aaa authentication enable "LineName" none
-{% endhighlight %}
+```
 
 These are used for connections over SSH - "LineName" can be anything, I tend to
 use the company name to keep things standard.
@@ -34,27 +35,30 @@ password to enter enable mode. Personally I control the login mode from the
 RADIUS server and find having to enter a password to get to enable again a hassle.
 
 Next we need to setup the RADIUS server
-{% highlight text %}
+
+```text
 radius-server host auth serverIpHere
 name "server1"
 usage login
 key "SecretKeyHere"
 exit
-{% endhighlight %}
+```
 
 Now we just need to configure the ssh line to use our aaa methods
-{% highlight text %}
+
+```text
 login authentication LineName
 enable authentication LineName
-{% endhighlight %}
+```
 
 Once complete you should be able to login via ssh using your RADIUS details.
 
 If you require access to the switch over http(s) you can also configure the HTTP
 server to authenticate against RADIUS
-{% highlight text %}
+
+```text
 ip http authentication radius local
 ip https authentication radius local
-{% endhighlight %}
+```
 
 We include local on every method to ensure we don't get locked out the switch.

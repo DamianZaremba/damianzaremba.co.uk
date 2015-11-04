@@ -26,7 +26,7 @@ and having Gunicorn start, rather harder than it needed to be.
 
 For the purposes of this post my WSGI application is the example Flask app;
 
-{% highlight python %}
+```python
 # myapp.wsgi
 from flask import Flask
 
@@ -38,11 +38,11 @@ def hello():
 
 if __name__ == "__main__":
 	application.run()
-{% endhighlight %}
+```
 
 Now, to get this running under Gunicorn we need to create a custom application
 
-{% highlight python %}
+```python
 # myapp.mycustomapplication
 from gunicorn.app.base import Application
 from gunicorn import util
@@ -80,7 +80,7 @@ class MyCustomApplication(Application):
         Imports our application and returns it to be run.
         '''        
         return util.import_app("myapp.wsgi")
-{% endhighlight %}
+```
 
 As far as I can tell the minimum methods you can define is 3;
 
@@ -94,7 +94,7 @@ app runs!
 To run the application we just need to initialize the MyCustomApplication
 class, passing any options as required.
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # myapp.run
 
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     }
 
     MyCustomApplication(options).run()
-{% endhighlight %}
+```
 
 In practice you'd probably load the options from a config file in your program.
 

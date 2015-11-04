@@ -16,7 +16,7 @@ a quicker and more reliable script than cPanel's built in utility is as below.
 
 This is based off notes in [this thread](http://forums.cpanel.net/f5/clone-server-server-b-35046-p4.html), with some reworked parts.
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 # Before running this script setup ssh access to the target server
 # so that 'passwordless' ssh may be accomplised (via ssh-agent or such.)
@@ -168,7 +168,7 @@ rsync $RSYNCARGS -e "ssh $SSHARGS" \
 rsync $RSYNCARGS -e "ssh $SSHARGS" \
 	/home \
 	$TARGETHOST:/
-{% endhighlight %}
+```
 
 Now onto common issues.
 

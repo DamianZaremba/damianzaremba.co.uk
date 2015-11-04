@@ -12,13 +12,13 @@ After some serious [seeding action](http://seven.centos.org/2014/07/guess-whats-
 
 As it happens I installed a new MSI Wind Box with CentOS 6.5 yesterday:
 
-{% highlight bash %}
+```bash
 [root@pingu ~]# cat /etc/redhat-release
 CentOS release 6.5 (Final)
 
 [root@pingu ~]# uptime
  20:57:41 up 22:57,  1 user,  load average: 0.00, 0.04, 0.05
-{% endhighlight %}
+```
 
 For the first time, there is a supported path for upgrading RHEL 6 to RHEL 7. Previously this would have been a reinstall.
 
@@ -29,7 +29,7 @@ Since I have a new box that's not anywhere near production, what the hell... let
 First update to the latest CentOS 6 release
 -------------------------------------------
 
-{% highlight bash %}
+```bash
 [root@pingu ~]# yum update
 Loaded plugins: downloadonly, fastestmirror, security
 Loading mirror speeds from cached hostfile
@@ -83,7 +83,7 @@ Loading mirror speeds from cached hostfile
  * extras: centos.hyve.com
  * updates: centos.hyve.com
 No packages marked for update
-{% endhighlight %}
+```
 
 
 Install the upgrade utils
@@ -92,7 +92,7 @@ Install the upgrade utils
 These are still very much in dev and may explode all the things.
 See [http://lists.centos.org/pipermail/centos-devel/2014-July/011277.html](http://lists.centos.org/pipermail/centos-devel/2014-July/011277.html) for details.
 
-{% highlight bash %}
+```bash
 [root@pingu ~]# yum localinstall http://dev.centos.org/centos/6/upg/x86_64/Packages/preupgrade-assistant-1.0.2-33.el6.x86_64.rpm http://dev.centos.org/centos/6/upg/x86_64/Packages/preupgrade-assistant-contents-0.5.13-1.el6.noarch.rpm http://dev.centos.org/centos/6/upg/x86_64/Packages/python-rhsm-1.9.7-1.el6.x86_64.rpm http://dev.centos.org/centos/6/upg/x86_64/Packages/redhat-upgrade-tool-0.7.22-1.el6.noarch.rpm
 Loaded plugins: downloadonly, fastestmirror, security
 Setting up Local Package Process
@@ -224,12 +224,12 @@ Dependency Installed:
   pcre-devel.x86_64 0:7.8-6.el6            python-simplejson.x86_64 0:2.0.9-3.1.el6  zlib-devel.x86_64 0:1.2.3-29.el6        
 
 Complete!
-{% endhighlight %}
+```
 
 Check for potential problems
 ----------------------------
 
-{% highlight bash %}
+```bash
 [root@pingu ~]# preupg
 Preupg tool doesn't do the actual upgrade.
 Please ensure you have backed up your system and/or data in the event of a failed upgrade
@@ -456,7 +456,7 @@ Tarball with results is stored here /root/preupgrade-results/preupg_results-1407
 The latest assessment is stored in directory /root/preupgrade .
 Upload results to UI by command:
 e.g. preupg -u http://127.0.0.1:8099/submit/ -r /root/preupgrade-results/preupg_results-*.tar.gz .
-{% endhighlight %}
+```
 
 Hopefully everything looks ok and you can continue with the upgrade.
 
@@ -466,12 +466,14 @@ Run the upgrade
 This tool basically downloads a custom kernel which does the actual upgrade.
 
 This should work
-{% highlight bash %}
+
+```bash
 redhat-upgrade-tool-cli http://mirror.bytemark.co.uk/centos/7/os/x86_64/
-{% endhighlight %}
+```
 
 However it fails as below
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# redhat-upgrade-tool-cli --instrepo=http://mirror.bytemark.co.uk/centos/7/os/x86_64/ --network=7 --force --disablerepo=epel
 setting up repos...
 No upgrade available for the following repos: scl
@@ -488,11 +490,12 @@ warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOK
 
 Downloading failed: The GPG keys listed for the "CentOS-7.0 - Base" repository are already installed but they are not correct for this package.
 Check that the correct key URLs are configured for this repository.
-{% endhighlight %}
+```
 
 So I thought.... ok, for now we'll trust the packages and not check the GPG keys. However there also seems to be a problem in detecting preupg.
 We ran preupg first, to check the system however the upgrade tool thinks we havn't and fails as below
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# redhat-upgrade-tool-cli --instrepo=http://mirror.bytemark.co.uk/centos/7/os/x86_64/ --network=7 --nogpgcheck
 setting up repos...
 base                                                                                                                             | 3.6 kB     00:00     
@@ -510,10 +513,11 @@ No upgrade available for the following repos: scl
 .treeinfo                                                                                                                        | 1.1 kB     00:00     
 preupgrade-assistant has not been run.
 To perform this upgrade, either run preupg or run redhat-upgrade-tool --force
-{% endhighlight %}
+```
 
 I finally ended up disabling both GPG encryption and forcing the run (to skip the preupg)
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# redhat-upgrade-tool-cli --instrepo=http://mirror.bytemark.co.uk/centos/7/os/x86_64/ --network=7 --force --nogpgcheck
 setting up repos...
 No upgrade available for the following repos: scl
@@ -530,12 +534,13 @@ rpm transaction 100% [==========================================================
 rpm install 100% [=====================================================================================================================================]
 setting up system for upgrade
 Finished. Reboot to start upgrade.
-{% endhighlight %}
+```
 
 Booom - we're getting somewhere. Now we reboot into the kernel that has been installed.
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# reboot
-{% endhighlight %}
+```
 
 At this point go get a cup of tea or something - the upgrade kernel basically downloads all the required packages from yum and then reboots into a working system.
 
@@ -543,22 +548,24 @@ The system booted up!
 ---------------------
 
 Since there isn't a SCL repo for 7 yet - we need to clean this up
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# rm -f /etc/yum.repos.d/CentOS-SCL.repo
-{% endhighlight %}
+```
 
 I also have EPEL installed on this server - lets fix that up.....
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 http://mirror.bytemark.co.uk/fedora/epel/RPM-GPG-KEY-EPEL-7
 [root@pingu ~]# sed -i 's/6/7/g' /etc/yum.repos.d/epel.repo 
-{% endhighlight %}
+```
 
 Update packages
 ---------------
 
 At this point CentOS 7 should update cleanly
 
-{% highlight bash %}
+```bash
 [root@pingu ~]# yum update
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
@@ -659,18 +666,20 @@ Updated:
   python-simplejson.x86_64 0:3.3.3-1.el7   
 
 Complete!
-{% endhighlight %}
+```
 
 Let's reboot once more to make sure things are all cleanly started...
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# reboot
-{% endhighlight %}
+```
 
 Oh hey, it's a CentOS 7 box
-{% highlight bash %}
+
+```bash
 [root@pingu ~]# cat /etc/redhat-release 
 CentOS Linux release 7.0.1406 (Core) 
-{% endhighlight %}
+```
 
 Roundup
 -------

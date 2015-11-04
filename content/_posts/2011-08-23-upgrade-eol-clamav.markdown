@@ -10,7 +10,7 @@ tags:
 - Update
 ---
 
-{% highlight text %}
+```text
 
 ClamAV have EOL'd all their versions prior to 0.95 - if you see an error like the following then ClamAV needs an update:
  LibClamAV Warning: ***********************************************************
@@ -24,7 +24,7 @@ ClamAV have EOL'd all their versions prior to 0.95 - if you see an error like th
  LibClamAV Error: Can't load /var/lib/clamav/daily.cld: Malformed database
  ERROR: Malformed database
 
-{% endhighlight %}
+```
 
 To upgrade ClamAV on a RHEL based system perform the following:
 

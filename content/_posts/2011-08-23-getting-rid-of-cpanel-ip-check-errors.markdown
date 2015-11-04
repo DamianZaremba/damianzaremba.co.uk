@@ -19,7 +19,7 @@ It seems that apart from this warning the panel and services function fine behin
 
 The email you get though is something like the following:
 
-{% highlight text %}
+```text
 [ipcheck] Problem with DNS setup on myserver.local
 
 IMPORTANT: Do not ignore this email.
@@ -29,7 +29,7 @@ Please be sure to correct /etc/hosts as well as the 'A' entry in zone file for t
 
 Some are all of these problems can be caused by /etc/resolv.conf being setup incorrectly.
 Please check this file if you believe everything else is correct.
-{% endhighlight %}
+```
 
 The best way I find of "fixing" this is to just disable the "Ip address dns check" option in the contact manager.
 

@@ -89,7 +89,7 @@ I make no guarantee but the 2 servers are split between two data centres with mu
 
 (I currently use this to keep my TunnelBroker endpoint updated) - It could probably be done much nicer but this kinda just works.
 
-{% highlight php %}
+```php
 #!/usr/bin/php
 <?php
  $PASSWORD = "";
@@ -119,7 +119,7 @@ if(strpos($return, "That IPv4 endpoint is already in use.") !== False){
  print "\n";
  }
 ?>
-{% endhighlight %}
+```
 
 
 ##### Another example
@@ -127,7 +127,7 @@ if(strpos($return, "That IPv4 endpoint is already in use.") !== False){
 
 Basic screen scraping example (I use this to keep my Cluenet VPN endpoint updated)
 
-{% highlight php %}
+```php
 #!/usr/bin/php
 <?php
  $ACCESSKEY = "";
@@ -178,4 +178,4 @@ if(strpos($output, 'Success.') != 0){
  die('IP has not changed'."\n");
  }
 ?>
-{% endhighlight %}
+```

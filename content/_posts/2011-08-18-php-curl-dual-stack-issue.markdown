@@ -20,12 +20,14 @@ Now you would expect that if you cannot get traffic out on IPv6 that CURL would 
 A quick fix (until the datacenter gets native IPv6) is to force CURL to use ipv4 when resolving domain names. Now anyone that has looked at developing things in C with CURL will know this is really easy, however the PHP bindings don't even document that you can set the IPRESOLVE option, but you can! Yay for php...
 
 The option is CURLOPT_IPRESOLVE and the value is either CURL_IPRESOLVE_V4, CURL_IPRESOLVE_V6 or CURL_IPRESOLVE_WHATEVER. To force IPv4 just use:
-{% highlight php %}
+
+```php
 curl_setopt( $ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
-{% endhighlight %}
+```
 
 My test script in a broken state is:
-{% highlight php %}
+
+```php
 <?php
  $ch = curl_init();
  curl_setopt( $ch, CURLOPT_USERAGENT, 'ClueBot/2.0' );
@@ -46,10 +48,11 @@ My test script in a broken state is:
 
 var_dump( curl_exec( $ch ) );
 ?>
-{% endhighlight %}
+```
 
 And the test script in the fixed status is:
-{% highlight php %}
+
+```php
 <?php
  $ch = curl_init();
  curl_setopt( $ch, CURLOPT_USERAGENT, 'ClueBot/2.0' );
@@ -71,6 +74,6 @@ And the test script in the fixed status is:
 
 var_dump( curl_exec( $ch ) );
 ?>
-{% endhighlight %}
+```
 
 Simples!

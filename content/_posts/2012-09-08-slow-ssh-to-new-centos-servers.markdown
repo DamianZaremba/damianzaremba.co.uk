@@ -43,7 +43,8 @@ resolv.conf file `single-request-reopen`. This forces glibc to enter
 fallback mode straight away and kills the delay.
 
 An example of the 'patched' /etc/resolv.conf file
-{% highlight text %}
+
+```text
 # This file is managed via Puppet
 
 # Servers
@@ -54,7 +55,7 @@ nameserver 208.67.220.220
 
 # Options
 options single-request-reopen
-{% endhighlight %}
+```
 
 Now you might want to dig into your network stack a little more and make sure
 you can handle IPv6/dual stack properly but for now, problem solved!

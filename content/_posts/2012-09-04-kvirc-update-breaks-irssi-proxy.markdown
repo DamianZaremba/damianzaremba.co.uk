@@ -15,7 +15,8 @@ The update appeared to complete successfully, however on trying to connect to my
 Irssi Proxy server nothing appeared to happen.
 
 The output from the server console was something like below
-{% highlight text %}
+
+```text
 This is the first connection in this IRC context: using the global server
 setting
 Attempting connection to myirssiproxy.local (RawrIRC) on port 8000
@@ -24,7 +25,7 @@ Server hostname resolved to 10.44.1.1
 Contacting IRC server myirssiproxy.local (10.44.1.1) on port 8000
 Connection established [myirssiproxy.local (10.44.1.1:8000)]
 Local host address is 10.44.1.2
-{% endhighlight %}
+```
 
 It turns out that in 4.2.0 the servers automatically had 'Switch to SSL/TLS by
 using the STARTTLS extension' enabled.
@@ -45,13 +46,15 @@ section and each server is numbered.
 
 To disabled STARTTLS for the first server in network A, your config should look
 something like the below
-{% highlight ini %}
+
+```ini
 [A]
 0_EnabledSTARTTLS=false
-{% endhighlight %}
+```
 
 This will usually have a number of other items, a full example is below
-{% highlight ini %}
+
+```ini
 [FreeNode]
 0_Port=8000
 0_Hostname=myirssiproxy.local
@@ -68,7 +71,7 @@ NickName=MyNick
 0_RealName=MyName
 0_User=MyUser
 UserName=Damian
-{% endhighlight %}
+```
 
 This also makes it quite easy to generally manage servers in KVIrc, outside of wide
 scale settings changes.

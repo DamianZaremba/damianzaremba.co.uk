@@ -54,7 +54,7 @@ Services to be monitored:
   * kerberos
 
 
-{% highlight text %}
+```text
 
 dn: cn=hex,ou=servers,dc=cluenet,dc=org
  changetype: modify
@@ -81,13 +81,13 @@ dn: cn=hex,ou=servers,dc=cluenet,dc=org
  add: clueServiceMonitoring
  clueServiceMonitoring: kerberos
 
-{% endhighlight %}
+```
 
 This would allow the script to check for the attributes and write out the services definitions as necessary. The current solution works but is a little inflexible.
 
 Also, the Perl could do with tidying up a little as I'm not the best Perl programmer on the planet.
 
-{% highlight perl %}
+```perl
 #!/usr/bin/env perl
 use strict;
 use File::Path;
@@ -266,4 +266,4 @@ print "Finished user config\n";
 
 print "Reloading\n";
 `/etc/init.d/nagios reload`
-{% endhighlight %}
+```

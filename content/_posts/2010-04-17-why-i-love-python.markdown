@@ -12,7 +12,8 @@ So I've been playing with Python a lot recently and it is just so amazing!
 Here are some quick example that all took less than 10mins to write:
 
 SMTP proxy to allow you to connect to a server via the specified port and have it silently forwarded to another server on another port! (Note: it's a bad idea to use localhost as it will make you an open proxy)
-{% highlight python %}
+
+```python
 #!/usr/bin/python
 '''
 Meta data
@@ -27,10 +28,11 @@ import asyncore
 
 smtpd.PureProxy(('localhost', 2535), ('mail.damianzaremba.co.uk', 25))
 asyncore.loop()
-{% endhighlight %}
+```
 
 Email parser to allow you to process email using a IMAP connection. This is really slow currently and would be improved massively by threading but it's still really cool and took about 10min to write!
-{% highlight python %}
+
+```python
 #!/usr/bin/python
 '''
 Meta data
@@ -83,6 +85,6 @@ for attachment in attachments:
 MH.close()
 MH.logout()
 print emails
-{% endhighlight %}
+```
 
 Now I just need to learn Django properly and I can do some really cool socket based interfaces to things! Hopefully if I can get what I'm working on at the moment to function correctly I can reveal some cool things in the future!

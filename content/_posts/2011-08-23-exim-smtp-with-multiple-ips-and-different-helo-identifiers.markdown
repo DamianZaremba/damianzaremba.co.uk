@@ -20,12 +20,12 @@ The first thing we need to create is a custom Router, all the options are listed
 
 An example router:
 
-{% highlight text %}
+```text
 myrouter:
  driver = dnslookup
  senders = *@mydomain.com, *@*.mydomain.com
  transport = mytransport
-{% endhighlight %}
+```
 
 The senders option is a CSV list of addresses to match in the From header. These can contain regex which makes matching whole domains really easy.
 
@@ -35,12 +35,12 @@ Next we need to create a custom Transport, all the options are listed [here](htt
 
 An example transport is:
 
-{% highlight text %}
+```text
 mytransport:
  driver = smtp
  interface = 192.168.0.1
  helo_data = mail.mydomain.com
-{% endhighlight %}
+```
 
 The interface setting is the IP address this transport should be used on and the helo_data is the command to send.
 

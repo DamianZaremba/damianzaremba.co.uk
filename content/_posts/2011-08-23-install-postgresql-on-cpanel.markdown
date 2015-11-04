@@ -23,9 +23,10 @@ Now you would think that is it, right?
 Well if you already have users on the box you will now need to add them into postgre otherwise they will have no access.
 
 You can add them with the following script:
-{% highlight text %}
+
+```text
 for user in $(ls /var/cpanel/users);
 do
  su postgres -c "createuser -S -D -R $user";
 done
-{% endhighlight %}
+```

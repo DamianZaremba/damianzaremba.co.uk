@@ -11,7 +11,8 @@ tags:
 In my kickstart files I "cheat" on disk sizes and let them grow automatically rather than figuring out the size, setting it then having to manually expand it later.
 
 To do this I use the following in my kickstarts:
-{% highlight text %}
+
+```text
 %include /tmp/partinfo
 
 %pre
@@ -29,7 +30,7 @@ volgroup VolGroup00 --pesize=32768 pv.2
 logvol / --fstype ext4 --name=LogVol00 --vgname=VolGroup00 --size=1024 --grow
 logvol swap --fstype swap --name=LogVol01 --vgname=VolGroup00 --size=512 --grow --maxsize=1024
 EOF
-{% endhighlight %}
+```
 
 Basically in the pre section of the kickstart I write out the disk partition stuff using some bash/list-harddrives into a file. This is then included in the main body of the kickstart (due to the pre code being run before the main stuff this works fine).
 

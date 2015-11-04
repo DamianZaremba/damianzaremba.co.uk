@@ -22,7 +22,7 @@ As far as the 'client' is concerned, they are talking unicast (to a single node)
 
 A quick example of this happening can be seen if you traceroute to an Anycast IP address from different locations in the world as seen below
 
-{% highlight text %}
+```text
 traceroute to ian.ns.cloudflare.com (173.245.59.118), 30 hops max, 60 byte packets
  1  router1 (10.44.200.254)  15.334 ms  17.279 ms  19.183 ms
  2  host-92-23-160-1.as13285.net (92.23.160.1)  29.204 ms  32.556 ms  36.016 ms
@@ -33,9 +33,9 @@ traceroute to ian.ns.cloudflare.com (173.245.59.118), 30 hops max, 60 byte packe
  7  host-78-144-0-180.as13285.net (78.144.0.180)  42.400 ms host-78-144-0-116.as13285.net (78.144.0.116)  39.599 ms host-78-144-0-164.as13285.net (78.144.0.164)  37.310 ms
  8  195.66.225.179 (195.66.225.179)  38.239 ms  73.818 ms  72.494 ms
  9  ian.ns.cloudflare.com (173.245.59.118)  38.989 ms  37.828 ms  38.971 ms
-{% endhighlight %}
+```
 
-{% highlight text %}
+```text
 traceroute to ian.ns.cloudflare.com (173.245.59.118), 30 hops max, 60 byte packets
  1  router1-dal.linode.com (67.18.7.161)  19.229 ms  19.291 ms  19.392 ms
  2  xe-2-0-0.car03.dllstx2.networklayer.com (67.18.7.89)  0.197 ms  0.220 ms  0.202 ms
@@ -44,7 +44,7 @@ traceroute to ian.ns.cloudflare.com (173.245.59.118), 30 hops max, 60 byte packe
  5  ae16.bbr01.eq01.dal03.networklayer.com (173.192.18.224)  16.145 ms  16.138 ms  16.112 ms
  6  141.101.74.253 (141.101.74.253)  0.602 ms  0.566 ms  0.549 ms
  7  ian.ns.cloudflare.com (173.245.59.118)  0.523 ms  0.670 ms  0.493 ms
-{% endhighlight %}
+```
 
 Note that the DNS (ian.ns.cloudflare.com) resolves to the same IP (173.245.59.118), but the traffic goes to different routers (141.101.74.253 vs 195.66.225.179).
 
@@ -107,7 +107,7 @@ Imagine you where serving users out of Europe, US and Asia-Pacific.
 
 A common thing to do would be create 3 NS entries pointing to servers in each location
 
-{% highlight text %}
+```text
 myawesomedns.something.	360	IN	SOA	ns1.myawesomedns.something. root.myawesomedns.something. (1303702991 14400 14400 1209600 86400)
 
 myawesomedns.something.	360	IN	NS	ns1.myawesomedns.something.
@@ -122,7 +122,7 @@ ns2	360	IN	A	192.168.0.1
 
 ; US
 ns3	360	IN	A	172.16.0.1
-{% endhighlight %}
+```
 
 These NS records would then be "glued" on the root nameservers, so the first resolver can find the NS servers IP address.
 
@@ -146,7 +146,7 @@ Requests to ns{1..3} (192.168.0.1, 127.16.0.1, 10.0.0.1) before we start using A
 
 So lets start using Anycast, we're going to keep the original IPs as 'maintenance' IPs - ones we know only go to that single host and create a new block.
 
-{% highlight text %}
+```text
 myawesomedns.something.	360	IN	SOA	ns1.myawesomedns.something. root.myawesomedns.something. (1303702991 14400 14400 1209600 86400)
 
 myawesomedns.something.	360	IN	NS	ns1.myawesomedns.something.
@@ -166,7 +166,7 @@ srv-ns3	360	IN	A	172.16.0.1
 ns1 360 IN A 10.1.0.1
 ns2 360 IN A 10.1.0.2
 ns3 360 IN A 10.1.0.3
-{% endhighlight %}
+```
 
 10.1.0.1, 10.1.0.2 & 10.1.0.3 now need to be advertised from the EU, APAC and US routers as /32 blocks - with no summary route for 10.1.0.0 0.0.0.255. 10.1.0.1, 10.1.0.2 & 10.1.0.3 also need to be brought up on loopback interfaces on the server and the DNS server configured to bind to them.
 

@@ -9,7 +9,7 @@ tags:
 Most of been bored last night, decided to have my first bash at automation in windows using powershell, kinda impressed but now where near the level that you can get in *nix :D
 Hack of an attempt can be seen below (it works mainly but is pretty untested for the function actions as I don't have a windows server that can run hyperv, looks right per the docs though!):
 
-{% highlight powershell %}
+```powershell
 # Settings
 
 ## Email
@@ -412,6 +412,6 @@ write-host 'Run complete....'
 Start-Sleep 10
 
 }
-{% endhighlight %}
+```
 
 Anyway back to making this CSS I'm working on look half decent in IE!

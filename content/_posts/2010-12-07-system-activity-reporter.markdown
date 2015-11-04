@@ -12,7 +12,7 @@ A nice simple program is the system activity reporter or SAR.
 
 To get started you'll want to install and start sysstat, on a centos box this can be done as below:
 
-{% highlight bash %}
+```bash
 # Make sure the system is up to date
 yum update
 
@@ -24,7 +24,7 @@ chkconfig sysstat on
 
 # Start sysstat – this starts the system activity data collector
 service sysstat start
-{% endhighlight %}
+```
 
 Ok once we have sysstat installed there are a few programs we can use to get performance data, iostat and sar (there are loads of other things such as mpstat, pidstat, nfsiostat, cifsiostat etc but for this post I'll only be covering the 2). I'll give you some basic examples of what we can do with these tools but they are very extensive so I suggest that you check out the man pages (man sar + man iostat)
 
@@ -32,7 +32,7 @@ Ok once we have sysstat installed there are a few programs we can use to get per
 
 iostat is mainly for reporting CPU statistics and input/output statistics for devices/partitions. Some examples of this can be seen below:
 
-{% highlight bash %}
+```bash
 [root@xxx ~]# iostat
 Linux my.kernel.version (my.hostname) 12/07/10
 avg-cpu: %user %nice %system %iowait %steal %idle
@@ -41,11 +41,11 @@ Device: tps Blk_read/s Blk_wrtn/s Blk_read Blk_wrtn
 xvda 11.04 174.56 96.57 1575022426 871286088
 xvdb 0.92 14.90 10.14 134403952 91524480
 xvdc 0.91 12.16 10.53 109676480 95014488
-{% endhighlight %}
+```
 
 The above output is avg history since last boot, now if your debugging a current issue on the system this probably isn't helpful to you so lets get the current values at 2 second intervals instead:
 
-{% highlight bash %}
+```bash
 [root@xxx ~]# iostat -d 2
 Linux my.kernel.version (my.hostname) 12/07/10
 avg-cpu: %user %nice %system %iowait %steal %idle
@@ -64,11 +64,11 @@ Device: tps Blk_read/s Blk_wrtn/s Blk_read Blk_wrtn
 xvda 0.00 0.00 0.00 0 0
 xvdb 0.00 0.00 0.00 0 0
 xvdc 0.00 0.00 0.00 0 0
-{% endhighlight %}
+```
 
 This output actually just carries on adding a new entry every 2 seconds, to limit the entries then just specify the number as below:
 
-{% highlight bash %}
+```bash
 [root@xxx ~]# iostat -d 2 2
 Linux my.kernel.version (my.hostname) 12/07/10
 avg-cpu: %user %nice %system %iowait %steal %idle
@@ -82,11 +82,11 @@ Device: tps Blk_read/s Blk_wrtn/s Blk_read Blk_wrtn
 xvda 0.00 0.00 0.00 0 0
 xvdb 0.00 0.00 0.00 0 0
 xvdc 0.00 0.00 0.00 0 0
-{% endhighlight %}
+```
 
 As you can see this testing vm is actually currently doing nothing but if I run this on a production machine you can see why this information is helpful for spotting bottle necks etc:
 
-{% highlight bash %}
+```bash
 root@xxx:~# iostat -d 2 2
 Linux my.kernel.version (my.hostname) 12/07/10 _x86_64_
 
@@ -105,7 +105,7 @@ sdb 15.00 8.00 416.00 16 832
 sdb1 15.00 8.00 416.00 16 832
 sdc 71.00 12.00 752.00 24 1504
 sdc1 71.00 12.00 752.00 24 1504
-{% endhighlight %}
+```
 
 Yes I know I started talking about memory, cpu etc at the start of this post but you should care about your disks too! Anyway onto sar..
 
@@ -142,33 +142,33 @@ As the name suggests it's not for reporting io data, it is mainly for reporting 
 Some common things your probably want to look at;
 CPU usage:
 
-{% highlight bash %}
+```bash
 sar -u
-{% endhighlight %}
+```
 
 Memory usage:
 
-{% highlight bash %}
+```bash
 sar -r
-{% endhighlight %}
+```
 
 Load avg (and queue length):
 
-{% highlight bash %}
+```bash
 sar -q
-{% endhighlight %}
+```
 
 Now without any other options sar is going to return you information from the current sar file, to get a different days content then specify the file.
 
 Today is the 7th, say I wanted to see CPU data for yesterday I would run:
 
-{% highlight bash %}
+```bash
 sar -s -f /var/log/sa/sa06
-{% endhighlight %}
+```
 
 Now depending on what data you are requesting (please read the man page on what data you can retrive and how you can format it, I am refering to the defaults!) the output will vary, example output for CPU data is as follows:
 
-{% highlight bash %}
+```bash
 [root@xxx~]# sar -s | head
 Linux my.kernel.version (my.hostname) 12/07/10
 
@@ -180,19 +180,19 @@ Linux my.kernel.version (my.hostname) 12/07/10
 08:50:01 all 0.29 0.00 0.28 0.04 0.01 99.39
 09:00:01 all 0.21 0.00 0.26 0.02 0.01 99.50
 09:10:01 all 0.66 0.00 0.41 0.34 0.03 98.57
-{% endhighlight %}
+```
 
 **But I want some graphs!**
 Awesome, let's make some using gnuplot! We are going to use sadf, this is a program that lets us format/display sar data in different formats really easily.
 You like excel? I'm sorry to hear that, here is an example of outputting cpu idle data in csv form anyway (just to keep you happy):
 
-{% highlight bash %}
+```bash
 sadf -- -u | awk '/%idle/ {print $3","$6}'
-{% endhighlight %}
+```
 
 Anyway for those geeks among us lets make some pretty stuff in gnuplot:
 
-{% highlight bash %}
+```bash
 # Make a tmp file
 cpu_data_file=$(mktemp /tmp/cpu_data.XXX);
 # Fill the file with stuff
@@ -206,13 +206,13 @@ set xlabel 'Time';
 plot '$cpu_data_file' using 1:2 with lines title 'CPU usage';" | gnuplot
 # Remove tmp file
 rm -f $cpu_data_file
-{% endhighlight %}
+```
 
 If your not a ASCII type of guy then change set terminal dump; to set terminal png; and pipe the output to file for some nice images.
 
 If your interested then I hacked up a quick example of making graphs for displaying on the web:
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # sar_graph.sh - Makes pretty web pages from sar
@@ -325,4 +325,4 @@ echo $HTML > "$HTML_DST/index.html"
 
 # Tidy
 rm -rf "$base_dir"
-{% endhighlight %}
+```

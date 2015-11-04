@@ -14,7 +14,8 @@ I decided to re-configure my home router from scratch so that I could tidy up th
 The main reason being my old IPv6 ACLs pretty much where non-existent and before properly configuring my lan for auto assigning v6 IPs, I wanted to limit the incoming traffic.
 
 I've included an example config below with comments
-{% highlight text %}
+
+```text
 !! Basic stuff
 version 12.4
 service timestamps debug datetime msec
@@ -208,7 +209,7 @@ line vty 0 15
  transport input ssh
 !
 end
-{% endhighlight %}
+```
 
 I might update it to support VPN connections rather than tunnelling them though to a openvpn box, but openvpn + SSL certs just work for when I want lan access (not that often..). For the rest of the time just plain old SSH with a little tunnelling where needed does the job.
 One thing that does need doing is sending the system logs over to the syslog box - Currently things like NAT table overflow warnings just spam the console. Once I get a bit of time to re-configure rancid I'll start playing with the configs, for now they work just fine.

@@ -12,23 +12,26 @@ tags:
 ---
 
 To configure a HP GbE2c L2/L3 Ethernet Blade Switch for HP c-Class BladeSystem, you need to use NTP with the following syntax.
-{% highlight text %}
+
+```text
 ntp enable 
 ntp timezone 0
 ntp primary-server <ip>
 ntp secondary-server <ip>
-{% endhighlight %}
+```
 
 The first line enables NTP, the second tells the switch to use GMT+0 and the third/forth tells the switch which servers to sync with.
 
 This needs to be done in configure mode which can be got into via enable mode.
-{% highlight text %}
+
+```text
 enable
 configure
-{% endhighlight %}
+```
 
 Now ensure the switch timezone is correct, the command for this is slightly obnoxious. Below is an example of setting it to GB:
-{% highlight text %}
+
+```text
 Switch(config)# system timezone 
 Please identify a location so that time zone rules can be set correctly.
 Please select a continent or ocean.
@@ -66,16 +69,18 @@ Please select one of the following time zone regions.
 2) Northern Ireland
 #? 1 
 System timezone set to : Europe/Britain/GB
-{% endhighlight %}
+```
 
 Lastly just save the changes then logout
-{% highlight text %}
+
+```text
 copy run start
 logout
-{% endhighlight %}
+```
 
 A full example of this is below:
-{% highlight text %}
+
+```text
 Switch> en
 Switch# conf t
 Switch(config)# ntp enable
@@ -85,6 +90,6 @@ Switch(config)# ntp secondary-server 217.147.208.1
 Switch(config)# exit
 Switch# copy run start
 Switch# logout
-{% endhighlight %}
+```
 
 Your switches should now keep their time in sync :)
