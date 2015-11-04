@@ -139,7 +139,8 @@ update:
 	rm -f /tmp/github-damianzaremba-cv-readme.markdown.current.diff
 
 	# Commit the update if the working dir is clean
-	@if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ]; then \
+	@if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ] && \
+		[ ! -z "`git status --porcelain | grep content/cv/index.markdown`" ]; then \
 		git commit -m "Updating CV from source" content/cv/index.markdown; \
 	else \
 		echo "Working directory dirty, not committing CV"; \
