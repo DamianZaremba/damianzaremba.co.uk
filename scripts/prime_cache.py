@@ -57,10 +57,7 @@ if __name__ == '__main__':
     parser.add_argument('--files', nargs='+', action='store')
     args = parser.parse_args()
 
-    if args.full:
-        urls = get_urls(args.full)
-    else:
-        urls = get_urls(args.full, args.files)
+    urls = get_urls(args.full, args.files)
 
     print('Priming %d urls' % len(urls))
     Pool(100).map(fetch_url, urls)
