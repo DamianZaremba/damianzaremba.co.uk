@@ -8,7 +8,7 @@ module Jekyll
 		end
 
 		def render(context)
-			uri = URI(@text)
+			uri = URI(@text.strip)
 
 			cdn_url = context.registers[:site].config['cdn_url'].gsub(/\/$/, '')
 			file = File.expand_path(File.join(File.dirname(__FILE__), '..', uri.path))
