@@ -154,7 +154,7 @@ primecache:
 		./scripts/prime_cache.py --full; \
 	else \
 		files=$(git diff --name-only $(LIVE_SHA1_PRE)...HEAD | tr "\n" " "); \
-		test -z "$files" || ./scripts/prime_cache.py --files $files; \
+		test -z "$(files)" || ./scripts/prime_cache.py --files $(files); \
 	fi
 publishpending_script:
 	./scripts/publish_pending.py
