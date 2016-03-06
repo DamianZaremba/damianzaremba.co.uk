@@ -3,7 +3,7 @@ DamianZaremba.co.uk
 
 Source code for my personal site. The generated HTML is [here](https://github.com/DamianZaremba/damianzaremba.github.io/).
 
-The site is generated via Jekyll, inspired by [David Cramer](http://justcramer.com/) and uses icons from [JIGSOAR](http://www.jigsoaricons.com/). The Jekyll plugins where mostly written by others, the respective licenses/authors can be found in the files themselves in the form of comments.
+The site is generated via Jekyll, inspired by [David Cramer](http://justcramer.com/) and uses icons from [JIGSOAR](http://www.jigsoaricons.com/). The Jekyll plugins were mostly written by others, the respective licenses/authors can be found in the files themselves in the form of comments.
 
 License
 -------
