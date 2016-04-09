@@ -13,7 +13,7 @@ addons:
     - libgsl0ldbl
     - build-essential
     - wget
-script: bundle exec make install
+script: bundle exec make -s install
 env:
   global:
     secure: UINE7RMyWXxegwJeK8Aq8iMDCBg5mb/r+4nRcbg8LzQL0+mGe6bU3VBvGBKn1ILYXZQQBD9wRfGNQB3a0FaTR3bx07Dlv1cPVlSliyg6dVN022EthVM5f7MF4OKLJ0PnQ5SDA7Wd37IicIQbn+bDetYZpwizpxx3NYEszPEoCMg=

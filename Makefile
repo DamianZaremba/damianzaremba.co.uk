@@ -46,15 +46,15 @@ prod-server:
 
 clone:
 	# Remove it not a git repo
-	test -d "_live/.git" || rm -rf _live
+	test -d "_live" && (test -d "_live/.git" || rm -rf _live); exit 0
+
 	# Update if a git repo
-	@if [ -d "_live" ]; then \
-		cd _live && \
-		git reset --hard; \
-		git pull origin master; \
-	else \
-		@if [ ! -z "${GH_TOKEN}" ]; then \
-			@git clone "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" _live; \
+	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
+
+	# Clone if it doesn't exist
+	if [ ! -d "_live" ]; then \
+		if [ ! -z "${GH_TOKEN}" ]; then \
+			git clone "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" _live; \
 		else \
 			GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; \
 		fi \
@@ -80,49 +80,50 @@ stash:
 	cd _live/ && touch .nojekyll
 
 push:
-	@cd _live/ && \
+	cd _live/ && \
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; \
 		then \
 			git add --all . && \
-			git commit -am "Auto updated site" && \
-				@if [ ! -z "${GH_TOKEN}" ]; \
-				then \
-					@git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master \
-				else \
-					GIT_SSH=../_temp/ssh git push origin master; \
-				fi \
+			(git commit -am "Auto updated site" && \
+			    if [ ! -z "${GH_TOKEN}" ]; \
+			    then \
+			        git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
+			    else \
+			        GIT_SSH=../_temp/ssh git push origin master; \
+			    fi \
+            exit 0); \
 		fi
 
 cacheclear:
 	# Lazy clear the cloudflare cache
 	@if [ "$(GIT_BRANCH)" == "master" ]; then \
-		@if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-			echo "Large change: purging whole zone"; \
-			@curl https://www.cloudflare.com/api_json.html \
-				-d 'a=fpurge_ts' \
-				-d 'tkn='${CLOUDFLARE_TOKEN} \
-				-d 'email=damian@damianzaremba.co.uk' \
-				-d 'z=damianzaremba.co.uk' \
-				-d 'v=1'; \
-		else \
-			cd _live/ && \
-			git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
-			do \
-				echo "Clearing cache for $$path" && \
-				curl https://www.cloudflare.com/api_json.html \
-					-d 'a=zone_file_purge' \
-					-d 'tkn='${CLOUDFLARE_TOKEN} \
-					-d 'email=damian@damianzaremba.co.uk' \
-					-d 'z=damianzaremba.co.uk' \
-					-d 'url=http://damianzaremba.co.uk/'$$path; \
-				echo; echo; \
-			done \
-		fi \
-	fi
+        @if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+            echo "Large change: purging whole zone"; \
+            curl https://www.cloudflare.com/api_json.html \
+                -d 'a=fpurge_ts' \
+                -d 'tkn='`cat ~/.cloudflare.token` \
+                -d 'email=damian@damianzaremba.co.uk' \
+                -d 'z=damianzaremba.co.uk' \
+                -d 'v=1'; \
+        else \
+            cd _live/ && \
+            git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
+            do \
+                echo "Clearing cache for $$path" && \
+                curl https://www.cloudflare.com/api_json.html \
+                    -d 'a=zone_file_purge' \
+                    -d 'tkn='`cat ~/.cloudflare.token` \
+                    -d 'email=damian@damianzaremba.co.uk' \
+                    -d 'z=damianzaremba.co.uk' \
+                    -d 'url=http://damianzaremba.co.uk/'$$path; \
+                echo; echo; \
+            done \
+        fi \
+    fi
 
 update:
 	# Make sure the dir exists
-	test -d content/cv/ || mkdir -p content/cv/
+	test -d content/cv/ || mkdir -p content/cv/; exit 0
 
 	# Download the current README
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
