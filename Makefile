@@ -52,13 +52,7 @@ clone:
 	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
 
 	# Clone if it doesn't exist
-	if [ ! -d "_live" ]; then \
-		if [ ! -z "${GH_TOKEN}" ]; then \
-			git clone "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" _live; \
-		else \
-			GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; \
-		fi \
-	fi
+	test -d "_live" || GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
 	test -d _site && rm -rf _site || true
@@ -76,7 +70,7 @@ minify:
 
 stash:
 	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
-	rsync -vr --exclude=.git/ --exclude=.bundle/ --exclude=vendor/ --delete _site/ _live/
+	rsync -vr --exclude=.git --delete _site/ _live/
 	cd _live/ && touch .nojekyll
 
 push:
