@@ -30,7 +30,7 @@ build: update compile minify
 
 check_git:
 	cd _live/ && \
-	@if [ ! -z "`git status --porcelain`" ]; then \
+	if [ ! -z "`git status --porcelain`" ]; then \
 		echo "[!! Un-comitted git changes !!]"; \
 		git status --porcelain; \
 		exit 1; \
