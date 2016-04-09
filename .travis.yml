@@ -13,6 +13,7 @@ addons:
     - libgsl0ldbl
     - build-essential
     - wget
+script: find vendor/bundle
 script: make install
 env:
   global:
