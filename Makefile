@@ -24,8 +24,7 @@ getdeps:
 
 stage: update compile minify clone stash
 
-#install: stage check_git push cacheclear primecache
-install: stage push cacheclear primecache
+install: stage check_git push cacheclear primecache
 
 build: update compile minify
 
@@ -47,13 +46,13 @@ prod-server:
 
 clone:
 	# Remove it not a git repo
-	test -d "_live" && (test -d "_live/.git" || rm -rf _live); exit 0
+	test -d "_live" && (test -d "_live/.git" || rm -rf _live)
 
 	# Update if a git repo
-	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
+	test -d "_live" && (cd _live && (git reset --hard; git pull origin master))
 
 	# Clone if it doesn't exist
-	test -d "_live" || git clone https://github.com/DamianZaremba/damianzaremba.github.io.git _live; exit 0
+	test -d "_live" || git clone https://github.com/DamianZaremba/damianzaremba.github.io.git _live
 
 clean:
 	test -d _site && rm -rf _site || true
@@ -113,12 +112,12 @@ cacheclear:
 fi
 
 update:
-    # Setup git
-    git config --global user.email "damian@damianzaremba.co.uk"
-    git config --global user.name "Damian Zaremba"
+	# Setup git
+	git config --global user.email "damian@damianzaremba.co.uk"
+	git config --global user.name "Damian Zaremba"
 
 	# Make sure the dir exists
-	test -d content/cv/ || mkdir -p content/cv/; exit 0
+	test -d content/cv/ || mkdir -p content/cv/
 
 	# Download the current README
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
