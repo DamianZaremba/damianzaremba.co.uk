@@ -76,7 +76,7 @@ minify:
 
 stash:
 	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
-	rsync -vr --exclude=.git --delete _site/ _live/
+	rsync -vr --exclude=.git/ --exclude=.bundle/ --exclude=vendor/ --delete _site/ _live/
 	cd _live/ && touch .nojekyll
 
 push:
