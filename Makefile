@@ -36,16 +36,13 @@ check_git:
 	fi
 
 compile: getdeps
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 PATH="$(PATH):vendor/bundle/ruby/2.2.0/bin" \
-		jekyll build
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
 
 server:
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 PATH="$(PATH):vendor/bundle/ruby/2.0.0/bin" \
-		jekyll serve --watch --drafts --incremental --config _config.yml,_config_dev.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --drafts --incremental --config _config.yml,_config_dev.yml
 
 prod-server:
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 PATH="$(PATH):vendor/bundle/ruby/2.0.0/bin" \
-		jekyll serve --watch --incremental --config _config.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml
 
 clone:
 	# Remove it not a git repo
