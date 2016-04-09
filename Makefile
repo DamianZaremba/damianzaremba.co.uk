@@ -29,7 +29,7 @@ install: stage check_git push cacheclear primecache
 build: update compile minify
 
 check_git:
-	@if [ ! -z "`git status --porcelain`" ]; then \
+	if [ ! -z "`git status --porcelain`" ]; then \
 		echo "[!! Un-comitted git changes !!]"; \
 		git status --porcelain; \
 		exit 1; \
@@ -89,8 +89,8 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	@if [ "$(GIT_BRANCH)" == "master" ]; then \
-		@if[ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+	if [ "$(GIT_BRANCH)" == "master" ]; then \
+		if[ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
 			echo "Large change: purging whole zone"; \
             curl https://www.cloudflare.com/api_json.html \
                 -d 'a=fpurge_ts' \
@@ -122,25 +122,25 @@ update:
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
 
 	# Write out the header
-	@echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
+	echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
 
 	# Cat in the main stuff ignoring the header crap
-	@tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
-	@rm -f /tmp/github-damianzaremba-cv-readme
+	tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
+	rm -f /tmp/github-damianzaremba-cv-readme
 
 	# Write out the footer
-	@echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
-	@echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
 
 	# Copy over if new
-	@if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
+	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
 	then \
 		echo "Updating CV"; \
 		mv /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown; \
@@ -154,7 +154,7 @@ update:
 	rm -f /tmp/github-damianzaremba-cv-readme.markdown.current.diff
 
 	# Commit the update if the working dir is clean
-	@if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ] && \
+	if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ] && \
 		[ ! -z "`git status --porcelain | grep content/cv/index.markdown`" ]; then \
 		git commit -m "Updating CV from source" content/cv/index.markdown; \
 	else \
