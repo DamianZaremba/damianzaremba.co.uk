@@ -8,7 +8,7 @@ addons:
     packages:
     - git
     - ruby-dev
-    - ruby-gsl
+    - gsl-bin
     - build-essential
     - wget
 script: make install
