@@ -13,7 +13,7 @@ addons:
     - libgsl0ldbl
     - build-essential
     - wget
-script: PATH="$PATH:vendor/bundle/ruby/2.0.0/bin" make install
+script: make install
 env:
   global:
     secure: jBTjP3lK6tm4OpTBHg/PZXbIjz00ZliCUOhU/wcTE596EpcNeFJgtrrISCyAY4WbK3E13qbH3+xNtlztCAp/I1Qd6K1EDF9b1sWgmygUYPVMiqaD82aTblw/XtNSM3LlpP8nqlOzvF5aeMxqAjoVOgY1pwSNy7/+jTtZUXRpMgg=
