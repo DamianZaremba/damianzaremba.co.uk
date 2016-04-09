@@ -16,8 +16,8 @@ addons:
 #script: bundle exec make -s install
 script: bundle exec make install
 env:
-  - GH_TOKEN=test
-  - CLOUDFLARE_TOKEN=test
-#  global:
+  global:
+    - GH_TOKEN=test
+    - CLOUDFLARE_TOKEN=test
 #  - secure: UINE7RMyWXxegwJeK8Aq8iMDCBg5mb/r+4nRcbg8LzQL0+mGe6bU3VBvGBKn1ILYXZQQBD9wRfGNQB3a0FaTR3bx07Dlv1cPVlSliyg6dVN022EthVM5f7MF4OKLJ0PnQ5SDA7Wd37IicIQbn+bDetYZpwizpxx3NYEszPEoCMg=
 #  - secure: mMv5FTbEfv1+NT4ER3iv+qVPnqBAnR4roL+OspbQhbkejZWUVhOpnzOCHwZ+JD8Kbq6YlB2TZ58eHvYjD/n3rZvUdsZ2KUGVVDM1mnM4Z0QJ0wkJoYU6/58wazlypihTTIS770CF+5gknG2HtdzVequuqcmux7Day4D9h5nXwA4=
