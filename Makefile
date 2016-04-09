@@ -8,6 +8,9 @@ HTML_COMPRESSOR_VERSION := 1.5.2
 HTML_COMPRESSOR_URL := http://central.maven.org/maven2/com/googlecode/htmlcompressor/htmlcompressor/$(HTML_COMPRESSOR_VERSION)/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
 HTML_COMPRESSOR_TARGET := _temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
 
+# Git branch
+GIT_BRANCH := $(git rev-parse --abbrev-ref HEAD)
+
 all: compile
 
 getdeps:
@@ -72,35 +75,45 @@ stash:
 
 push:
 	cd _live/ && \
-		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
+		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; \
+		then \
 			git add --all . && \
-			(git commit -am "Auto updated site" && GIT_SSH=../_temp/ssh git push origin master; exit 0); \
+			(git commit -am "Auto updated site" && \
+			    if [ ! -z "${GH_TOKEN}" ]; \
+			    then \
+			        git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
+			    else \
+			        GIT_SSH=../_temp/ssh git push origin master; \
+			    fi \
+            exit 0); \
 		fi
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	@if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-		echo "Large change: purging whole zone"; \
-		curl https://www.cloudflare.com/api_json.html \
-			-d 'a=fpurge_ts' \
-			-d 'tkn='`cat ~/.cloudflare.token` \
-			-d 'email=damian@damianzaremba.co.uk' \
-			-d 'z=damianzaremba.co.uk' \
-			-d 'v=1'; \
-	else \
-		cd _live/ && \
-		git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
-		do \
-			echo "Clearing cache for $$path" && \
-			curl https://www.cloudflare.com/api_json.html \
-				-d 'a=zone_file_purge' \
-				-d 'tkn='`cat ~/.cloudflare.token` \
-				-d 'email=damian@damianzaremba.co.uk' \
-				-d 'z=damianzaremba.co.uk' \
-				-d 'url=http://damianzaremba.co.uk/'$$path; \
-			echo; echo; \
-		done \
-	fi
+	@if [ "$(GIT_BRANCH)" == "master" ]; then \
+        @if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+            echo "Large change: purging whole zone"; \
+            curl https://www.cloudflare.com/api_json.html \
+                -d 'a=fpurge_ts' \
+                -d 'tkn='`cat ~/.cloudflare.token` \
+                -d 'email=damian@damianzaremba.co.uk' \
+                -d 'z=damianzaremba.co.uk' \
+                -d 'v=1'; \
+        else \
+            cd _live/ && \
+            git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
+            do \
+                echo "Clearing cache for $$path" && \
+                curl https://www.cloudflare.com/api_json.html \
+                    -d 'a=zone_file_purge' \
+                    -d 'tkn='`cat ~/.cloudflare.token` \
+                    -d 'email=damian@damianzaremba.co.uk' \
+                    -d 'z=damianzaremba.co.uk' \
+                    -d 'url=http://damianzaremba.co.uk/'$$path; \
+                echo; echo; \
+            done \
+        fi \
+    fi
 
 update:
 	# Make sure the dir exists
@@ -156,6 +169,7 @@ primecache:
 		files=$(git diff --name-only $(LIVE_SHA1_PRE)...HEAD | tr "\n" " "); \
 		test -z "$(files)" || ./scripts/prime_cache.py --files $(files); \
 	fi
+
 publishpending_script:
 	./scripts/publish_pending.py
 
