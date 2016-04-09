@@ -18,4 +18,4 @@ script: bundle exec make -s install
 env:
   global:
   - secure: FzkuyWOQHWOeESMrtiaddgjqTzm8zGYZYHrFrwAqdapT/2uA9hC2qVrtJsmdNG82yR8vB9kbyBWdHABughyUmdkxmIANd9St7BMCaDIRDX+XmqJk4ouDJa4INqVdKVxOzSxTfd0YJmR3sF/5e8cktbQprwb/am1BJ8b3ccMqpRE=
-  - secure: uarIYkwo16QKcXYxstcGYQMEW8rpsKR+1hkyRtPbYjsTU30aTFVqayWfa26+NjiMvkCEMhwuaYIgWYWxMcGg/FHaOUhRoh5tQCVTfR3ZaHkE+up1uVhEabr9BEnrqwaLfFuiYD8rYywUhe2+rVw+pnFlYK+5C4mzgtpl7tZIc8k=
+  - secure: FGG6kuaQ1b8OE+d+M3RCsewTmaQhJ5atTDBe13ogYVe9na0s8DGoK5yCrqnaAdtwg6tzMIrKkb6EddCYcwLYlwrhlUbYXFQmWLNhM3p6b9/FiRTj/TEL+Yy4sEqd5aEnPq6oWsSBDbesq39JK91jxXXjrZA5kIZ/fHBkWmEZdZg=
