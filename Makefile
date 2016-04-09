@@ -89,8 +89,9 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	@if [ "$(GIT_BRANCH)" == "master" ] &&  [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-        echo "Large change: purging whole zone"; \
+	@if [ "$(GIT_BRANCH)" == "master" ]; then \
+		@if[ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+			echo "Large change: purging whole zone"; \
         curl https://www.cloudflare.com/api_json.html \
             -d 'a=fpurge_ts' \
             -d 'tkn=${CLOUDFLARE_TOKEN}' \
@@ -110,7 +111,8 @@ cacheclear:
                 -d 'url=http://damianzaremba.co.uk/'$$path; \
             echo; echo; \
         done \
-    fi
+    fi \
+	fi
 
 update:
 	# Make sure the dir exists
