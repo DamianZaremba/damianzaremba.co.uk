@@ -55,8 +55,8 @@ clone:
 		git reset --hard; \
 		git pull origin master; \
 	else \
-		if [ ! -z "${GH_TOKEN}" ]; then \
-			git clone "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" _live; \
+		@if [ ! -z "${GH_TOKEN}" ]; then \
+			@git clone "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" _live; \
 		else \
 			GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; \
 		fi \
@@ -82,17 +82,17 @@ stash:
 	cd _live/ && touch .nojekyll
 
 push:
-	cd _live/ &&
+	@cd _live/ && \
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; \
-		then
-			git add --all . &&
-			git commit -am "Auto updated site" &&
-				@if [ ! -z "${GH_TOKEN}" ];
-				then
-					@git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
-				else
-					GIT_SSH=../_temp/ssh git push origin master;
-				fi
+		then \
+			git add --all . && \
+			git commit -am "Auto updated site" && \
+				@if [ ! -z "${GH_TOKEN}" ]; \
+				then \
+					@git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master \
+				else \
+					GIT_SSH=../_temp/ssh git push origin master; \
+				fi \
 		fi
 
 cacheclear:
