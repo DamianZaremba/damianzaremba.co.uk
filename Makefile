@@ -24,7 +24,8 @@ getdeps:
 
 stage: update compile minify clone stash
 
-install: stage check_git push cacheclear primecache
+#install: stage check_git push cacheclear primecache
+install: stage push cacheclear primecache
 
 build: update compile minify
 
@@ -75,39 +76,41 @@ stash:
 
 push:
 	cd _live/ && \
-		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; \
-		then \
+		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; then \
 			git add --all . && \
-			git commit -am "Auto updated site" && \
-			    test -z "${GH_TOKEN}" && GIT_SSH=../_temp/ssh git push origin master || git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
+			git commit -am "Auto updated site"; \
+				if [ -z "${GH_TOKEN}" ]; then \
+			    GIT_SSH=../_temp/ssh git push origin master; \
+				else \
+					git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master; \
+				fi \
 		fi
 
 cacheclear:
-	# Clear the whole cache
-	if [ "$(GIT_BRANCH)" == "master" ] && [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-        echo "Large change: purging whole zone"; \
-        curl https://www.cloudflare.com/api_json.html \
-            -d 'a=fpurge_ts' \
-            -d 'tkn=${CLOUDFLARE_TOKEN}' \
-            -d 'email=damian@damianzaremba.co.uk' \
-            -d 'z=damianzaremba.co.uk' \
-            -d 'v=1'; \
-    fi
-    # Clear singles files out of the cache
-    if [ "$(GIT_BRANCH)" == "master" ] && [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -lt 91 ]; then \
-        cd _live/ && \
-        git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
-        do \
-            echo "Clearing cache for $$path" && \
-            curl https://www.cloudflare.com/api_json.html \
-                -d 'a=zone_file_purge' \
-                -d 'tkn=${CLOUDFLARE_TOKEN}' \
-                -d 'email=damian@damianzaremba.co.uk' \
-                -d 'z=damianzaremba.co.uk' \
-                -d 'url=http://damianzaremba.co.uk/'$$path; \
-            echo; echo; \
-        done \
-    fi
+	# Lazy clear the cloudflare cache
+	if [ "$(GIT_BRANCH)" == "master" ]; then \
+	if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+			echo "Large change: purging whole zone"; \
+			curl https://www.cloudflare.com/api_json.html \
+					-d 'a=fpurge_ts' \
+					-d 'tkn='`cat ~/.cloudflare.token` \
+					-d 'email=damian@damianzaremba.co.uk' \
+					-d 'z=damianzaremba.co.uk' \
+					-d 'v=1'; \
+	else \
+			cd _live/ && \
+			git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; do \
+					echo "Clearing cache for $$path" && \
+					curl https://www.cloudflare.com/api_json.html \
+							-d 'a=zone_file_purge' \
+							-d 'tkn='`cat ~/.cloudflare.token` \
+							-d 'email=damian@damianzaremba.co.uk' \
+							-d 'z=damianzaremba.co.uk' \
+							-d 'url=http://damianzaremba.co.uk/'$$path; \
+					echo; echo; \
+			done \
+	fi \
+fi
 
 update:
 	# Make sure the dir exists
@@ -157,11 +160,13 @@ update:
 	fi
 
 primecache:
-	if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-		./scripts/prime_cache.py --full; \
-	else \
-		files=$(git diff --name-only $(LIVE_SHA1_PRE)...HEAD | tr "\n" " "); \
-		test -z "$(files)" || ./scripts/prime_cache.py --files $(files); \
+	if [ "$(GIT_BRANCH)" == "master" ]; then \
+		if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+			./scripts/prime_cache.py --full; \
+		else \
+			files=$(git diff --name-only $(LIVE_SHA1_PRE)...HEAD | tr "\n" " "); \
+			test -z "$(files)" || ./scripts/prime_cache.py --files $(files); \
+		fi \
 	fi
 
 publishpending_script:
