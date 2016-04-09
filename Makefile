@@ -76,7 +76,7 @@ stash:
 
 push:
 	cd _live/ && \
-		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; then \
+		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "master" == "$(GIT_BRANCH)" ]; then \
 			git add --all . && \
 			git commit -am "Auto updated site"; \
 				if [ -z "${GH_TOKEN}" ]; then \
@@ -88,7 +88,7 @@ push:
 
 cacheclear:
 	# Lazy clear the cloudflare cache
-	if [ "$(GIT_BRANCH)" == "master" ]; then \
+	if [ "master" == "$(GIT_BRANCH)" ]; then \
 	if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
 			echo "Large change: purging whole zone"; \
 			curl https://www.cloudflare.com/api_json.html \
@@ -160,7 +160,7 @@ update:
 	fi
 
 primecache:
-	if [ "$(GIT_BRANCH)" == "master" ]; then \
+	if [ "master" == "$(GIT_BRANCH)" ]; then \
 		if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
 			./scripts/prime_cache.py --full; \
 		else \
