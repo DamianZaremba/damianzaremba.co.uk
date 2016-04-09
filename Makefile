@@ -46,7 +46,7 @@ prod-server:
 
 clone:
 	# Remove it not a git repo
-	if [ -d "_live" ] && [ ! -d "_live/.git" ]; then \
+	if [ ! -d "_live/.git" ]; then \
 		rm -rf _live; \
 	fi
 	# Update if a git repo
@@ -100,9 +100,9 @@ cacheclear:
 	@if [ "$(GIT_BRANCH)" == "master" ]; then \
 		@if [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
 			echo "Large change: purging whole zone"; \
-			curl https://www.cloudflare.com/api_json.html \
+			@curl https://www.cloudflare.com/api_json.html \
 				-d 'a=fpurge_ts' \
-				-d 'tkn='`cat ~/.cloudflare.token` \
+				-d 'tkn='${CLOUDFLARE_TOKEN} \
 				-d 'email=damian@damianzaremba.co.uk' \
 				-d 'z=damianzaremba.co.uk' \
 				-d 'v=1'; \
@@ -113,7 +113,7 @@ cacheclear:
 				echo "Clearing cache for $$path" && \
 				curl https://www.cloudflare.com/api_json.html \
 					-d 'a=zone_file_purge' \
-					-d 'tkn='`cat ~/.cloudflare.token` \
+					-d 'tkn='${CLOUDFLARE_TOKEN} \
 					-d 'email=damian@damianzaremba.co.uk' \
 					-d 'z=damianzaremba.co.uk' \
 					-d 'url=http://damianzaremba.co.uk/'$$path; \
