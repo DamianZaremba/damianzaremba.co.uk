@@ -4,3 +4,6 @@ _temp
 *~
 *.py[co]
 .jekyll-metadata
+vendor/
+.bundle
+.idea
