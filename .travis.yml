@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 rvm:
 - 2.2
 sudo: false
@@ -6,6 +7,10 @@ addons:
   apt:
     packages:
     - git
+    - ruby-dev
+    - ruby-gsl
+    - build-essential
+    - wget
 script: make install
 env:
   global:
