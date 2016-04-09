@@ -9,6 +9,8 @@ addons:
     - git
     - ruby-dev
     - gsl-bin
+    - libgsl0-dev
+    - libgsl0ldbl
     - build-essential
     - wget
 script: make install
