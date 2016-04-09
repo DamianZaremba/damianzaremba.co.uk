@@ -13,6 +13,7 @@ addons:
     - libgsl0ldbl
     - build-essential
     - wget
+    - python-requests
 script: bundle exec make -s install
 env:
   global:
