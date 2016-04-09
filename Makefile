@@ -53,7 +53,7 @@ clone:
 	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
 
 	# Clone if it doesn't exist
-	test -d "_live" || GIT_SSH=_temp/ssh git clone git@github.com:DamianZaremba/damianzaremba.github.io.git _live; exit 0
+	test -d "_live" || git clone https://github.com/DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
 	test -d _site && rm -rf _site || true
@@ -80,7 +80,7 @@ push:
 			git add --all . && \
 			git commit -am "Auto updated site"; \
 				if [ -z "${GH_TOKEN}" ]; then \
-			    GIT_SSH=../_temp/ssh git push origin master; \
+			    GIT_SSH=../_temp/ssh git push git@github.com:DamianZaremba/damianzaremba.github.io.git master; \
 				else \
 					git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master; \
 				fi \
