@@ -46,13 +46,13 @@ prod-server:
 
 clone:
 	# Remove it not a git repo
-	test -d "_live" && (test -d "_live/.git" || rm -rf _live)
+	test -d "_live" && (test -d "_live/.git" || rm -rf _live); exit 0
 
 	# Update if a git repo
-	test -d "_live" && (cd _live && (git reset --hard; git pull origin master))
+	test -d "_live" && (cd _live && (git reset --hard; git pull origin master)); exit 0
 
 	# Clone if it doesn't exist
-	test -d "_live" || git clone https://github.com/DamianZaremba/damianzaremba.github.io.git _live
+	test -d "_live" || git clone https://github.com/DamianZaremba/damianzaremba.github.io.git _live; exit 0
 
 clean:
 	test -d _site && rm -rf _site || true
@@ -117,7 +117,7 @@ update:
 	git config --global user.name "Damian Zaremba"
 
 	# Make sure the dir exists
-	test -d content/cv/ || mkdir -p content/cv/
+	test -d content/cv/ || mkdir -p content/cv/; exit 0
 
 	# Download the current README
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
