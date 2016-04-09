@@ -9,7 +9,7 @@ HTML_COMPRESSOR_URL := http://central.maven.org/maven2/com/googlecode/htmlcompre
 HTML_COMPRESSOR_TARGET := _temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
 
 # Git branch
-GIT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+GIT_BRANCH ?= $(TRAVIS_BRANCH)
 
 all: compile
 
