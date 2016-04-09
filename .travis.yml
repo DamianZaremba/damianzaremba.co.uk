@@ -17,5 +17,4 @@ addons:
 script: bundle exec make -s install
 env:
   global:
-  - secure: UINE7RMyWXxegwJeK8Aq8iMDCBg5mb/r+4nRcbg8LzQL0+mGe6bU3VBvGBKn1ILYXZQQBD9wRfGNQB3a0FaTR3bx07Dlv1cPVlSliyg6dVN022EthVM5f7MF4OKLJ0PnQ5SDA7Wd37IicIQbn+bDetYZpwizpxx3NYEszPEoCMg=
-  - secure: mMv5FTbEfv1+NT4ER3iv+qVPnqBAnR4roL+OspbQhbkejZWUVhOpnzOCHwZ+JD8Kbq6YlB2TZ58eHvYjD/n3rZvUdsZ2KUGVVDM1mnM4Z0QJ0wkJoYU6/58wazlypihTTIS770CF+5gknG2HtdzVequuqcmux7Day4D9h5nXwA4=
+    secure: v9T/l7lA+dsg0u8fcmzJiTv69fCNlTD2pfHtVNAGDJ5dwxOdZmsWpUg5xHBs5jdkFXvdrIgP8cO0MnCTQKx0cq/rKcY3Oxjsq49Kva/P1l3euEKIxLCSp+bm7fZvbTY2j9fWFrmgJ/YbCCX6yvXM6+Ashw5uVjjUVl8Q3AV5K2Q=
