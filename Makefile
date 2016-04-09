@@ -46,9 +46,7 @@ prod-server:
 
 clone:
 	# Remove it not a git repo
-	if [ ! -d "_live/.git" ]; then \
-		rm -rf _live; \
-	fi
+	test -d "_live/.git" || rm -rf _live
 	# Update if a git repo
 	@if [ -d "_live" ]; then \
 		cd _live && \
