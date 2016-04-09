@@ -78,14 +78,13 @@ push:
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ] && [ "$(GIT_BRANCH)" == "master" ]; \
 		then \
 			git add --all . && \
-			(git commit -am "Auto updated site" && \
+			git commit -am "Auto updated site" && \
 			    if [ ! -z "${GH_TOKEN}" ]; \
 			    then \
 			        git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
 			    else \
 			        GIT_SSH=../_temp/ssh git push origin master; \
 			    fi \
-            exit 0); \
 		fi
 
 cacheclear:
