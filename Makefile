@@ -88,31 +88,31 @@ push:
 		fi
 
 cacheclear:
-	# Lazy clear the cloudflare cache
-	if [ "$(GIT_BRANCH)" == "master" ]; then \
-		if[ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
-			echo "Large change: purging whole zone"; \
+	# Clear the whole cache
+	if [ "$(GIT_BRANCH)" == "master" ] && [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -gt 90 ]; then \
+        echo "Large change: purging whole zone"; \
+        curl https://www.cloudflare.com/api_json.html \
+            -d 'a=fpurge_ts' \
+            -d 'tkn=${CLOUDFLARE_TOKEN}' \
+            -d 'email=damian@damianzaremba.co.uk' \
+            -d 'z=damianzaremba.co.uk' \
+            -d 'v=1'; \
+    fi
+    # Clear singles files out of the cache
+    if [ "$(GIT_BRANCH)" == "master" ] && [ "`cd _live/ && git diff --name-only $(LIVE_SHA1_PRE)...HEAD | wc -l`" -lt 91 ]; then \
+        cd _live/ && \
+        git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
+        do \
+            echo "Clearing cache for $$path" && \
             curl https://www.cloudflare.com/api_json.html \
-                -d 'a=fpurge_ts' \
+                -d 'a=zone_file_purge' \
                 -d 'tkn=${CLOUDFLARE_TOKEN}' \
                 -d 'email=damian@damianzaremba.co.uk' \
                 -d 'z=damianzaremba.co.uk' \
-                -d 'v=1'; \
-        else \
-            cd _live/ && \
-            git diff --name-only $(LIVE_SHA1_PRE)...HEAD | while read path; \
-            do \
-                echo "Clearing cache for $$path" && \
-                curl https://www.cloudflare.com/api_json.html \
-                    -d 'a=zone_file_purge' \
-                    -d 'tkn=${CLOUDFLARE_TOKEN}' \
-                    -d 'email=damian@damianzaremba.co.uk' \
-                    -d 'z=damianzaremba.co.uk' \
-                    -d 'url=http://damianzaremba.co.uk/'$$path; \
-                echo; echo; \
-            done \
-        fi \
-	fi
+                -d 'url=http://damianzaremba.co.uk/'$$path; \
+            echo; echo; \
+        done \
+    fi
 
 update:
 	# Make sure the dir exists
