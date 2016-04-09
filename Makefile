@@ -92,7 +92,7 @@ cacheclear:
 			echo "Large change: purging whole zone"; \
 			curl https://www.cloudflare.com/api_json.html \
 					-d 'a=fpurge_ts' \
-					-d 'tkn='`cat ~/.cloudflare.token` \
+					-d 'tkn='${CLOUDFLARE_TOKEN} \
 					-d 'email=damian@damianzaremba.co.uk' \
 					-d 'z=damianzaremba.co.uk' \
 					-d 'v=1'; \
@@ -102,7 +102,7 @@ cacheclear:
 					echo "Clearing cache for $$path" && \
 					curl https://www.cloudflare.com/api_json.html \
 							-d 'a=zone_file_purge' \
-							-d 'tkn='`cat ~/.cloudflare.token` \
+							-d 'tkn='${CLOUDFLARE_TOKEN} \
 							-d 'email=damian@damianzaremba.co.uk' \
 							-d 'z=damianzaremba.co.uk' \
 							-d 'url=http://damianzaremba.co.uk/'$$path; \
