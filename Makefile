@@ -79,12 +79,7 @@ push:
 		then \
 			git add --all . && \
 			git commit -am "Auto updated site" && \
-			    if [ ! -z "${GH_TOKEN}" ]; \
-			    then \
-			        git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master \
-			    else \
-			        GIT_SSH=../_temp/ssh git push origin master; \
-			    fi \
+			    test -z "${GH_TOKEN}" && GIT_SSH=../_temp/ssh git push origin master || git push "https://${GH_TOKEN}@github.com/DamianZaremba/damianzaremba.github.io.git" master
 		fi
 
 cacheclear:
