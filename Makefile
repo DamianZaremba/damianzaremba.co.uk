@@ -113,6 +113,10 @@ cacheclear:
 fi
 
 update:
+    # Setup git
+    git config --global user.email "damian@damianzaremba.co.uk"
+    git config --global user.name "Damian Zaremba"
+
 	# Make sure the dir exists
 	test -d content/cv/ || mkdir -p content/cv/; exit 0
 
