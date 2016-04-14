@@ -21,7 +21,7 @@ gems:
 
 tag_dir: tag
 tag_title_prefix: Archive for
-tag_meta_description_prefix: Damian Zaremba's Blog Archive For 
+tag_meta_description_prefix: Damian Zaremba's Blog Archive For
 
 sitemap:
     exclude:
