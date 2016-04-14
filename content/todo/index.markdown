@@ -20,7 +20,6 @@ Professional
 * 642-813 SWITCH (CCNP)
 * CCIE Routing and Switching Written Exam
 * CCIE Routing and Switching Lab Exam
-* Oracle Certified Professional, MySQL 5.7(?) Database Administrator
 
 Personal
 --------
