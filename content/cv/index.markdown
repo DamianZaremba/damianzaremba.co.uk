@@ -18,10 +18,10 @@ Driven to impact change where required and deliver things done efficiently and e
 Employment History
 ------------------
 ### TravelJigsaw Limited (Rentalcars.com) - Technical Architect
-*November 2016 - Present*
+*November 2015 - Present*
 
 ### TravelJigsaw Limited (Rentalcars.com) - Technical Architect
-*June 2015 - November 2016*
+*June 2015 - November 2015*
 
 ### TravelJigsaw Limited (Rentalcars.com) - Linux Systems Administrator
 *February 2014 - June 2015*
