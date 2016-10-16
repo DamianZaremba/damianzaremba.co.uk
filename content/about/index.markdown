@@ -3,23 +3,38 @@ layout: default
 title: About
 description: About Damian Zaremba
 ---
-<img src="https://s.gravatar.com/avatar/5eb437aa4368d29386cb6f0ed8e6c5b4?s=250" style="float: left; height: 250px; margin-right: 10px" />
+<div class="row">
+  <div class="col-md-4">
+    <p><img src="https://s.gravatar.com/avatar/5eb437aa4368d29386cb6f0ed8e6c5b4?s=250" /></p>
 
-Damian is a Linux sysadmin at heart, with a deep desire to automate systems and scale platforms.
+    <div class="visible-md visible-lg hidden-sg">
+      <p><a href="http://twitter.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/twitter.png %}" alt="Twitter" /></a>
+      <a href="http://facebook.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/facebook.png %}" alt="Facebook" /></a>
+      <a href="http://lastfm.com/user/DamianZaremba4"><img src="{% cdn_url /assests/images/logos/lastfm.png %}" alt="LastFM" /></a>
+      <a href="http://uk.linkedin.com/in/damianzaremba"><img src="{% cdn_url /assests/images/logos/linkedin.png %}" alt="LinkedIn" /></a>
+      <a href="http://www.youtube.com/user/DamianZaremba"><img src="{% cdn_url /assests/images/logos/youtube.png %}" alt="YouTube" /></a></p>
+      <p><img src="{% cdn_url /assests/images/logos/rhcsa.png %}" alt="RHCSA" />
+      <img src="{% cdn_url /assests/images/logos/rhce.png %}" alt="RHCE" /></p>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <p>Damian is a Linux sysadmin at heart, with a deep desire to automate systems and scale platforms.
+    He enjoys networking and enabling businesses via the integration of systems + networks.</p>
 
-Experience in a wide variety of operational, engineering and R&D roles have empowered Damian to design and implement infrastructure solutions that meet business requirements at reduced cost and complexity.
+    <p>Having experience in a wide variety of operational, engineering and R&amp;D roles have empowered Damian to design and implement infrastructure solutions that meet business requirements at reduced cost and complexity.</p>
 
-With a passion for complex/distributed systems, automation, solution design, testing strategies, Linux, open source methodologies, monitoring, metrics, graphing and AI, Damian is a strong asset to any team looking to architect, implement and scale infrastructure while ensuring continuous service delivery.
+    <p>With a passion for complex systems, networking, automation, solution design, testing strategies, Linux, open source, metric collection and graphing, Damian is a strong asset to any team looking to architect, implement and scale infrastructure while ensuring continuous service delivery.</p>
 
-Damian's skills include Linux (OS level debugging, performance tuning etc.), layer 2/3/4 network design and application implementations across a large set of technologies.
+    <p>Take a look at Damian's <a href="/cv">CV</a> for more information and work experience.</p>
 
-Take a look at Damian's [CV](/cv) for more information and work experience.
-
-[![Twitter]({% cdn_url /assests/images/logos/twitter.png %})](http://twitter.com/DamianZaremba)
-[![Facebook]({% cdn_url /assests/images/logos/facebook.png %})](http://facebook.com/DamianZaremba)
-[![LastFM]({% cdn_url /assests/images/logos/lastfm.png %})](http://lastfm.com/user/DamianZaremba4)
-[![LinkedIn]({% cdn_url /assests/images/logos/linkedin.png %})](http://uk.linkedin.com/in/damianzaremba)
-[![YouTube]({% cdn_url /assests/images/logos/youtube.png %})](http://www.youtube.com/user/DamianZaremba)
-
-![RHCSA]({% cdn_url /assests/images/logos/rhcsa.png %})
-![RHCE]({% cdn_url /assests/images/logos/rhce.png %})
+    <div class="visible-sd hidden-md hidden-lg">
+      <p><a href="http://twitter.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/twitter.png %}" alt="Twitter" /></a>
+      <a href="http://facebook.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/facebook.png %}" alt="Facebook" /></a>
+      <a href="http://lastfm.com/user/DamianZaremba4"><img src="{% cdn_url /assests/images/logos/lastfm.png %}" alt="LastFM" /></a>
+      <a href="http://uk.linkedin.com/in/damianzaremba"><img src="{% cdn_url /assests/images/logos/linkedin.png %}" alt="LinkedIn" /></a>
+      <a href="http://www.youtube.com/user/DamianZaremba"><img src="{% cdn_url /assests/images/logos/youtube.png %}" alt="YouTube" /></a></p>
+      <p><img src="{% cdn_url /assests/images/logos/rhcsa.png %}" alt="RHCSA" />
+      <img src="{% cdn_url /assests/images/logos/rhce.png %}" alt="RHCE" /></p>
+    </div>
+  </div>
+</div>

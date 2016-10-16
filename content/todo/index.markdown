@@ -10,7 +10,7 @@ Professional
 * ~~Red Hat Certified Engineer~~
 * _[Booked]_ Red Hat Certificate of Expertise in Server Hardening
 * Red Hat Certificate of Expertise in Performance Tuning
-* _[Booked]_ Cisco 200-120 (CCNA)
+* Cisco 200-120 (CCNA)
 * Cisco 642-813 SWITCH (CCNP)
 * 642-832 TSHOOT (CCNP)
 * Red Hat Certificate of Expertise in Deployment and Systems Management
@@ -28,12 +28,13 @@ Personal
 * Go wing suit flying
 * Go high lining
 * Go scuba diving
-* Spend 2+ years in Europe
+* ~~Spend 2+ years in Europe~~
 * Spend 2+ years in California
 * ~~Attend FOSDEM~~
 * Attend DEFCON
 * Attend PyCon
 * Attend DjangoCon
+* ~~Attend Percona Live~~
 * Spend a year writing a blog entry at least once a week
 * Contribute a significant number of patches to the Linux kernel
 * Become a package maintainer for Fedora/EPEL
