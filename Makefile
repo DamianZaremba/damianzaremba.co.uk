@@ -176,3 +176,6 @@ publishpending_script:
 	./scripts/publish_pending.py
 
 publishpending: getdeps publishpending_script install
+
+new:
+	touch "content/_posts/$(shell date +'%Y-%M-%d')-$(shell read -p 'Title? ' title; echo $$title).markdown"
