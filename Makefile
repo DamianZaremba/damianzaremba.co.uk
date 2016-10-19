@@ -39,7 +39,7 @@ compile: getdeps
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
 
 server:
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --drafts --incremental --config _config.yml,_config_dev.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
 
 prod-server:
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml
@@ -178,4 +178,15 @@ publishpending_script:
 publishpending: getdeps publishpending_script install
 
 new:
-	touch "content/_posts/$(shell date +'%Y-%M-%d')-$(shell read -p 'Title? ' title; echo $$title).markdown"
+	$(eval POST_TITLE := $(shell read -p 'Title? ' title; echo $$title))
+	$(eval POST_DATE := $(shell date +'%Y-%m-%d'))
+	$(eval POST_PATH := "content/_drafts/$(POST_DATE)-$(POST_TITLE).markdown")
+	if [ ! -f $(POST_PATH) ]; then \
+		echo '---' > $(POST_PATH); \
+		echo 'comments: true' >> $(POST_PATH); \
+		echo 'layout: post' >> $(POST_PATH); \
+		echo 'title: $(POST_TITLE)' >> $(POST_PATH); \
+		echo '---' >> $(POST_PATH); \
+		echo >> $(POST_PATH); \
+		atom $(POST_PATH); \
+	fi
