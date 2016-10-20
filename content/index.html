@@ -33,7 +33,7 @@ description: Damian Zaremba's Blog
     {% endif %}
 {% endif %}
 
-{% if paginator.previous_page or paginator.next_page %}
+{% if paginator.total_pages > 1 %}
 <nav id="page_nav">
     {% if paginator.previous_page %}
     {% if paginator.previous_page > 1 %}

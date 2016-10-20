@@ -35,13 +35,13 @@ check_git:
 		exit 1; \
 	fi
 
-compile: getdeps
+compile: clean getdeps
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
 
-server:
+server: clean
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
 
-prod-server:
+prod-server: clean
 	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml
 
 clone:
