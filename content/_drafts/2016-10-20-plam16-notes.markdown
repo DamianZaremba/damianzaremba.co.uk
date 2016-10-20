@@ -1,0 +1,279 @@
+---
+comments: true
+layout: post
+title: Percona Live Amsterdam 2016 Notes
+tags:
+- FOSS
+- Conferences
+---
+
+Early this month I attended Percona Live, below are some random notes:
+
+MySQL 8.0
+=========
+
+MySQL 8.0 is currently quite far out, with a DMR available. While there is no
+official release date yet, another 2 years or so is likely.
+
+Some companies are testing the DMR in production to weed out potential issues
+during the development.
+
+Some exciting features include
+
+### InnoDB by default!
+MySQL 5.7 is still using MyISAM for system tables, 8.0 will see MyISAM
+still shipped, but completely optional due to the new [data dictionary](https://dev.mysql.com/doc/refman/8.0/en/data-dictionary.html).
+
+Another [feature request](http://bugs.mysql.com/bug.php?id=78553) has been raised
+to move the storage engine to a plugin, with some comments suggesting a separate package.
+
+All the features in MyISAM have been implemented in InnoDB (5.6, 5.7), with MyISAM
+still performing better in some cases.
+
+Some key reasons why not to use MyISAM unless there's a specific use case (also applies to 5.6/5.7):
+
+* Not ACID compliant
+* Not transactional
+* Repair + index rebuild required on crashes
+* Table level locking
+
+### Invisible indexes
+A very interesting feature, allowing you to hide an index from the query optimizer,
+but critically keep the index updated.
+
+There is a feature in MyISAM called 'disabled indexes', which has differing behaviour;
+this stops the index being maintained, requiring a rebuild of the index when it's re-enabled.
+
+Why is this useful?
+
+* Dropping an index; once dropped rebuilding the index could be very time-consuming,
+in a production setting this could have a significant effect on your applications.
+Hiding the index would reveal the same performance hit, with a low-cost rollback.
+
+* Adding an index; creating a new index can cause the query plan to change,
+sometimes negatively. Currently it's not possible to 'force' a hidden index to be on,
+however this would be an interesting feature; enabling testing of critical queries.
+
+### IPv6 comparisons
+INET6_ATON / INET6_NTOA were added in MySQL 5.6 however binary comparison has never
+worked properly. [WL#8699](http://dev.mysql.com/worklog/task/?id=8699) has changed that.
+
+You can now do `INET6_ATON(address) & INET6_ATON(network)` and the result is correct.
+
+A small change, but for certain applications a lot of logic around v6 can now be treated the same way as v4.
+
+### JSON support
+The JSON support continues to mature, with 2 new functions added in 8.0;
+JSON_ARRAYAGG & JSON_OBJECTAGG.
+
+These functions work on tables without JSON fields, allowing logic such as:
+
+```sql
+mysql> SELECT JSON_ARRAYAGG(`name`) AS `devices` FROM `assets` where `active` = b'1';
++--------------------------+
+| devices                  |
++--------------------------+
+| [ "device1",
+    "device2",
+    "device3" ]
+|
++--------------------------+
+```
+
+Or
+
+```sql
+mysql> SELECT JSON_OBJECTAGG(`name`, `ip`) AS `devices` FROM `assets` where `active` = b'1';
++--------------------------+
+| devices                  |
++--------------------------+
+| { "device1": "127.0.0.1",
+    "device2": "127.0.0.2",
+    "device3": "127.0.0.3" }
+|
++--------------------------+
+```
+
+Other SQL logic should as grouping or joins can also be performed
+
+```sql
+mysql> SELECT `location`, JSON_OBJECTAGG(`name`, `ip`) AS `devices` FROM `assets` where `active` = b'1' group by `location`;
++--------------+--------------------------------------------------+
+| location     | devices                                          |
++--------------+--------------------------------------------------+
+| Amsterdam    | {"device1": "127.0.0.1", "device2": "127.0.0.2"} |
+| Manchester   | {"device3": "127.0.0.3"}                         |
++--------------+--------------------------------------------------+
+```
+
+I'm not sure how much application/serialisation logic I want in my database,
+but this is definitely powerful.
+
+### CTE
+This literally hurts my brain, seemingly it can be used in place of derived tables,
+with 1 powerful feature; you can recurse over the statement.
+
+In the case of a table being referenced to its self, it's now simple (and in some cases possible)
+to query the data in 1 pass.
+
+The CTE only knows about 1 row at a time, so for really complex items,
+columns have to be passed around (see [this post](http://mysqlserverteam.com/mysql-8-0-labs-recursive-common-table-expressions-in-mysql-ctes-part-two-how-to-generate-series/) for a Fibonacci example).
+
+A simple example is as below:
+
+```sql
+WITH RECURSIVE crazy AS
+(
+  SELECT 1 AS counter
+  UNION ALL
+  SELECT 2 + counter FROM crazy WHERE counter < 10
+)
+SELECT * FROM crazy;
+
++---------+
+| counter |
++---------+
+|       1 |
+|       3 |
+|       5 |
+|       7 |
+|       9 |
++---------+
+```
+
+### Other stuff
+Lots of other nice features have been added such as:
+
+* Better docs
+* Better GIS support
+* Performance improvements
+* Improved security models
+* Query optimizer cost model improvements
+* Support for the latest Unicode 9.0 standard
+* UTF8MB4 as the default character set (work started in 5.7)
+
+Follow the [MySQL server team](http://mysqlserverteam.com/) blog for updates.
+
+ProxySQL
+========
+ProxySQL is a high-performance SQL proxy, supporting a number of interesting features:
+
+* Query rewriting / blocking
+* Load balancing / query routing
+* Caching
+* HA (when used with a topology manager)
+* Traffic mirroring
+
+The HA part is especially interesting for a few reasons:
+
+* Applications have their connection held, so you can have 'no downtime, increased latency' master failovers
+* Servers can be promoted based on their read_only status
+* Integration with cluster managers (Galera etc) is possible
+
+[Marco Tusa](http://www.tusacentral.net/joomla/) had a presentation on deploying ProxySQL,
+with an interesting overview of failover techniques and what 'HA' means:
+
+```
+90.000% (36 days) MySQL Replication
+99.900% (8 hours) Linux Heartbeat with DRBD
+99.900% (8 hours) RHCS with Shared Storage (Active/Passive)
+99.990% (52 minutes) MHA with at least 3 nodes
+99.990% (52 minutes) Linux Heartbeat with DRBD and Replication
+99.990% (52 minutes) Linux Heartbeat with Shared Storage and Replication
+99.995% (26 minutes) Multi-Master (Galera - Percona cluster) 3 node minimum
+99.999% (5 minutes) MySQL Cluster
+```
+
+gh-ost
+======
+Think pt-online-schema-change without triggers, on steroids.
+
+The killer features include:
+
+* No triggers, so 0 performance overhead when paused
+* Dynamic throttling
+* Hooks for notifications / cut-over
+* Re-configurable at runtime
+* Pauseable
+
+Currently, they're still using the `INSERT INTO xxx SELECT FROM yyy` pattern for
+the bulk row copy (binlog events played over the top), there is a feature
+request for this to be done via the gh-ost process; if that happens a number of
+really cool possibilities open up:
+
+* No extra read load on the masters (and no touching the source table) - read data from slaves
+* Live table migrations - no complex intermediary master setup for migrations/vertical sharding
+* Sharding - with support for conditionals, slicing a table in 2 could be done in the same way as a live table migration
+
+The only catch is you need row based binlogs (binlog_row_image=FULL, though MINIMAL [has been requested](https://github.com/github/gh-ost/issues/230)); this can be supported in a
+statement or mixed topology by having 1 slave log changes in the row format.
+
+Facebook backups / binlog server
+================================
+
+Facebook had a number of talks, 2 of which were on the topic of binlogs and backups.
+
+Interestingly their strategy is along the lines of:
+
+* Backup binlogs as they rotate
+* Stream binlogs into HDFS
+* `mysqldump` all databases every day
+
+The dumping process is interesting, as they take a full backup, but only save that
+every 5 days. The rest of the days, they compute the updated (+inserted) and deleted rows, then store that.
+
+When restoring a database/table they:
+
+1. Download the last full backup
+2. Download the diff backups between full...now
+3. Combine the full + diffs into 1 file
+4. Restore that file
+5. Replay the binlogs
+
+The only benefit I can see to this (over just storing the full backups) is
+saving on storage space (assuming < 100% churn of the data).
+
+They have made multiple additions to the `mysqldump` binary (available in their [mysql-5.6](https://github.com/facebook/mysql-5.6) branch),
+such as storing table offsets in comments.
+
+For restores, there is an orchestrated pipeline with a scheduler submitting
+automated restore requests to test backups; this has picked up failures in the
+process previously.
+
+To handle binlogs, they wrote their own binlog server, which can serve the files
+out of HDFS upon request; this is used to seed slaves and replay entries on restores.
+
+MyRocks
+=======
+It was announced that Percona Server will be supporting MyRocks, this is exciting
+as previously you needed to run [Facebook's branch](https://github.com/facebook/mysql-5.6) of MySQL.
+
+I've not yet had time to play with MyRocks, but some key stats posted by others when compared to InnoDB:
+
+* 1.5x more queries per second
+* 8x-14x less data written per transaction
+* 2x-3x less space used
+
+Follow [Mark Callaghan](http://smalldatum.blogspot.nl/) for interesting RocksDB updates.
+
+Percona Monitoring and Management
+=================================
+This is still pretty new, but there's a nice bundle of tools.
+I'm interested to see how this project matures and if the pain of MySQL
+Enterprise Monitor can be forgotten.
+
+There's an [online demo](https://pmmdemo.percona.com/) if you want to play with it.
+
+Database engine licensing
+=========================
+Peter Zaitsev's keynote reminded me of the excellent
+[db-engines.com](http://db-engines.com) and their trends on licensing and usage.
+
+The [popularity of Opensource engine](http://db-engines.com/en/ranking_osvsc)'s is growing
+with some of the biggest users of commercial licenses being their owners (Microsoft, Oracle).
+
+It also highlighted that most commercial offerings are around relational stores,
+with Opensource heavily present in wide column, graph, key-value and time series stores.
+
+A key takeaway for this segment was 'free' really means reduced TCO for business;
+they pay the support cost in people/consultancy etc but with a 3-10x reduction in TCO.
