@@ -186,6 +186,8 @@ new:
 		echo 'comments: true' >> $(POST_PATH); \
 		echo 'layout: post' >> $(POST_PATH); \
 		echo 'title: $(POST_TITLE)' >> $(POST_PATH); \
+		echo 'tags:' >> $(POST_PATH); \
+		echo '- General' >> $(POST_PATH); \
 		echo '---' >> $(POST_PATH); \
 		echo >> $(POST_PATH); \
 		atom $(POST_PATH); \
