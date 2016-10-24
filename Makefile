@@ -180,7 +180,7 @@ publishpending: getdeps publishpending_script install
 new:
 	$(eval POST_TITLE := $(shell read -p 'Title? ' title; echo $$title))
 	$(eval POST_DATE := $(shell date +'%Y-%m-%d'))
-	$(eval POST_PATH := "content/_drafts/$(POST_DATE)-$(POST_TITLE).markdown")
+	$(eval POST_PATH := "content/_drafts/singles/$(POST_DATE)-$(POST_TITLE).markdown")
 	if [ ! -f $(POST_PATH) ]; then \
 		echo '---' > $(POST_PATH); \
 		echo 'comments: true' >> $(POST_PATH); \
