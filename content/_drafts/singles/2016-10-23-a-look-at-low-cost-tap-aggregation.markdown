@@ -393,6 +393,10 @@ switch(config)#interface ethernet1
 switch(config-if-Et1)#service-policy type tapagg input TAP_CLASS_MAP
 ```
 
+For software based control, Arista provides a powerful HTTP API as well as
+XMPP client support and 'on-device' APIs. The Python eAPI client can be found on
+[GitHub](https://github.com/arista-eosplus/pyeapi), with some [examples](https://github.com/arista-eosplus/pyeapi/tree/develop/examples).
+
 # Summary
 
 It is cost effective to deploy tap infrastructure where required.
