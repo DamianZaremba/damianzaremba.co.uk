@@ -245,8 +245,9 @@ out of HDFS upon request; this is used to seed slaves and replay entries on rest
 
 MyRocks
 =======
-It was announced that Percona Server will be supporting MyRocks, this is exciting
-as previously you needed to run [Facebook's branch](https://github.com/facebook/mysql-5.6) of MySQL.
+It was [announced](https://www.percona.com/blog/2016/10/24/announcing-myrocks-in-percona-server-for-mysql/)
+that Percona Server will be supporting MyRocks, this is exciting as previously
+you needed to run [Facebook's branch](https://github.com/facebook/mysql-5.6) of MySQL.
 
 I've not yet had time to play with MyRocks, but some key stats posted by others when compared to InnoDB:
 
