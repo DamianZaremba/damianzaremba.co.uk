@@ -46,13 +46,13 @@ this stops the index being maintained, requiring a rebuild of the index when it'
 
 Why is this useful?
 
-* Dropping an index; once dropped rebuilding the index could be very time-consuming,
-in a production setting this could have a significant effect on your applications.
+* Dropping an index; once dropped rebuilding the index could be very time-consuming and
+in a production setting, this could have a significant effect on your applications.
 Hiding the index would reveal the same performance hit, with a low-cost rollback.
 
 * Adding an index; creating a new index can cause the query plan to change,
-sometimes negatively. Currently it's not possible to 'force' a hidden index to be on,
-however this would be an interesting feature; enabling testing of critical queries.
+sometimes negatively. Currently, it's not possible to 'force' a hidden index to be on,
+this would be an interesting feature; enabling testing of critical queries.
 
 ### IPv6 comparisons
 INET6_ATON / INET6_NTOA were added in MySQL 5.6 however binary comparison has never
@@ -60,7 +60,7 @@ worked properly. [WL#8699](http://dev.mysql.com/worklog/task/?id=8699) has chang
 
 You can now do `INET6_ATON(address) & INET6_ATON(network)` and the result is correct.
 
-A small change, but for certain applications a lot of logic around v6 can now be treated the same way as v4.
+A small change, but for certain applications, a lot of logic around v6 can now be treated the same way as v4.
 
 ### JSON support
 The JSON support continues to mature, with 2 new functions added in 8.0;
