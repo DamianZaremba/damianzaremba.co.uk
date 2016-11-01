@@ -7,8 +7,8 @@ tags:
 - How-to
 - Python
 ---
-
-Recently a project I worked on required traffic capture from a number of sources, thus an adventure into possible solutions was born.
+A while ago I have a project come up, that required traffic capture from a
+number of sources, thus an adventure into possible solutions was born.
 
 ## Why do we want to capture traffic?
 
@@ -38,7 +38,7 @@ traffic volumes processing traffic can take critical resources away from your bu
 
 Raw sockets are generally very limited, hub based topologies are not widely used, limiting any traffic to broadcast for the servers subnet, or targeted (CPU bound) traffic (multicast/unicast).
 
-Generally, to be usable by any analyser the traffic would need to be encapsulated and transmitted,
+Generally, to be usable by an analyser the traffic would need to be encapsulated and transmitted,
 using further resources on the device.
 
 ### Span a switch
@@ -64,8 +64,7 @@ However, if you need insight into a switched domain and don't want to inline-tap
 it might work for you.
 
 ### Inline
-Inline-taps come in many different flavours, supporting different media types, however there are
-2 main differences.
+Inline-taps come in many different flavours, supporting different media types. At a basic level, there are 2 main differences.
 
 #### Passive tap
 * Require no power, pass the original signal onto the output
@@ -174,9 +173,9 @@ However, there are a number of reasons to have an aggregation step in the middle
 
 * Number of ingress points
   * Aggregation of smaller capture points into larger interfaces
-  * Reduction in rack space required for servers (Analysers)
+  * Reduction in rack space required for analysers, servers etc
   * Strategic aggregation to reduce physical requirements (fibre, rack space)
-* Multiple analysers
+* Multiple destinations
   * Apply filtering logic to save on analyser licensing
   * Send traffic to security appliances and network monitoring devices
 * Apply software logic to capture rules
@@ -294,7 +293,8 @@ The switch config is where we wire everything together, there are 3 key concepts
 * Tool - output
 * Tap Group - logical grouping of TAP ports
 
-The configuration is pretty straight forward and [well documented](https://www.arista.com/en/um-eos/eos-section-16-3-tap-aggregation-configuration).
+The configuration is pretty straight forward and
+[well documented](https://www.arista.com/en/um-eos/eos-section-16-3-tap-aggregation-configuration).
 
 First, let's put the switch into tap mode
 
@@ -305,7 +305,7 @@ switch(config)#tap aggregation
 switch(config-tap-agg)#mode exclusive
 ```
 
-This will place all switch ports into errdisabled and enable tap/tool ports.
+This will place all switch ports into error disabled and enable tap/tool ports.
 
 Next, define our tap ports
 
@@ -393,7 +393,7 @@ switch(config)#interface ethernet1
 switch(config-if-Et1)#service-policy type tapagg input TAP_CLASS_MAP
 ```
 
-For software based control, Arista provides a powerful HTTP API as well as
+For software-based control, Arista provides a powerful HTTP API as well as
 XMPP client support and 'on-device' APIs. The Python eAPI client can be found on
 [GitHub](https://github.com/arista-eosplus/pyeapi), with some [examples](https://github.com/arista-eosplus/pyeapi/tree/develop/examples).
 
@@ -411,3 +411,13 @@ And the cost? Basically, about the same as a 10G switch with routing functionali
 Naturally, the cost is varied depending on physical requirements (fibre/copper runs),
 port speeds (1/10/25/40/100G) and port count; this is applicable to any switch or
 other tap based deployment.
+
+## Footnote
+I would advise any tap deployments to be carefully planned, certain topologies,
+such as multi-stage clos networks do not make good tap targets, both due to the number
+of links involved and the resulting bandwidth requirements for the TAP infrastructure.
+
+Depending on your goals, tapping at natural points of congestion, such as
+the ingress/egress points for your high performance/bandwidth network segments
+(transit links, firewalls etc), will likely provide highly useful information at
+a vastly reduce capture complexity.
