@@ -141,8 +141,7 @@ diff to hand.
 This would be a really nice feature, that I hope they implement soon.
 
 For any configs on the flash, these can either be restored
-(`config replace flash:startup-config.xxxx`), or the differences
-(`diff running-config flash:startup-config.xxxx`) displayed pretty easily,
+(`config replace flash:startup-config.xxxx`), or the differences displayed (`diff running-config flash:startup-config.xxxx`) pretty easily,
 so most the functionality is already there.
 
 ### An example 'four-eye' change

@@ -16,12 +16,11 @@ It is commonly accepted do use TLS when accessing services over the internet, wh
 they are based on HTTP, SMTP, IMAP, POP, FTP or any number of other protocols.
 
 It is also commonly accepted to terminate those TLS connections on the edge,
-handling all internal communications in plain text. This is for a number of reasons,
-historically around scalability, performance and trust.
+handling all internal communications in plain text. This is for a number of reasons around scalability, performance and trust.
 
 As technology stacks have matured, a number of security standards have been created,
 including those for card handling (PCI DDS); many of these still contain phrasing such
-as '[Encrypt transmission of cardholder data across open, public networks](https://www.pcisecuritystandards.org/pdfs/pci_ssc_quick_guide.pdf)', with the
+as '[encrypt transmission of cardholder data across open, public networks](https://www.pcisecuritystandards.org/pdfs/pci_ssc_quick_guide.pdf)', with the
 definitions being open to interpretation.
 
 Pause for a moment and consider if these scenarios are 'across open, public networks':
@@ -47,7 +46,7 @@ which limit the possibilities of the above; however that isn't very effective ag
 or a cyber-based attack on a provider.
 
 Many businesses have a wealth of information useful to a nation state, from habits and preferences
-to medical or travel data. It might just be paranoia until they're out to get you.
+to medical or travel data. It might be paranoia, until they're out to get you.
 
 Ultimately this comes down to risk management and if you want to be 'compliant' or 'secure'
 in regards to your customer's data.
@@ -60,7 +59,7 @@ As briefly noted above, the standard for encryption in the public network space 
 [Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 (TLS).
 
-There are multiple implementations of TLS, with 1.2 currently being the most secure,
+There are multiple implementations of TLS, with 1.2 currently being the standard (1.3 is in draft),
 the version and associated cryptographic ciphers are usually associated to the
 support requirements; many older browsers and SSL libraries don't support the most
 secure choices.
@@ -74,7 +73,7 @@ The results should then be checked, either using `openssl s_client`,
 Generally, user-facing TLS is simple to deploy, with the potential for
 small compatibility issues (including breaking certain browsers).
 
-The direction for Google Chrome and others is to start displaying HTTP sites in
+The direction for [Google Chrome](https://security.googleblog.com/2016/09/moving-towards-more-secure-web.html) and others is to start displaying HTTP sites in
 the same manner as invalid SSL is currently shown (red bars or similar), so it's
 highly advisable even if you don't transmit any 'sensitive info' (sensitive here
  includes tracking data, such as cookies).
@@ -94,11 +93,11 @@ the current state of TLS performance. The key takeaway is, when configured
 correctly, TLS at the scale of Facebook and Google performs fast enough with minimal
 CPU overhead.
 
-Using the most secure ECDHE is a little more costly, but with mitigations in place
+Using the most secure cipher suites (ECDHE) are a little more costly, but with mitigations in place
 (HTTP keepalives, session resumption etc), the performance overhead is negligible.
 
 Depending on your environment, you may purchase or use CA signed certificates
-as is the cast with external traffic, however at a certain scale an internal
+as is the case with external traffic, however at a certain scale an internal
 certificate authority makes sense.
 
 There is a certain level of complexity in deploying and maintaining a secure
@@ -243,12 +242,12 @@ subgraph cluster_SiteB {
 
 It may not be desirable to put a layer 2 device in your path, though it is
 likely that the path will already be using BFD or similar to account for
-any interruptions that don't result in an interface flap.
+any provider interruptions, which don't result in an interface flap.
 
 There are also some implementation considerations:
 
 * Additional header size needs to be accounted for in downstream MTUs
-* Certain providers filter layer 2 traffic, they may filter the control messages!
+* Certain providers filter layer 2 traffic, they may filter the MacSec control messages!
 
 As with Layer 1 encryption, this prevents unauthorised traffic entering the network, as
 well as protecting against interception.

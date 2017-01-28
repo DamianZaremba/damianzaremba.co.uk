@@ -7,7 +7,7 @@ tags:
 - How-to
 - Python
 ---
-A while ago I have a project come up, that required traffic capture from a
+A while ago, I had a project that required capturing traffic from a
 number of sources, thus an adventure into possible solutions was born.
 
 ## Why do we want to capture traffic?
@@ -16,7 +16,7 @@ There are numerous reasons to capture traffic including:
 
 * Network troubleshooting
 * Traffic monitoring (including intrusion detection)
-* Legal requests
+* Legal requests/requirements
 
 Ultimately it's about getting visibility, either for security or operations.
 
@@ -99,7 +99,7 @@ subgraph cluster_Monitor {
 {% enddigraph %}
 
 There are different technologies for mirroring the payload, for copper these
-are generally resistor based, for fibre they're either thin film or FBT.
+are generally resistor based, for fibre they're either thin film or fused biconical taper based.
 
 _Note: Thin film is generally preferred for 40G+ links, due to their lower loss rate caused by more even light distribution._
 
@@ -159,8 +159,9 @@ The internal complexity varies, but the principal is:
 * Transmit Z to the output interface
 
 It is possible to buy active taps, with the capability to 'fail open', so in the event
-of a power failure traffic will continue to flow. I still prefer to use passive taps,
-which should be as resilient as a fibre patch panel.
+of a power failure traffic will continue to flow.
+
+I still prefer to use passive taps, which should be as resilient as a fibre patch panel.
 
 ## Why do we want to aggregate it?
 In the most simplistic deployment, we can simply send from the source to the destination:
@@ -235,7 +236,7 @@ Outputs:
 * Bro Network Security Monitor (Internet + Regional only)
 * Server (Corporate only)
 
-### Diagram
+### Logical Diagram
 {% digraph active tap %}
 subgraph cluster_PassiveTap {
   label = "Passive Optical Tap";
@@ -286,7 +287,7 @@ subgraph cluster_Server {
 "Tap Switch" -> "Secret Server"
 {% enddigraph %}
 
-### Switch config
+### Switch configuration
 The switch config is where we wire everything together, there are 3 key concepts:
 
 * Tap - input
@@ -326,7 +327,7 @@ switch(config-if-Et3)#switchport mode tap
 switch(config-if-Et3)#switchport tool group CORPORATE
 
 switch(config)#interface ethernet 4
-switch(config-if-Et4)#description Corporate Spine 1
+switch(config-if-Et4)#description Corporate Spine 2
 switch(config-if-Et4)#switchport mode tap
 switch(config-if-Et4)#switchport tool group CORPORATE
 

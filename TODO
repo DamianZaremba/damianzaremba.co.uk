@@ -1,5 +1,4 @@
-Arista config session - for role based sign off + synchro changes (vrf etc)
-DLB concepts - ECMP, UCMP, re-hasing considerations, opensource, commodity hardware
+DLB concepts - ECMP, UCMP, re-hashing considerations, opensource, commodity hardware
 Distributed firewalling - central source of truth, declarative requirements, hit counter logging, iptables + juniper + cisco or w/e
 Consistency requirements in distributed systems - latency impact, choke points etc
 Using pam_access for RBAC
