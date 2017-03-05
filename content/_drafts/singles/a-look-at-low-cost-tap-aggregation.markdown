@@ -36,7 +36,7 @@ At a basic level, a device can capture traffic in 2 ways:
 CPU bound traffic can be efficient to capture if filtered appropriately. When dealing with high
 traffic volumes processing traffic can take critical resources away from your business applications.
 
-Raw sockets are generally very limited, hub based topologies are not widely used, limiting any traffic to broadcast for the servers subnet, or targeted (CPU bound) traffic (multicast/unicast).
+Raw sockets are generally very limited, hub-based topologies are not widely used, limiting any traffic to broadcast for the servers subnet, or targeted (CPU bound) traffic (multicast/unicast).
 
 Generally, to be usable by an analyser the traffic would need to be encapsulated and transmitted,
 using further resources on the device.
@@ -151,7 +151,7 @@ subgraph cluster_Processor {
 "Processor" -> "Monitor TX2"
 {% enddigraph %}
 
-The internal complexity varies, but the principal is:
+The internal complexity varies, but the principle is:
 
 * Given an input of X
 * Generate the payload of X into Y and Z
@@ -181,7 +181,7 @@ However, there are a number of reasons to have an aggregation step in the middle
   * Send traffic to security appliances and network monitoring devices
 * Apply software logic to capture rules
 * Support multiple media types
-  * Provide longer reach for copper based taps
+  * Provide longer reach for copper-based taps
   * SMF, MMF, XFP, QSFP, Copper support
 * Single view of traffic
   * Certain DPI/IDS appliances require full flows, difficult in ECMP networks
@@ -294,7 +294,7 @@ The switch config is where we wire everything together, there are 3 key concepts
 * Tool - output
 * Tap Group - logical grouping of TAP ports
 
-The configuration is pretty straight forward and
+The configuration is quite simple and
 [well documented](https://www.arista.com/en/um-eos/eos-section-16-3-tap-aggregation-configuration).
 
 First, let's put the switch into tap mode
@@ -361,7 +361,7 @@ switch(config-if-Et11)#switchport tool group set CORPORATE
 Et10 + Et11 will now receive any traffic sent to their relevant groups.
 
 ### Advanced features
-In the demo, we have a static input -> output allocation, in real life this can be
+In the demo, we have a static input -> output allocation in real life this can be
 software controlled or filter based.
 
 We could also truncate packets to look at only their headers,

@@ -42,11 +42,11 @@ However, there are also risks, as they all pass through physical assets you don'
 * Redundancy; A targeted attack on physical infrastructure could place your business operations at risk
 
 Thankfully, most providers and many ISO standards have well defined physical access controls,
-which limit the possibilities of the above; however that isn't very effective against a nation state,
+which limit the possibilities of the above; however that isn't very effective against a nation-state,
 or a cyber-based attack on a provider.
 
-Many businesses have a wealth of information useful to a nation state, from habits and preferences
-to medical or travel data. It might be paranoia, until they're out to get you.
+Many businesses have a wealth of information useful to a nation-state, from habits and preferences
+to medical or travel data. It might be paranoia until they're out to get you.
 
 Ultimately this comes down to risk management and if you want to be 'compliant' or 'secure'
 in regards to your customer's data.
@@ -60,7 +60,7 @@ As briefly noted above, the standard for encryption in the public network space 
 (TLS).
 
 There are multiple implementations of TLS, with 1.2 currently being the standard (1.3 is in draft),
-the version and associated cryptographic ciphers are usually associated to the
+the version and associated cryptographic ciphers are usually associated with the
 support requirements; many older browsers and SSL libraries don't support the most
 secure choices.
 
@@ -84,7 +84,7 @@ a few hundred dollars is a small cost for most online businesses.
 
 ## TLS internally
 
-Historically concerns around performance of TLS have stunted the deployment internally,
+Historically concerns about performance of TLS have stunted the deployment internally,
 modern versions of the libraries combined with the current generations of CPUs mean
 TLS is not slow! (mostly).
 
@@ -103,7 +103,7 @@ certificate authority makes sense.
 There is a certain level of complexity in deploying and maintaining a secure
 internal certificate authority and many tools exist to help with this.
 
-Another advantage of an internal CA is to be able to use certificate based
+Another advantage of an internal CA is being able to use certificate-based
 authentication for clients, enabling devices to prove their identity.
 
 Alternatives
@@ -149,7 +149,7 @@ For the second, we have a number of options described below.
 ### Layer 1 encryption
 There are a number of 'black box' solutions, which sit in-line to the network.
 
-The general principal is un-encrypted data comes in one end, encrypted data comes
+The general principle is un-encrypted data comes in one end, encrypted data comes
 out the other; the reverse then happens to give you un-encrypted data on the other end.
 
 {% digraph layer 1 encryption %}
@@ -204,15 +204,15 @@ subgraph cluster {
 }
 {% enddigraph %}
 
-Any layer 2 data additional to the mac addresses (VLAN tag, LLDP etc) is contained
+Any layer 2 data outside of the mac addresses (VLAN tag, LLDP etc) is contained
 within the encrypted data.
 
 The security tag and ICV are used internally for MacSec, with the mac addresses being
 used for forwarding.
 
-There is a hardware dependency associated to MacSec, as the encryption is done
+There is a hardware dependency associated with MacSec, as the encryption is done
 in hardware to achieve line rate speeds. This varies between vendors, but can
-be in the form of dedicated line cards or whole models.
+be in the form of dedicated line cards or whole products.
 
 It is possible to offload the encryption to MacSec capable switches,
 allowing routers and line cards to remain, with the switch sitting inline.
@@ -253,11 +253,11 @@ As with Layer 1 encryption, this prevents unauthorised traffic entering the netw
 well as protecting against interception.
 
 ### DMVPN / Mesh VPN
-It may be desirable in some cases to form a software based VPN mesh over
+It may be desirable in some cases to form a software-based VPN mesh over
 your existing network, providing encryption between 2 or more points.
 
-This could be in the form of a single IPSEC tunnel, or a complex hub spoke DMVPN
-network. These could be deployed on dedicated devices or end user devices.
+This could be in the form of a single IPsec tunnel, or a complex hub spoke DMVPN
+network. These could be deployed on dedicated devices or end-user devices.
 
 For high traffic applications, these approaches are likely not applicable, due to
 line rate speeds being desirable, but in branch or remote worker applications

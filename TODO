@@ -5,3 +5,4 @@ Using pam_access for RBAC
 Confederated BGP overview
 Optic options - 25G, 40G, 100G. What's the difference, consolidate fibre for 100G with 25G
 Clos architecture overview
+Ansible quirks - modules/callbacks/inventory
