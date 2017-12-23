@@ -36,13 +36,13 @@ check_git:
 	fi
 
 compile: clean getdeps
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll build
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll build
 
 server: clean
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
 
 prod-server: clean
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 jekyll serve --watch --incremental --config _config.yml
+	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll serve --watch --incremental --config _config.yml
 
 clone:
 	# Remove it not a git repo
