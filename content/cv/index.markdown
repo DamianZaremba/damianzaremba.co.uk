@@ -17,11 +17,12 @@ Driven to impact change where required and deliver things done efficiently and e
 
 Employment History
 ------------------
-### Booking.com - DevOps Engineer
+### Booking.com - Network Engineer
 *September 2016 - Present*
 
-Working in the network engineering department, dealing with internal systems
-related to provisioning, monitoring and managing network devices across the globe.
+Working in network engineering, dealing with infrastructure related to running [AS43996](https://stat.ripe.net/AS43996) / [AS202196](https://stat.ripe.net/AS202196).
+
+Also manage and develop internal systems related to provisioning, monitoring and managing network infrastructure across the globe.
 
 ### TravelJigsaw Limited (Rentalcars.com) - Principal Security Engineer
 *November 2015 - September 2016*

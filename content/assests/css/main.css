@@ -12,12 +12,9 @@ body > .container {
   padding: 60px 15px 0;
 }
 
-/* Header stuff */
-/*@media(max-width: 992px) {
-  .social-icons {
-    display: none;
-  }
-}*/
+blockquote {
+    font-size: 14px !important;
+}
 
 .social-icons a img {
   margin-top: 4px;

@@ -25,6 +25,8 @@ description: About Damian Zaremba
 
     <p>With a passion for complex systems, networking, automation, solution design, testing strategies, Linux, open source, metric collection and graphing, Damian is a strong asset to any team looking to architect, implement and scale infrastructure while ensuring continuous service delivery.</p>
 
+    <p>In his spare time, Damian enjoys travelling, Scuba diving and climbing.</p>
+
     <p>Take a look at Damian's <a href="/cv">CV</a> for more information and work experience.</p>
 
     <div class="visible-sd hidden-md hidden-lg">
@@ -35,6 +37,22 @@ description: About Damian Zaremba
       <a href="http://www.youtube.com/user/DamianZaremba"><img src="{% cdn_url /assests/images/logos/youtube.png %}" alt="YouTube" /></a></p>
       <p><img src="{% cdn_url /assests/images/logos/rhcsa.png %}" alt="RHCSA" />
       <img src="{% cdn_url /assests/images/logos/rhce.png %}" alt="RHCE" /></p>
+    </div>
+    <div class="hidden-sd visible-md visible-lg">
+      <h5>What others say about Damian</h5>
+      <blockquote class="blockquote">
+        <p class="mb-0">Damian is a very skilled engineer which successfully combines devops skills with network engineering.</p>
+      </blockquote>
+      <blockquote class="blockquote">
+        <p class="mb-0">A key contributor to network tooling, and an advocate of doing proper engineering. Comfortable with any programming language and any system. One of the best engineer I've ever worked with.</p>
+      </blockquote>
+      <blockquote class="blockquote">
+        <p class="mb-0">Damian's technical knowledge and craftsmanship are at the very high level.
+        He is one of the most skilled engineers I know.</p>
+      </blockquote>
+      <blockquote class="blockquote">
+        <p class="mb-0">I have found Damian to be a worthy collaborator, very cooperative, helpful, and humble.</p>
+      </blockquote>
     </div>
   </div>
 </div>

@@ -42,12 +42,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="{% if page.url != '/about/' and page.url != '/cv/' and page.url != '/archive/' and page.url != '/projects/' and page.url != '/todo/' %}active{% endif %}"><a href="/">Blog</a></li>
+            <li class="{% if page.url != '/about/' and page.url != '/cv/' and page.url != '/archive/' and page.url != '/projects/' %}active{% endif %}"><a href="/">Blog</a></li>
             <li class="{% if page.url == '/about/' %}active{% endif %}"><a href="/about/">About</a></li>
             <li class="{% if page.url == '/cv/' %}active{% endif %}"><a href="/cv/">CV</a></li>
             <li class="{% if page.url == '/archive/' %}active{% endif %}"><a href="/archive/">Archive</a></li>
             <li class="{% if page.url == '/projects/' %}active{% endif %}"><a href="/projects/">Projects</a></li>
-            <li class="{% if page.url == '/todo/' %}active{% endif %}"><a href="/todo/">Todo</a></li>
           </ul>
 
           <div class="social-icons navbar-right visible-md visible-lg">
