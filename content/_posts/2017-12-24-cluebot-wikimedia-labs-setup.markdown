@@ -12,7 +12,7 @@ A few years ago (was it really that long?!), [ClueBot III](https://en.wikipedia.
 
 A while later, they were migrated again from [Wikimedia Labs](https://wikitech.wikimedia.org/wiki/Portal:Wikimedia_Labs) into [Wikimedia Tool Labs](https://wikitech.wikimedia.org/wiki/Portal:Tool_Labs), providing more resources via the [Open Grid Manager](http://gridscheduler.sourceforge.net/) cluster as well as [web services](https://wikitech.wikimedia.org/wiki/Help:Tool_Labs/Web) and other shared community things.
 
-Recently due to [Ubunutu Precise LTS](http://releases.ubuntu.com/12.04/) hitting EOL, the [Tool Labs](https://wikitech.wikimedia.org/wiki/Portal:Tool_Labs) containers where migrated to run under [Ubuntu Trusty LTS](http://releases.ubuntu.com/14.04/).
+Recently due to [Ubuntu Precise LTS](http://releases.ubuntu.com/12.04/) hitting EOL, the [Tool Labs](https://wikitech.wikimedia.org/wiki/Portal:Tool_Labs) containers where migrated to run under [Ubuntu Trusty LTS](http://releases.ubuntu.com/14.04/).
 
 During the latest migration, the tool accounts where re-created from scratch. This post will outline how things are configured for a point of reference in the future.
 
@@ -20,7 +20,7 @@ Overview
 ========
 Accounts:
 
-* `tools.cluebot` - Legacy account - only a webservice redirect is running
+* `tools.cluebot` - Legacy account - only a web service redirect is running
 * `tools.cluebot3` - Dedicated account for [ClueBot III](https://en.wikipedia.org/wiki/User:ClueBot_III)
 * `tools.cluebotng` - Account for all things related to [ClueBot NG](https://en.wikipedia.org/wiki/User:ClueBot_NG)
 
@@ -274,6 +274,6 @@ The main bot log provides a good indicator as to the source of problems but has 
 
 It is common to see 'Failed to get edit data for xxx', this is only a problem if it's happening for a large number of changes; normally this is due to delayed replicas, causing the user/page metadata for new users/pages to be non-existent.
 
-The relays generally don't break but may have incorrect entries in database. The simplest fix is to kill the job and let it re-spawn.
+The relays generally don't break but may have incorrect entries in the database. The simplest fix is to kill the job and let it re-spawn.
 
-The report interface will likely break due to PHP being updated, it will need fixing randomly; there is a motivation to rebuild the interface to include the review functionality as well as oauth based authentication ([T135323](https://phabricator.wikimedia.org/T135323)).
+The report interface will likely break due to PHP being updated, it will need fixing randomly; there is a motivation to rebuild the interface to include the review functionality as well as OAuth based authentication ([T135323](https://phabricator.wikimedia.org/T135323)).
