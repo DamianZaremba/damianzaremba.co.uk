@@ -6,7 +6,6 @@ tags:
 - General
 - How-to
 - FOSS
-status: pending
 ---
 
 A few years ago (was it really that long?!), [ClueBot III](https://en.wikipedia.org/wiki/User:ClueBot_III) & [ClueBot NG](https://en.wikipedia.org/wiki/User:ClueBot_NG) where moved into [Wikimedia Labs](https://wikitech.wikimedia.org/wiki/Portal:Wikimedia_Labs) from personal/community servers on [Cluenet](https://www.cluenet.org/).
