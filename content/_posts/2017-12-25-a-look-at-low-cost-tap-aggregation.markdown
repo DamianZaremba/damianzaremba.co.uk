@@ -6,7 +6,6 @@ tags:
 - Network
 - How-to
 - Python
-status: pending
 ---
 A while ago, I had a project that required capturing traffic from a
 number of sources, thus an adventure into possible solutions was born.
@@ -55,7 +54,7 @@ There are a number of downsides:
 
 * Vendors have varying levels of support;
   * RSPAN on a Juniper EX series switch doesn't work over an AE
-  * Tricks can be used, for example spanning into a GRE tunnel to accomplish ERSPAN, this becomes hardware dependent though
+  * Tricks can be used, for example, spanning into a GRE tunnel to accomplish ERSPAN, this becomes hardware dependent though
 * CPU generated (ICMP/ARP/LLDP/BPDU etc) packets generally do not get mirrored
 * Invalid packets will not be seen (those dropped due to checksum errors for example)
 * CPU usage can increase drastically due to extra processing requirements
@@ -99,7 +98,7 @@ subgraph cluster_Monitor {
 "Output TX" -> "Monitor TX2"
 {% enddigraph %}
 
-There are different technologies for mirroring the payload, for copper these
+There are different technologies for mirroring the payload when using copper, these
 are generally resistor based, for fibre they're either thin film or fused biconical taper based.
 
 _Note: Thin film is generally preferred for 40G+ links, due to their lower loss rate caused by more even light distribution._
@@ -159,7 +158,7 @@ The internal complexity varies, but the principle is:
 * Transmit Y to the monitor interface
 * Transmit Z to the output interface
 
-It is possible to buy active taps, with the capability to 'fail open', so in the event
+It is possible to buy active taps, with the capability to 'fail open' meaning in the event
 of a power failure traffic will continue to flow.
 
 I still prefer to use passive taps, which should be as resilient as a fibre patch panel.
