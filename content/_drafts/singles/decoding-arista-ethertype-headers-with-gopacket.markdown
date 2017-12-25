@@ -8,13 +8,13 @@ tags:
 - Go
 ---
 
-Using hardware time stamping provides a highly accurate record of when packets
-where processed by devices, making it perform for TAP aggregation.
-
 As we [previously discussed](/2017/12/a-look-at-low-cost-tap-aggregation/),
-using cheap switches to aggregate multiple tap feeds gives you a lot of power.
+using cheap switches to aggregate multiple tap sources gives you a lot of power.
 
-However, given the multiple feeds, how can you measure timing information 1 hop away?
+However, given the multiple feeds, how can you measure timing information accurately 1 hop away?
+
+Using hardware time stamping provides a highly accurate record of when packets
+were processed by devices, making it perfect for TAP aggregation.
 
 Revisiting the 7150 platform
 ----------------------------
@@ -66,7 +66,7 @@ A look into the 7500{E,R}/7280{E,R} series
 On the newer platforms, Arista has moved away from using the keyframe setup and
 introduced a custom EtherType. Again, using hardware time stamping at line-rate & supporting PTP.
 
-There are 3 possible time stamping modes on the 7500{E,R} & 7280{E,R} series switches:
+There is 3 possible time stamping modes on the 7500{E,R} & 7280{E,R} series switches:
 
 * 64-bit header timestamp; i.e., encapsulated in the L2 header
 * 48-bit header timestamp; i.e., encapsulated in the L2 header
@@ -104,7 +104,7 @@ subgraph cluster {
   "Timestamp" [shape=square, height=1.2];
   "Version" [shape=square, height=1.2];
   "Sub-Type" [shape=square, height=1.2];
-  "EtherType" [shape=square, height=1.2];
+  "EtherType" [shape=square, height=1.5];
   "Src Address" [shape=square, height=1.5];
   "Dst Address" [shape=square, height=1.5];
 }
@@ -139,10 +139,10 @@ There are some limitations to the time stamping support, notably;
 
 Now we've changed the Ethernet header, it requires a specific decoder to be able to process.
 
-Without a specific decoder, it is no longer a valid Ethernet header as Length field now
+Without a specific decoder, it is no longer a valid Ethernet header as Length field
 contains a meaningless value.
 
-Arista [provide](https://eos.arista.com/analyzing-packet-header-timestamps-in-wireshark/) a
+Arista [provides](https://eos.arista.com/analyzing-packet-header-timestamps-in-wireshark/) an
 LUA extension for Wireshark for this purpose.
 
 Decoding custom EtherTypes in gopacket
@@ -156,7 +156,7 @@ our EtherType.
 
 After some experimentation, while this provided decoding of the timestamp data,
 it prevented further processing of the packets, resulting in the IP layer
-being inaccessible. This was complicated due to our now invalid Ethernet header.
+being inaccessible; this was complicated due to our now invalid Ethernet header.
 
 A simple solution of extending the built-in
 [EthernetType](https://godoc.org/github.com/google/gopacket/layers#EthernetType)
@@ -261,7 +261,8 @@ func DecodeAristaExtendedEthernet(data []byte, p gopacket.PacketBuilder) error {
 }
 ```
 
-Now we have the custom decoder, we just need to register it with gopacket
+Now we have the custom decoder, we just need to register it with gopacket.
+This makes gopacket use our decoder implementation rather than the built-in Ethernet one.
 
 ```go
 import (
@@ -269,9 +270,6 @@ import (
 )
 
 func init() {
-  // Register our customer ethernet decoder
-  // This is required to make the ethernet header parsable :)
-  // We basically optionally parse either a normal Ethernet header or one with timestamp data (12 bytes after src mac)
   layers.LinkTypeMetadata[layers.LinkTypeEthernet] = layers.EnumMetadata{
     DecodeWith: gopacket.DecodeFunc(DecodeAristaExtendedEthernet),
     Name:       "AristaExtendedEthernet",
@@ -279,7 +277,7 @@ func init() {
 }
 ```
 
-The custom fields are accessible on the Ethernet layer.
+The custom fields are now accessible on the Ethernet layer, alongside the other fields.
 
 ```go
 layer := packet.Layer(layers.LayerTypeEthernet)
@@ -296,7 +294,7 @@ if layer != nil {
 }
 ```
 
-The above decoder has been successfully tested with 500k/s packets per second.
+A similar decoder has been successfully tested with 500k/s packets per second.
 
 Summary
 -------

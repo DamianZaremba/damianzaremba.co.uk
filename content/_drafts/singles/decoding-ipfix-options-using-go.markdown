@@ -16,7 +16,7 @@ is the template-based nature of data.
 
 While very similar to NetFlow version 9, IPFIX enables variable length fields
 and vendor extensions. This makes the protocol suitable for different types of
-performance data, as desired by any vendors.
+performance data, as desired by any vendor.
 
 A recent project required some processing of IPFIX flow data,
 which this post will focus on.
@@ -27,7 +27,7 @@ _TL;DR The full implementation can be found on
 Parsing options
 ---------------
 A number of IPFIX decoder implementations exist in Go,
-however most are included in flow decoder implementations,
+most are included in flow decoder implementations,
 rather than standalone libraries.
 
 The best stand-alone library I could fix is
@@ -52,7 +52,7 @@ At a high level, there is 1 common header then 3 different payload types
 * Options template
 * Data set
 
-We are interested in the options template and data set.
+We are interested in the options template and data set (where we have a matching template ID, more on this later).
 
 Decoding the header
 -------------------
@@ -80,10 +80,9 @@ Decoding the template
 
 Before any data can be decoded, we must have a matching template.
 
-Without the template, there is no way to know how the fields are mapped within the data set.
+Without the template, there is no way to know how the fields are mapped inside the data set.
 
-Each template payload (SetId 2 or 3) has a header containing the ID and field counts,
-first we need to decode this.
+Each template payload (SetId 2 or 3) has a header containing the ID and field counts.
 
 ```go
 template := OptionsTemplate{
@@ -98,9 +97,9 @@ we can determine the payload is a sequence of field separators.
 
 The number of separators corresponds to the values in the header we just decoded.
 
-Unlike a data template, the options template has a set of scope fields.
+The ordering of these fields is critical for us to maintain.
 
-The ordering of these fields is critical to maintain.
+Note: Unlike a data template, the options template has a set of scope fields.
 
 ### Decode the fields
 Both scope fields and fields have the same structure, thus can be decoded
@@ -172,7 +171,7 @@ templateCache.Add(template.Id, template)
 Decoding the data set
 ---------------------
 
-Any set ID over 255 represents a data set, the set ID then refers to the template
+Any set ID over 255 represents a data set, the set ID refers to the template
 we need to use when decoding the data set.
 
 First, we need to ensure we have a matching template for this payload.
@@ -186,9 +185,10 @@ template := cacheEntry.(OptionsTemplate)
 ```
 
 Once we have the template, it's a case of decoding each option in sequence.
+
 Again, both scope fields and fields can be decoded using the same logic.
 
-### Option decoding
+### Field decoding
 
 The option decoding logic has 3 main tasks:
 
@@ -249,8 +249,6 @@ func decodeSingleOption(byteSlice []byte, field TemplateField, options Options) 
 }
 ```
 
-### Decoding the fields
-
 The order of fields in the data set is identical to the order in the template,
 so once again it's just a case of looping over them.
 
@@ -278,8 +276,9 @@ for i := 0; i < len(template.Field); i++ {
 
 Result
 ------
-We now have a subset of the IANA fields supported in our decoder,
-given a correct template and data payload, the result is now a map of our options.
+We now have a subset of the IANA fields supported in our decoder.
+
+Given a correct template and data payload, the result is a map of received options.
 
 ```go
 map[
