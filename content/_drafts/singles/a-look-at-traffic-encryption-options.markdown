@@ -5,6 +5,7 @@ title: A look at traffic encryption options
 tags:
 - Network
 - Security
+status: pending
 ---
 
 Given a post [highlighting the cost effectiveness](/2017/12/a-look-at-low-cost-tap-aggregation/)
@@ -12,7 +13,7 @@ of deploying network taps, it would make sense to look at the other side; encryp
 
 Intro
 =====
-It is commonly accepted do use TLS when accessing services over the internet, whether
+It is commonly accepted to use TLS when accessing services over the internet, whether
 they are based on HTTP, SMTP, IMAP, POP, FTP or any number of other protocols.
 
 It is also commonly accepted to terminate those TLS connections on the edge,
@@ -27,7 +28,7 @@ Pause for a moment and consider if these scenarios are 'across open, public netw
 
 * A point to point circuit provided over an external 'dark fibre' (DWDM or similar) network
 * A point to point wireless link between 2 buildings provided by a 3rd party
-* Cross connections between 2 suites within a datacenter, via a meet me room
+* Cross connections between 2 suites within a datacenter, via the meet me room
 
 I imagine most people would argue these are private:
 
@@ -42,7 +43,7 @@ However, there are also risks, as they all pass through physical assets you don'
 * Redundancy; A targeted attack on physical infrastructure could place your business operations at risk
 
 Thankfully, most providers and many ISO standards have well defined physical access controls,
-which limit the possibilities of the above; however that isn't very effective against a nation-state,
+which limit the possibilities of the above however that isn't very effective against a nation-state,
 or a cyber-based attack on a provider.
 
 Many businesses have a wealth of information useful to a nation-state, from habits and preferences
@@ -84,7 +85,7 @@ a few hundred dollars is a small cost for most online businesses.
 
 ## TLS internally
 
-Historically concerns about performance of TLS have stunted the deployment internally,
+Historically concerns about the performance of TLS have stunted the deployment internally,
 modern versions of the libraries combined with the current generations of CPUs mean
 TLS is not slow! (mostly).
 
@@ -96,8 +97,8 @@ CPU overhead.
 Using the most secure cipher suites (ECDHE) are a little more costly, but with mitigations in place
 (HTTP keepalives, session resumption etc), the performance overhead is negligible.
 
-Depending on your environment, you may purchase or use CA signed certificates
-as is the case with external traffic, however at a certain scale an internal
+Depending on your environment, you may purchase or use CA-signed certificates
+as is the case with external traffic however at a certain scale an internal
 certificate authority makes sense.
 
 There is a certain level of complexity in deploying and maintaining a secure
@@ -211,7 +212,7 @@ The security tag and ICV are used internally for MacSec, with the mac addresses 
 used for forwarding.
 
 There is a hardware dependency associated with MacSec, as the encryption is done
-in hardware to achieve line rate speeds. This varies between vendors, but can
+in hardware to achieve line rate speeds. This varies between vendors but can
 be in the form of dedicated line cards or whole products.
 
 It is possible to offload the encryption to MacSec capable switches,
@@ -256,7 +257,7 @@ well as protecting against interception.
 It may be desirable in some cases to form a software-based VPN mesh over
 your existing network, providing encryption between 2 or more points.
 
-This could be in the form of a single IPsec tunnel, or a complex hub spoke DMVPN
+This could be in the form of a single IPsec tunnel, or a complex hub-spoke DMVPN
 network. These could be deployed on dedicated devices or end-user devices.
 
 For high traffic applications, these approaches are likely not applicable, due to
