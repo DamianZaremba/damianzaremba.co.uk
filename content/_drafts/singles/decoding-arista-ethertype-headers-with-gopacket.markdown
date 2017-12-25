@@ -11,7 +11,7 @@ tags:
 Using hardware time stamping provides a highly accurate record of when packets
 where processed by devices, making it perform for TAP aggregation.
 
-As we [previously discussed](/2016/10/a-look-at-low-cost-tap-aggregation/),
+As we [previously discussed](/2017/12/a-look-at-low-cost-tap-aggregation/),
 using cheap switches to aggregate multiple tap feeds gives you a lot of power.
 
 However, given the multiple feeds, how can you measure timing information 1 hop away?

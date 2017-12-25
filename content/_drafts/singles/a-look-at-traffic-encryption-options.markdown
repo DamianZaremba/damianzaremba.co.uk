@@ -7,7 +7,7 @@ tags:
 - Security
 ---
 
-Given a post [highlighting the cost effectiveness](/2016/10/a-look-at-low-cost-tap-aggregation/)
+Given a post [highlighting the cost effectiveness](/2017/12/a-look-at-low-cost-tap-aggregation/)
 of deploying network taps, it would make sense to look at the other side; encryption.
 
 Intro
