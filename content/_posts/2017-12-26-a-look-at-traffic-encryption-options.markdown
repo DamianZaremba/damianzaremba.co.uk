@@ -5,7 +5,6 @@ title: A look at traffic encryption options
 tags:
 - Network
 - Security
-status: pending
 ---
 
 Given a post [highlighting the cost effectiveness](/2017/12/a-look-at-low-cost-tap-aggregation/)
