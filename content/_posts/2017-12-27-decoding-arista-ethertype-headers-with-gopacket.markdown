@@ -6,7 +6,6 @@ tags:
 - Network
 - How-to
 - Go
-status: pending
 ---
 
 As we [previously discussed](/2017/12/a-look-at-low-cost-tap-aggregation/),
