@@ -6,7 +6,6 @@ tags:
 - Network
 - How-to
 - Go
-status: pending
 ---
 
 The IPFIX (IP Flow Information Export) protocol provides an extensible
