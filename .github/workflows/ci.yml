@@ -26,8 +26,8 @@ jobs:
             git wget graphviz \
             openjdk-8-jre python \
             gcc g++ make libgsl0-dev \
-            ruby-bundler ruby-dev \
-            ruby-gsl ruby-ffi
+            ruby-dev ruby-gsl ruby-ffi
+          sudo gem install bundler
 
       - name: Install bundle dependancies
         run: bundle install
