@@ -1,0 +1,40 @@
+name: Continuous Deployment
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '30 1 * * 1'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Checkout live source
+        uses: actions/checkout@v2
+        with:
+          repository: 'DamianZaremba/damianzaremba.co.uk'
+          ref: 'master'
+          token: '${{ secrets.GH_TOKEN }}'
+          path: '_live'
+
+      - name: Install system dependancies
+        run: |
+          sudo apt-get install -y \
+            git wget graphviz \
+            openjdk-8-jre python \
+            gcc g++ make libgsl0-dev \
+            ruby-bundler ruby-dev \
+            ruby-gsl ruby-ffi
+
+      - name: Install bundle dependancies
+        run: bundle install
+
+      - name: Transpile site
+        run: make stage
+
+      - name: Commit site
+        run: make deploy
+        if: github.ref == 'refs/heads/master'
