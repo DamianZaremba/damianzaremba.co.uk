@@ -3,17 +3,10 @@ YUI_COMPRESSOR_VERSION := 2.4.8
 YUI_COMPRESSOR_URL := https://repo1.maven.org/maven2/com/yahoo/platform/yui/yuicompressor/$(YUI_COMPRESSOR_VERSION)/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
 YUI_COMPRESSOR_TARGET := _temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
 
-# HTML Compressor
-HTML_COMPRESSOR_VERSION := 1.5.2
-HTML_COMPRESSOR_URL := https://repo1.maven.org/maven2/com/googlecode/htmlcompressor/htmlcompressor/$(HTML_COMPRESSOR_VERSION)/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
-HTML_COMPRESSOR_TARGET := _temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar
-
 all: compile
 
 getdeps:
 	test -d _temp || mkdir -p _temp
-	# HTML Compressor
-	test -f '$(HTML_COMPRESSOR_TARGET)' || wget '$(HTML_COMPRESSOR_URL)' -O '$(HTML_COMPRESSOR_TARGET)' || (rm -f '$(HTML_COMPRESSOR_TARGET)')
 	# YUI Compressor
 	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)')
 
@@ -66,11 +59,6 @@ minify:
 	do \
 		java -jar '_temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar' $$f -o $$f --charset utf-8; \
 	done
-
-	# HTML
-	java -jar '_temp/htmlcompressor-$(HTML_COMPRESSOR_VERSION).jar' \
-		--type html --remove-quotes --recursive --compress-js \
-		--compress-css --remove-quotes --js-compressor yui -o _site/ _site/
 
 stash:
 	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
