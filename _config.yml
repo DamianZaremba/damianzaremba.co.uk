@@ -17,7 +17,7 @@ paginate_path: ":num"
 
 excerpt_separator:
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
