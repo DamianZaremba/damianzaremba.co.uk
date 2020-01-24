@@ -50,7 +50,7 @@ Achievements included:
 * First internal team to have IPv6 enabled management for all devices
 * Improvements to the GeoDNS backend including EDNS0 support
 
-As an extension to this role, I also provide design/engineering support to and act as an escalation point for BookingGo (Rentalcars.com) teams on an ad-hoc basis, including on the integration of infrastructure.
+As an extension to this role, I also provided design/engineering support to and act as an escalation point for BookingGo (Rentalcars.com) teams on an ad-hoc basis, including on the integration of infrastructure.
 
 ### TravelJigsaw Limited (Rentalcars.com) - Principal Security Engineer
 *November 2015 - September 2016*
