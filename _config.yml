@@ -1,10 +1,8 @@
-url: http://damianzaremba.co.uk
-cdn_url: //damianzaremba.co.uk
+url: https://damianzaremba.co.uk
 permalink: /:year/:month/:title/
 host: 127.0.0.1
 port: 4039
 
-markdown: rdiscount
 highlighter: pygments
 lsi: false
 show_drafts: false

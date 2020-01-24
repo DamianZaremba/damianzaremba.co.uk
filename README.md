@@ -15,7 +15,7 @@ You may not reuse anything within them without my permission:
 * content/_posts/
 * content/_postfiles/
 
-All other directories and files, unless otherwise stated are GPLv3 Licensed. Feel free to use the HTML/CSS/plugins, linkbacks to [damianzaremba.co.uk](http://damianzaremba.co.uk) are appreciated.
+All other directories and files, unless otherwise stated are GPLv3 Licensed. Feel free to use the HTML/CSS/plugins, linkbacks to [damianzaremba.co.uk](https://damianzaremba.co.uk) are appreciated.
 
 How to build
 ------------

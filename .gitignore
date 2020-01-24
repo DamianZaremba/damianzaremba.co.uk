@@ -8,3 +8,4 @@ vendor/
 .bundle
 .idea
 content/assests/images/gv
+content/.jekyll-cache

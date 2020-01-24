@@ -33,13 +33,13 @@ check_git:
 	fi
 
 compile: getdeps
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll build
+	bundle exec jekyll build
 
 server: clean
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
+	bundle exec jekyll serve --watch --incremental --config _config.yml,_config_dev.yml
 
 prod-server: clean
-	LC_ALL=en_GB.UTF-8 LANG=en_GB.UTF-8 bundle exec jekyll serve --watch --incremental --config _config.yml
+	bundle exec jekyll serve --watch --incremental --config _config.yml
 
 clone:
 	# Remove it not a git repo
@@ -47,7 +47,7 @@ clone:
 
 	# Clone if it doesn't exist, update if it does
 	if [ ! -d "_live" ]; then \
-		git clone git@github.com:DamianZaremba/damianzaremba.co.uk.git _live; \
+		git clone git@github.com:DamianZaremba/damianzaremba.github.io _live; \
 	else \
 		cd _live && \
 			git reset --hard && \

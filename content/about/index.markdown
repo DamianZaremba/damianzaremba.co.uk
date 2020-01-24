@@ -8,13 +8,11 @@ description: About Damian Zaremba
     <p><img src="https://s.gravatar.com/avatar/5eb437aa4368d29386cb6f0ed8e6c5b4?s=250" /></p>
 
     <div class="visible-md visible-lg hidden-sg">
-      <p><a href="http://twitter.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/twitter.png %}" alt="Twitter" /></a>
-      <a href="http://facebook.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/facebook.png %}" alt="Facebook" /></a>
-      <a href="http://lastfm.com/user/DamianZaremba4"><img src="{% cdn_url /assests/images/logos/lastfm.png %}" alt="LastFM" /></a>
-      <a href="http://uk.linkedin.com/in/damianzaremba"><img src="{% cdn_url /assests/images/logos/linkedin.png %}" alt="LinkedIn" /></a>
-      <a href="http://www.youtube.com/user/DamianZaremba"><img src="{% cdn_url /assests/images/logos/youtube.png %}" alt="YouTube" /></a></p>
-      <p><img src="{% cdn_url /assests/images/logos/rhcsa.png %}" alt="RHCSA" />
-      <img src="{% cdn_url /assests/images/logos/rhce.png %}" alt="RHCE" /></p>
+      <p><a href="https://twitter.com/DamianZaremba"><img src="/assests/images/logos/twitter.png" alt="Twitter" /></a>
+      <a href="https://facebook.com/DamianZaremba"><img src="/assests/images/logos/facebook.png" alt="Facebook" /></a>
+      <a href="https://lastfm.com/user/DamianZaremba4"><img src="/assests/images/logos/lastfm.png" alt="LastFM" /></a>
+      <a href="https://uk.linkedin.com/in/damianzaremba"><img src="/assests/images/logos/linkedin.png" alt="LinkedIn" /></a>
+      <a href="https://www.youtube.com/user/DamianZaremba"><img src="/assests/images/logos/youtube.png" alt="YouTube" /></a></p>
     </div>
   </div>
   <div class="col-md-8">
@@ -30,13 +28,11 @@ description: About Damian Zaremba
     <p>Take a look at Damian's <a href="/cv">CV</a> for more information and work experience.</p>
 
     <div class="visible-sd hidden-md hidden-lg">
-      <p><a href="http://twitter.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/twitter.png %}" alt="Twitter" /></a>
-      <a href="http://facebook.com/DamianZaremba"><img src="{% cdn_url /assests/images/logos/facebook.png %}" alt="Facebook" /></a>
-      <a href="http://lastfm.com/user/DamianZaremba4"><img src="{% cdn_url /assests/images/logos/lastfm.png %}" alt="LastFM" /></a>
-      <a href="http://uk.linkedin.com/in/damianzaremba"><img src="{% cdn_url /assests/images/logos/linkedin.png %}" alt="LinkedIn" /></a>
-      <a href="http://www.youtube.com/user/DamianZaremba"><img src="{% cdn_url /assests/images/logos/youtube.png %}" alt="YouTube" /></a></p>
-      <p><img src="{% cdn_url /assests/images/logos/rhcsa.png %}" alt="RHCSA" />
-      <img src="{% cdn_url /assests/images/logos/rhce.png %}" alt="RHCE" /></p>
+      <p><a href="http://twitter.com/DamianZaremba"><img src="/assests/images/logos/twitter.png" alt="Twitter" /></a>
+      <a href="http://facebook.com/DamianZaremba"><img src="/assests/images/logos/facebook.png" alt="Facebook" /></a>
+      <a href="http://lastfm.com/user/DamianZaremba4"><img src="/assests/images/logos/lastfm.png" alt="LastFM" /></a>
+      <a href="http://uk.linkedin.com/in/damianzaremba"><img src="/assests/images/logos/linkedin.png" alt="LinkedIn" /></a>
+      <a href="http://www.youtube.com/user/DamianZaremba"><img src="/assests/images/logos/youtube.png" alt="YouTube" /></a></p>
     </div>
     <div class="hidden-sd visible-md visible-lg">
       <h5>What others say about Damian</h5>
