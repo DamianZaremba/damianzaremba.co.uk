@@ -1,0 +1,29 @@
+name: Scheduled Post Publishing
+on:
+  schedule:
+    - cron: '0 10 * * 1-4'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          ref: 'master'
+          token: '${{ secrets.GH_TOKEN }}'
+
+      - name: Install system dependancies
+        run: sudo apt-get install -y python python-yaml
+
+      - name: Promote a pending entry
+        run: ./scripts/promote_pending.py
+
+      - name: Publish the new entry to master
+        run: |
+          git add --all && (
+            git config --global user.name "InfraBits CI"
+            git config --global user.email "ci@infrabits.nl"
+
+            git commit -m "Auto publishing entry"
+            git push origin master
+          ) || true
