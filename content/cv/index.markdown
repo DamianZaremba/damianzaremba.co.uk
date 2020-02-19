@@ -17,8 +17,11 @@ Driven to impact change where required and deliver things done efficiently and e
 
 Employment History
 ------------------
+### Fastly - Senior Network Engineer
+*September 2018 - Present*
+
 ### Booking.com - Network Engineer
-*September 2016 - Present*
+*September 2016 - September 2018*
 
 Focused on the design, engineering and management of AS43996 & AS202196, powering Booking.com globally.
 
@@ -210,6 +213,15 @@ Supporting world-recognized pro audio brands such as MIDAS, Klark Teknik, Turbos
 
 Volunteering experience
 -----------------------
+### Scuba Education Amsterdam - Staff / DMC
+*2018 - Present*
+
+* 5-star PADI and IANTD training center
+* Operation of the filling station
+* Perform equipment servicing/management/maintenance
+* Provide students with assistance and advice
+* Certified TecRec diver, Gas blender, PADI Divemaster candidate
+
 ### ClueBot NG Maintainer
 *2012 - Present*
 
@@ -240,15 +252,10 @@ Volunteering experience
 * Completed training for first aid, climbing, safeguarding and leadership
 * Assist local campsites, district, county, and groups at large events
 
-Professional certifications (current)
--------------------------------------
-* Red Hat Certified Engineer - 150-017-028
-* Red Hat Certified System Administrator - 150-017-028
-
 Misc
 ----
-* UK passport/driving licence
-* Available out of hours
+* UK passport
+* Dutch driving licence
 * Based in Amsterdam, Netherlands
 * Diver, Climber, Explorer
 
