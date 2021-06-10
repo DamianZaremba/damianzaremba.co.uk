@@ -18,6 +18,9 @@ jobs:
       - name: Promote a pending entry
         run: ./scripts/promote_pending.py
 
+      - name: Update external data
+        run: make update
+
       - name: Publish the new entry to master
         run: |
           git add --all && (
