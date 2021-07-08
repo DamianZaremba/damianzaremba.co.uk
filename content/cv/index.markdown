@@ -30,7 +30,7 @@ _Not currently looking for a long term position._
 ### Fastly - Senior Network Engineer
 *September 2018 - April 2021*
 
-Focused on the automation, management, expansion & improvement of AS54113 (FSLY) as part of the network reliability engineering team. During this time the network grew from 37T to over 110T of capacity, with new generations of topologies.
+Focused on the automation, management, expansion & improvement of AS54113 (FSLY) as part of the network reliability engineering team. During this time the network grew from 37T to over 130T of capacity, with new generations of topologies.
 
 Responsibilities included:
 
