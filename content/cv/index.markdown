@@ -229,4 +229,4 @@ See Also
 
 Other Formats
 -------------
-Available on [GitHub](https://github.com/DamianZaremba/cv)
+Available on [GitHub](https://github.com/DamianZaremba/cv/)
