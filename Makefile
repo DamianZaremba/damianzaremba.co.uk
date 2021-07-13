@@ -44,7 +44,7 @@ clone:
 	else \
 		cd _live && \
 			git reset --hard && \
-			git pull origin master; \
+			git pull origin main; \
 	fi
 
 clean:
@@ -70,7 +70,7 @@ push:
 		if [ "`git ls-files --modified --deleted | grep -v 'sitemap.xml' | wc -l`" != "0" ]; then \
 			git add --all . && \
 			git commit -am "Auto updated site"; \
-      git push origin master; \
+      git push origin main; \
 		fi
 
 update:
@@ -82,7 +82,7 @@ update:
 	test -d content/cv/ || mkdir -p content/cv/; exit 0
 
 	# Download the current README
-	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/master/README.md
+	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/main/README.md
 
 	# Write out the header
 	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown

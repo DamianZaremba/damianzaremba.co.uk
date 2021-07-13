@@ -2,7 +2,7 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '30 1 * * 1'
 jobs:
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'DamianZaremba/damianzaremba.github.io'
-          ref: 'master'
+          ref: 'main'
           token: '${{ secrets.GH_TOKEN }}'
           path: '_live'
 
@@ -38,4 +38,4 @@ jobs:
 
       - name: Commit site
         run: make deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'

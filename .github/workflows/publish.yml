@@ -9,7 +9,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
         with:
-          ref: 'master'
+          ref: 'main'
           token: '${{ secrets.GH_TOKEN }}'
 
       - name: Install system dependancies
@@ -21,12 +21,12 @@ jobs:
       - name: Update external data
         run: make update
 
-      - name: Publish the new entry to master
+      - name: Publish the new entry to main
         run: |
           git add --all && (
             git config --global user.name "InfraBits CI"
             git config --global user.email "ci@infrabits.nl"
 
             git commit -m "Auto publishing entry"
-            git push origin master
+            git push origin main
           ) || true
