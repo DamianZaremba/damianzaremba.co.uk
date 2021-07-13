@@ -33,6 +33,10 @@ jobs:
       - name: Install bundle dependancies
         run: bundle install
 
+      - name: Update external data
+        run: make update
+        if: github.ref == 'refs/heads/main'
+
       - name: Transpile site
         run: make stage
 

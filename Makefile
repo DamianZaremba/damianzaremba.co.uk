@@ -85,43 +85,30 @@ update:
 	wget -O /tmp/github-damianzaremba-cv-readme https://raw.github.com/DamianZaremba/cv/main/README.md
 
 	# Write out the header
-	echo "---" > /tmp/github-damianzaremba-cv-readme.markdown
-	echo "layout: default" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "title: CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "description: Damian Zaremba's CV" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "---" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo "---" > content/cv/index.markdown
+	echo "layout: default" >> content/cv/index.markdown
+	echo "title: CV" >> content/cv/index.markdown
+	echo "description: Damian Zaremba's CV" >> content/cv/index.markdown
+	echo "---" >> content/cv/index.markdown
 
 	# Cat in the main stuff ignoring the header crap
-	tail -n +4 /tmp/github-damianzaremba-cv-readme >> /tmp/github-damianzaremba-cv-readme.markdown
+	tail -n +4 /tmp/github-damianzaremba-cv-readme >> content/cv/index.markdown
 	rm -f /tmp/github-damianzaremba-cv-readme
 
 	# Write out the footer
-	echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "Other Formats" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "-------------" >> /tmp/github-damianzaremba-cv-readme.markdown
-	echo "Available on [GitHub](https://github.com/DamianZaremba/cv)" >> /tmp/github-damianzaremba-cv-readme.markdown
+	echo >> content/cv/index.markdown
+	echo >> content/cv/index.markdown
+	echo "Other Formats" >> content/cv/index.markdown
+	echo "-------------" >> content/cv/index.markdown
+	echo "Available on [GitHub](https://github.com/DamianZaremba/cv/)" >> content/cv/index.markdown
 
-	# Copy over if new
-	if [ "`diff /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown`" != "" ]; \
-	then \
-		echo "Updating CV"; \
-		mv /tmp/github-damianzaremba-cv-readme.markdown content/cv/index.markdown; \
-	else \
-		echo "CV up to date"; \
-		rm -f /tmp/github-damianzaremba-cv-readme.markdown; \
-	fi
-
-	# Cleanup
-	rm -f /tmp/github-damianzaremba-cv-readme.markdown.new.diff
-	rm -f /tmp/github-damianzaremba-cv-readme.markdown.current.diff
+	# Pull in the compiled formats
+	wget -O content/cv/scuba-diving.pdf https://raw.github.com/DamianZaremba/cv/scuba-diving/damianzaremba.pdf
 
 	# Commit the update if the working dir is clean
-	if [ -z "`git status --porcelain | grep -v content/cv/index.markdown`" ] && \
-		[ ! -z "`git status --porcelain | grep content/cv/index.markdown`" ]; then \
-		git commit -m "Updating CV from source" content/cv/index.markdown; \
-	else \
-		echo "Working directory dirty, not committing CV"; \
+	if [ ! -z "`git status --porcelain | grep content/cv/`" ]; then \
+		git add --all content/cv/ && \
+		git commit -am "Updating CV from source"; \
 	fi
 
 new:
