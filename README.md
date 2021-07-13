@@ -3,7 +3,7 @@ DamianZaremba.co.uk
 
 Source code for my personal site. The generated HTML is [here](https://github.com/DamianZaremba/damianzaremba.github.io/).
 
-The site is generated via Jekyll, inspired by [David Cramer](http://justcramer.com/) and uses icons from [JIGSOAR](http://www.jigsoaricons.com/). The Jekyll plugins where mostly written by others, the respective licenses/authors can be found in the files themselves in the form of comments.
+The site is generated via Jekyll and uses icons from [JIGSOAR](http://www.jigsoaricons.com/). The Jekyll plugins where mostly written by others, the respective licenses/authors can be found in the files themselves in the form of comments.
 
 License
 -------
@@ -42,12 +42,11 @@ After proof reading etc, build and deploy the content:
 The make tasks will take care of all the heavy lifiting, at a high level what they do is:
 
 1. Update the source with the latest markdown copy of my CV from github
-2. Download the YUI and HTML compressor utilities
+2. Download the YUI compressor utility
 3. Run jekyll over the source, outputting the final HTML
 4. Compress the JS/CSS
-5. Optionally compress the HTML - disabled for now as there is little gain
-6. Reduce image quality of the icons to 70%
-7. Clone out the production repo (HTML) into _live (or update the copy if it is already cloned)
-8. Rsync the _site/ folder to the _live/ folder, removing any old content (apart from the .git folder)
-9. Stages the changes to _live in git, commits the changes and pushes the repo up to Github
-10. Github site hooks then deploy the site to their webservers and everything is done
+5. Reduce image quality of the icons to 70%
+6. Clone out the production repo (HTML) into _live (or update the copy if it is already cloned)
+7. Rsync the _site/ folder to the _live/ folder, removing any old content (apart from the .git folder)
+8. Stages the changes to _live in git, commits the changes and pushes the repo up to Github
+9. Github site hooks then deploy the site to their webservers and everything is done
