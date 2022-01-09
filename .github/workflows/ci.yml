@@ -26,12 +26,15 @@ jobs:
           sudo apt-get install -y \
             git wget graphviz \
             openjdk-8-jre python \
-            gcc g++ make libgsl0-dev \
+            gcc g++ make libgsl-dev \
             ruby-dev ruby-gsl ruby-ffi
-          sudo /usr/bin/gem install bundler
+          sudo gem install bundler
 
       - name: Install bundle dependancies
-        run: sudo /usr/local/bin/bundle install
+        run: |
+          # For some reason gsl fails under bundle
+          sudo gem install gsl
+          sudo bundle install
 
       - name: Update external data
         run: make update
