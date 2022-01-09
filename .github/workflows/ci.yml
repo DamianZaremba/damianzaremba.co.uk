@@ -28,10 +28,10 @@ jobs:
             openjdk-8-jre python \
             gcc g++ make libgsl0-dev \
             ruby-dev ruby-gsl ruby-ffi
-          sudo gem install bundler
+          sudo /usr/bin/gem install bundler
 
       - name: Install bundle dependancies
-        run: sudo bundle install
+        run: sudo /usr/local/bin/bundle install
 
       - name: Update external data
         run: make update
@@ -43,4 +43,3 @@ jobs:
       - name: Commit site
         run: make deploy
         if: github.ref == 'refs/heads/main'
-

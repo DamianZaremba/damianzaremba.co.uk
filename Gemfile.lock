@@ -11,6 +11,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.15.4)
     forwardable-extended (2.6.0)
+    gsl (2.1.0.3)
     http_parser.rb (0.8.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
