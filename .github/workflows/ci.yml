@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Checkout live source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'DamianZaremba/damianzaremba.github.io'
           ref: 'main'
@@ -32,8 +32,6 @@ jobs:
 
       - name: Install bundle dependancies
         run: |
-          # For some reason gsl fails under bundle
-          sudo gem install gsl
           sudo bundle install
 
       - name: Update external data
