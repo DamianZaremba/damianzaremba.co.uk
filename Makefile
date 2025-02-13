@@ -1,22 +1,15 @@
-# YUI Compressor
-YUI_COMPRESSOR_VERSION := 2.4.8
-YUI_COMPRESSOR_URL := https://repo1.maven.org/maven2/com/yahoo/platform/yui/yuicompressor/$(YUI_COMPRESSOR_VERSION)/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
-YUI_COMPRESSOR_TARGET := _temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar
-
 all: compile
 
 getdeps:
 	test -d _temp || mkdir -p _temp
-	# YUI Compressor
-	test -f '$(YUI_COMPRESSOR_TARGET)' || wget '$(YUI_COMPRESSOR_URL)' -O '$(YUI_COMPRESSOR_TARGET)' || (rm -f '$(YUI_COMPRESSOR_TARGET)')
 
-stage: update compile minify clone stash
+stage: update compile clone stash
 
 deploy: check_git push
 
 install: stage deploy
 
-build: update compile minify
+build: update compile
 
 check_git:
 	if [ ! -z "`git status --porcelain`" ]; then \
@@ -51,14 +44,6 @@ clean:
 	test -d _site && rm -rf _site || true
 	test -d _live && rm -rf _live || true
 	test -d _temp && rm -rf _temp || true
-
-minify:
-	# Js/CSS
-	find _site/assests/ -type f \( -iname '*.css' -o -iname '*.js' \) | \
-	while read f; \
-	do \
-		java -jar '_temp/yuicompressor-$(YUI_COMPRESSOR_VERSION).jar' $$f -o $$f --charset utf-8; \
-	done
 
 stash:
 	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
