@@ -2,10 +2,9 @@
 layout: default
 ---
 <article class="post">
-    <h1 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    <h1 class="title">{{ page.title }}</h1>
     <div class="meta">
-        <span><img src="/assests/images/date.png" title="Date" alt="Date" />{{ page.date | date_to_string }}</span>
-        <span><img src="/assests/images/comments.png" title="Content" alt="Content" /><a href="{{ page.url }}#disqus_thread">Comments</a></span>
+        <span><img src="/assets/images/date.png" title="Date" alt="Date" />{{ page.date | date_to_string }}</span>
         {% if page.tags and page.tags.size > 0 %}
             <ul class="categories">
             {% for tag in page.tags %}<li><a href='{{ tag | make_tag_url }}'>{{ tag }}</a></li>{% endfor %}</ul>
@@ -25,26 +24,4 @@ layout: default
     {% endfor %}
     </ul>
 </section>
-{% endif %}
-
-{% if page.comments %}
-<section id="comment">
-    <h2>Comments</h2>
-    <div id="disqus_thread" aria-live="polite">
-        <noscript>Please enable JavaScript to view the comments</noscript>
-    </div>
-</section>
-
-<script type="text/javascript">
-    var disqus_identifier = 'http://damianzaremba.co.uk{{ page.url }}';
-    var disqus_url = 'http://damianzaremba.co.uk{{ page.url }}';
-
-    (function () {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = 'http://damianzaremba.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
 {% endif %}
