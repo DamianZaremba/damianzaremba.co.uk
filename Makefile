@@ -1,8 +1,5 @@
 all: compile
 
-getdeps:
-	test -d _temp || mkdir -p _temp
-
 stage: update compile clone stash
 
 deploy: check_git push
@@ -18,7 +15,7 @@ check_git:
 		exit 1; \
 	fi
 
-compile: getdeps
+compile:
 	bundle exec jekyll build
 
 server: clean
@@ -43,7 +40,6 @@ clone:
 clean:
 	test -d _site && rm -rf _site || true
 	test -d _live && rm -rf _live || true
-	test -d _temp && rm -rf _temp || true
 
 stash:
 	$(eval LIVE_SHA1_PRE := $(shell cd _live/ && git rev-parse HEAD))
@@ -87,9 +83,6 @@ update:
 	echo "-------------" >> content/cv/index.markdown
 	echo "Available on [GitHub](https://github.com/DamianZaremba/cv/)" >> content/cv/index.markdown
 
-	# Pull in the compiled formats
-	wget -O content/cv/scuba-diving.pdf https://raw.github.com/DamianZaremba/cv/scuba-diving/damianzaremba.pdf
-
 	# Commit the update if the working dir is clean
 	if [ ! -z "`git status --porcelain | grep content/cv/`" ]; then \
 		git add --all content/cv/ && \
@@ -102,7 +95,6 @@ new:
 	$(eval POST_PATH := "content/_drafts/singles/$(POST_SLUG).markdown")
 	if [ ! -f $(POST_PATH) ]; then \
 		echo '---' > $(POST_PATH); \
-		echo 'comments: true' >> $(POST_PATH); \
 		echo 'layout: post' >> $(POST_PATH); \
 		echo 'title: $(POST_TITLE)' >> $(POST_PATH); \
 		echo 'tags:' >> $(POST_PATH); \
