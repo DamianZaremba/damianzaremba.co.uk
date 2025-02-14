@@ -18,6 +18,7 @@ description: Damian Zaremba's Blog
         <div class="entry">
             {% if post.excerpt %}
             {{ post.excerpt }}
+            <p class="text-end"><a href="{{ post.url }}">Read More &raquo;</a></p>
             {% else %}
             {{ post.content }}
             {% endif %}
