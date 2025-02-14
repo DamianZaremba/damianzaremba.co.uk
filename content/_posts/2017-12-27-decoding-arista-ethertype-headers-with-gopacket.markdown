@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Decoding Arista EtherType headers with gopacket
 tags:

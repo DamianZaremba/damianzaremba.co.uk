@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Decoding IPFIX options using Go
 tags:
@@ -23,6 +22,8 @@ which this post will focus on.
 
 _TL;DR The full implementation can be found on
 [Github](https://github.com/DamianZaremba/ipfix_options_demo)_
+
+<!--more-->
 
 Parsing options
 ---------------

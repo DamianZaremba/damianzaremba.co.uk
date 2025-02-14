@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: What's Anycast and why would I use it?
 tags:

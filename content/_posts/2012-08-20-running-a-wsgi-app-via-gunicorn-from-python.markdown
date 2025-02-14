@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Running a WSGI app via Gunicorn from Python
 tags:

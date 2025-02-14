@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Unix time to human readable?
 tags:

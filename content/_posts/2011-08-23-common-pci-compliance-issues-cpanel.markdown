@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Common PCI compliance issues - cPanel
 tags:

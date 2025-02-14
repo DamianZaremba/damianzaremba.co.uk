@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Apache process ID
 tags:

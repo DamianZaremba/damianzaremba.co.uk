@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Restricting access to EdgeCast nodes
 tags:

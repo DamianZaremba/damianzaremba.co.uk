@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: A look at traffic encryption options
 tags:

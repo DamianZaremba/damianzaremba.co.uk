@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: 5min hack in python
 tags:

@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: GNS3 crash after upgrade
 tags:

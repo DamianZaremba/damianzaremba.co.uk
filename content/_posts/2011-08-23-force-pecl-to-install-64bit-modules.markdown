@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Force PECL to install 64bit modules
 tags:

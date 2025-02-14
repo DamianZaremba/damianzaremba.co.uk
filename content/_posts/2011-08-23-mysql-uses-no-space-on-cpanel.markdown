@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: MySQL uses no space on cPanel
 tags:

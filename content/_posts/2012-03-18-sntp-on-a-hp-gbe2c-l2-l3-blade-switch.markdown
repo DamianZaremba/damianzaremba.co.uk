@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: NTP on a HP GbE2c L2/L3 Blade Switch
 tags:

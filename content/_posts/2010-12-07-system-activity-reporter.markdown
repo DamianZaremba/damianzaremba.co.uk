@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: System activity reporter
 tags:

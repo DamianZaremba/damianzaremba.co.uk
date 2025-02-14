@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: PHP CURL dual stack issue
 tags:

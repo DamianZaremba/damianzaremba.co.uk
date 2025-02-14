@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Compiling nginx and PHP-FPM on CentOS 5
 tags:

@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Internet world 2010
 categories:

@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Exim SMTP with multiple IPs and different HELO identifiers
 tags:

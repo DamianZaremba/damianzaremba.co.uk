@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: virt-install is a life server
 tags:

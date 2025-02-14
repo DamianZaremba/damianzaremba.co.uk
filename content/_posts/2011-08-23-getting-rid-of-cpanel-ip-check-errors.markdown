@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Getting rid of cPanel IP Check errors
 tags:

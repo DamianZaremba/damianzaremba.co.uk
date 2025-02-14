@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Job change, house move and more
 tags:

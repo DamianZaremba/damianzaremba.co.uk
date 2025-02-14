@@ -7,5 +7,5 @@ _temp
 vendor/
 .bundle
 .idea
-content/assests/images/gv
+content/assets/images/gv
 content/.jekyll-cache

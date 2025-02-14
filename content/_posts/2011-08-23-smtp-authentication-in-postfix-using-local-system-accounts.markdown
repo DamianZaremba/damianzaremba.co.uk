@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: SMTP Authentication in Postfix using local system accounts
 tags:

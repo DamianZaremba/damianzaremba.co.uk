@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: A look at low-cost tap aggregation
 tags:

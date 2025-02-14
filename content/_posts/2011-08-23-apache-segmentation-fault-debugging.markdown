@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Apache segmentation fault debugging
 tags:

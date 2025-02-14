@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: RADIUS authentication on a Dell PowerConnect M6220 switch
 tags:

@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Recovering deleted files from the handlers in /proc/
 tags:

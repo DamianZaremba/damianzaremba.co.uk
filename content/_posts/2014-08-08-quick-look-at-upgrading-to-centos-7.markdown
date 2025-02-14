@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: A very quick look at upgrading CentOS 6.5 to 7.0
 tags:

@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Upgrade EOL Clamav
 tags:

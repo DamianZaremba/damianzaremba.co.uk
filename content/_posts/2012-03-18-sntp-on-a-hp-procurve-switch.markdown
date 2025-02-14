@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: SNTP on a HP ProCurve switch
 tags:

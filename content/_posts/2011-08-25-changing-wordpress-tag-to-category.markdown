@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Changing WordPress tag to category?
 tags:

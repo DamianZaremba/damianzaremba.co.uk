@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: KVIrc update breaks Irssi Proxy
 tags:

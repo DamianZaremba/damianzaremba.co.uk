@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Why I love Python
 tags:

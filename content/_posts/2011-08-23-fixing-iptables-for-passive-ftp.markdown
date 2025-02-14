@@ -1,5 +1,4 @@
 ---
-comments: true
 layout: post
 title: Fixing iptables for passive FTP
 tags:
